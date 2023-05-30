@@ -1,0 +1,2038 @@
+[
+  {
+    "channel": "3001",
+    "productsAttributes": {
+      "CondyBenef": "? Monto mínimo de apertura: $100.000 ? Titularidad Unico dueño ? Rendimientos sujetos a retención en la fuente. ? Producto unicamente para mayores de edad. ? Abre tu CDT de forma facil, rapida y segura sin necesidad de desplazarte a nuestras oficinas. ? Solo se puede retirar una vez vence el plazo pactado.",
+      "TipoMercado": "3 {Digital}",
+      "TipoModalidad": "2 {Vencido}",
+      "Descripcion": "Plazo en Meses: Desde en 1 mes hasta 84 meses según configuración del macrotitulo. Tasa: Fija Periodicidad Pago de Intereses: Al vencimiento, Mensual, Trimestral, Semestral y Anual. Base: 360 ? Mes Comercial de 30 Días",
+      "FechaFinal": "",
+      "TipoPlazo": "1 {Meses}",
+      "TipoTasa": "1 {Fija}",
+      "TipoMoneda": "1 {Pesos (COP)}",
+      "FechaInicial": "2020-06-03T00:00:00",
+      "TipoBase": "2 {360}",
+      "Estado": "1 {TRUE}"
+    },
+    "ratesAttributes": [
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "1",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "1",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.65",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "2",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "2",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "3",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "3",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.68",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "4",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "4",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.07",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "5",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "5",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.42",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "6",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "6",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.55",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "7",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "7",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "8",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "8",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.63",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "9",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "9",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "10",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "10",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.68",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "11",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "11",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "12",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "12",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.73",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "13",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "13",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.56",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "14",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "14",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.44",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "15",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "15",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.42",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "16",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "16",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.38",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "17",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "18",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.31",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "19",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "33",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "1",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "1",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "2",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "2",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.65",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "3",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "3",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.85",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "4",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "4",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.2",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "5",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "5",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.55",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "6",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "6",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "7",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "7",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "8",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "8",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.69",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "9",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "9",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.73",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "10",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "10",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.76",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "11",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "11",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.8",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "12",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "12",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.82",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "13",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "13",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.69",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "14",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "14",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.47",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "15",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "15",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.46",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "16",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "16",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.45",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "17",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "18",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.7",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "19",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "33",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "1",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "1",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1.25",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "2",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "2",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.8",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "3",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "3",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.9",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "4",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "4",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.25",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "5",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "5",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "6",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "6",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "7",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "7",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "8",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "8",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.74",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "9",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "9",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.78",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "10",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "10",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.81",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "11",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "11",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.85",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "12",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "12",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.87",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "13",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "13",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.74",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "14",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "14",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.52",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "15",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "15",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.51",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "16",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "16",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.5",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "17",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "18",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.75",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "19",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "33",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "1",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "1",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1.5",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "2",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "2",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.9",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "3",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "3",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.95",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "4",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "4",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.3",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "5",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "5",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "6",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "6",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "7",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "7",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.75",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "8",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "8",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.79",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "9",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "9",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.83",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "10",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "10",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.86",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "11",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "11",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.9",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "12",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "12",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.95",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "13",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "13",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.8",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "14",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "14",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.61",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "15",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "15",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.61",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "16",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "16",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.55",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "17",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "18",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.8",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "19",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "33",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "1",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "1",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1.5",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "2",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "2",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "3",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "3",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.05",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "4",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "4",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.35",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "5",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "5",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "6",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "6",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.75",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "7",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "7",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.8",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "8",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "8",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.84",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "9",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "9",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.88",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "10",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "10",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.91",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "11",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "11",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.95",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "12",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "12",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "13",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "13",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "13",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.85",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "14",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "14",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.66",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "15",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "15",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.66",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "16",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "16",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "17",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "18",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.85",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "19",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "33",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "1 {Meses}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3001 {CDT Digital tasa fija en meses}"
+      }
+    ]
+  },
+  {
+    "channel": "3002",
+    "productsAttributes": {
+      "CondyBenef": "? Monto mínimo de apertura: $100.000 ? Titularidad Individual ? Rendimientos sujetos a retención en la fuente. ? Producto unicamente para mayores de edad. ? Abre tu CDT de forma facil, rapida y segura sin necesidad de desplazarte a nuestras oficinas. ? Solo se puede retirar una vez vence el plazo pactado.",
+      "TipoMercado": "3 {Digital}",
+      "TipoModalidad": "2 {Vencido}",
+      "Descripcion": "Plazo en Días : Plazo mínimo 30 Días hasta 999 días según configuración del macrotitulo. Tasa: Fija Periodicidad: Múltiplo del plazo o al vencimiento.",
+      "FechaFinal": "",
+      "TipoPlazo": "2 { Dias}",
+      "TipoTasa": "1 {Fija}",
+      "TipoMoneda": "1 {Pesos (COP)}",
+      "FechaInicial": "2020-06-03T00:00:00",
+      "TipoBase": "1 {365}",
+      "Estado": "1 {TRUE}"
+    },
+    "ratesAttributes": [
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "30",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "59",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.65",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "60",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "89",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "90",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "119",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.68",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "120",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "149",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.07",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "150",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "179",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.42",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "180",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "209",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.55",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "210",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "239",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "240",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "269",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.63",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "270",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "299",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "300",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "329",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.68",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "330",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "359",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "360",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "389",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.73",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "390",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "419",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.56",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "420",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "449",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.44",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "450",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "479",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.42",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "480",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "509",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.38",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "510",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "540",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.31",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "100000",
+        "PlazoMinimo": "541",
+        "MontoMaximo": "49999999",
+        "PlazoMaximo": "999",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "30",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "59",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "60",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "89",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.65",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "90",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "119",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.85",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "120",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "149",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.2",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "150",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "179",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.55",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "180",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "209",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "210",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "239",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "240",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "269",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.69",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "270",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "299",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.73",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "300",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "329",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.76",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "330",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "359",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.8",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "360",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "389",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.82",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "390",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "419",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.69",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "420",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "449",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.47",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "450",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "479",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.46",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "480",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "509",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.45",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "510",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "540",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.7",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "50000000",
+        "PlazoMinimo": "541",
+        "MontoMaximo": "199999999",
+        "PlazoMaximo": "999",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "30",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "59",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1.25",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "60",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "89",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.8",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "90",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "119",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.9",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "120",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "149",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.25",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "150",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "179",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "180",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "209",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "210",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "239",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "240",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "269",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.74",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "270",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "299",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.78",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "300",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "329",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.81",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "330",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "359",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.85",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "360",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "389",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.87",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "390",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "419",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.74",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "420",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "449",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.52",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "450",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "479",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.51",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "480",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "509",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.5",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "510",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "540",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.75",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "200000000",
+        "PlazoMinimo": "541",
+        "MontoMaximo": "499999999",
+        "PlazoMaximo": "999",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "30",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "59",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1.5",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "60",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "89",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.9",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "90",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "119",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.95",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "120",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "149",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.3",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "150",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "179",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.65",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "180",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "209",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "210",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "239",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.75",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "240",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "269",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.79",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "270",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "299",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.83",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "300",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "329",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.86",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "330",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "359",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.9",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "360",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "389",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.95",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "390",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "419",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.8",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "420",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "449",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.61",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "450",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "479",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.61",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "480",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "509",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.55",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "510",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "540",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.8",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "500000000",
+        "PlazoMinimo": "541",
+        "MontoMaximo": "999999999",
+        "PlazoMaximo": "999",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "30",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "59",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "1.5",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "60",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "89",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "90",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "119",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.05",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "120",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "149",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.35",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "150",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "179",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.7",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "180",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "209",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.75",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "210",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "239",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.8",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "240",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "269",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.84",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "270",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "299",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.88",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "300",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "329",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.91",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "330",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "359",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.95",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "360",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "389",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "13",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "390",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "419",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.85",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "420",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "449",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.66",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "450",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "479",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.66",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "480",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "509",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "12.6",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "510",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "540",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "11.85",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "1000000000",
+        "PlazoMinimo": "541",
+        "MontoMaximo": "999999999999",
+        "PlazoMaximo": "999",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      },
+      {
+        "Signo": "+",
+        "TasaSpread": "0",
+        "UnidadPlazo": "2 { Dias}",
+        "MontoMinimo": "0",
+        "PlazoMinimo": "0",
+        "MontoMaximo": "0",
+        "PlazoMaximo": "0",
+        "ProductoCDT": "3002 {CDT Digital tasa fija en días}"
+      }
+    ]
+  }
+]

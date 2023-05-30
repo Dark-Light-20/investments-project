@@ -1,0 +1,675 @@
+{
+  "Caracteristicas": [
+    {
+      "wcmNombre": "01ahorraTiempo",
+      "wcmImagen": "/wcm/connect/www.bancolombia.com-26918/370cce71-fb91-48aa-b9c8-8540ef788972/Ahorro%5B1%5D.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-370cce71-fb91-48aa-b9c8-8540ef788972-nei4-NT",
+      "wcmTitulo": "Ahorra tiempo",
+      "wcmNombreDescripcion": "100% digital y sin documentos",
+      "wcmIcono": "icon-desktop"
+    },
+    {
+      "wcmNombre": "02montoMinimo",
+      "wcmImagen": "/wcm/connect/www.bancolombia.com-26918/f6138526-d1c0-4de7-a3a9-ab8b2cc54dc5/Monto%5B1%5D.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-f6138526-d1c0-4de7-a3a9-ab8b2cc54dc5-nei7hLW",
+      "wcmTitulo": "Monto mínimo para comenzar",
+      "wcmNombreDescripcion": "$500.000",
+      "wcmIcono": "icon-coin"
+    },
+    {
+      "wcmNombre": "03plazoMinimo",
+      "wcmImagen": "/wcm/connect/www.bancolombia.com-26918/675b6167-895e-4869-ad79-94aa6f6004d2/Plazo%5B1%5D.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-675b6167-895e-4869-ad79-94aa6f6004d2-nei7Lyp",
+      "wcmTitulo": "El plazo mínimo de inversión",
+      "wcmNombreDescripcion": "30 días",
+      "wcmIcono": "icon-month"
+    },
+    {
+      "wcmNombre": "04necesitoTener",
+      "wcmImagen": "/wcm/connect/www.bancolombia.com-26918/59e90ad4-e875-4e78-b0da-cfbe3c44db4e/Requisitos%5B1%5D.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-59e90ad4-e875-4e78-b0da-cfbe3c44db4e-nei82cO",
+      "wcmTitulo": "Necesitas tener",
+      "wcmNombreDescripcion": "una cuenta de ahorros o corriente Bancolombia.",
+      "wcmIcono": "icon-cash"
+    }
+  ],
+  "simuladorContent": {
+    "TituloSimulador": "Simulador de inversión virtual",
+    "TituloSimulacion": "¿Cuánto dinero quieres invertir?",
+    "TituloResultado": "Te ofrecemos estas opciones para Inversión Virtual",
+    "SubtituloSimulador": "Con el plazo y el monto que quieres invertir podrás simular las condiciones aproximadas de tu inversión.\n",
+    "Subtitulo1": "st_dtosubtitulo1",
+    "TextoBotonSimulador": "CONTINUAR",
+    "UrlSvp": "link_prod_aiv",
+    "TextoCaracteristicas": "Esta simulación es un valor aproximado. Los cálculos reales serán los indicados en la Sucursal Virtual Personas, APP Personas o Sucursal Virtual Empresas en el momento de la solicitud del producto.",
+    "textoBotonSimular": "SOLICITAR INVERSIÓN",
+    "urlBotonSimular": "https://sucursalpersonas.transaccionesbancolombia.com/mua/USER?scis=%2BusD2F1nGhBm%2FFFjrWSQcIXbbdPhxQQP4xiNB3C35LY%3D#no-back-button",
+    "urlBotonSimularNegocios": "https://sucursalempresas.transaccionesbancolombia.com/SVE/control/BoleTransactional.bancolombia",
+    "InformacionLegal": "<strong>Condiciones del simulador:</strong> Bancolombia pone a disposición este simulador, con fines ilustrativos, destinado a suministrar información y estimaciones de carácter general basadas en la información que proporciones. Los cálculos presentados se realizan con base en las condiciones comerciales y de mercado establecidas en la fecha en que realizas la simulación. La tasa de interés remuneratoria también será la establecida por Bancolombia al momento de la simulación\r\n<br/><br/>\r\nLa información que presentamos no implica una oferta o promesa de contratar y el resultado de la simulación no es una certificación o recomendación comercial, contable, tributaria o legal.\r\n<br/><br/>\r\nEste simulador es propiedad de Bancolombia S.A., no está permitida su reproducción, venta, publicación, modificación, difusión o explotación comercial del mismo o de la información aquí proporcionada.\r\n<br/><br/>\r\n<strong>Protección de datos:</strong> Los datos suministrados en el presente simulador serán tratados conforme la política de tratamiento de datos del grupo Bancolombia, la cual podrás conocer en  <a href=\"https://www.bancolombia.com/personas/documentos-legales/proteccion-datos/bancolombia-sa\" target=\"_blank\">https://www.bancolombia.com/personas/documentos-legales/proteccion-datos/bancolombia-sa</a>",
+    "DiasMinimos": "30",
+    "DiasMaximos": "1800",
+    "DiasRecomendados": "360",
+    "InfoChat": "Si tienes preguntas sobre la simulación, podemos llamarte y resolverlas",
+    "InfoCard": "La periodicidad de los intereses está calculada al vencimiento, Al momento de realizar la inversión puede elegir cada cuánto quieres recibirlos: mensual, bimestral, trimestral...",
+    "InfoAviso": "Este valor es aproximado. Los cálculos reales serán los indicados en la Sucursal Virtual Personas, APP Personas o Sucursal Virtual Empresas en el momento de la solicitud del producto.",
+    "InfoAvisoNegocios": "Este valor es aproximado. Los cálculos reales serán los indicados en la Sucursal Virtual Empresas en el momento de la solicitud del producto.",
+    "MontoMinimo": "500000",
+    "MontoMaximo": "10000000000",
+    "TooltipGanancia": " Esta es la ganancia antes de la retención en la fuente.",
+    "TooltipTasaEfectiva": "Es la tasa que calcula el valor del interés esperado en un año, teniendo en cuenta el capital invertido y los intereses generados.",
+    "TooltipRetencionFuente": "Este producto solo puede ser adquirido por clientes residentes en Colombia.",
+    "TooltipNominal": "Es la tasa que calcula el interés en un período de tiempo determinando, teniendo en cuenta solo el capital invertido.",
+    "TooltipInteresesAntes": "Son los intereses totales generados por la Inversión Virtual donde aún no se ha cobrado la retención en la fuente.",
+    "TooltipInteresesRecibidos": "Pendiente",
+    "Asistencia": "false",
+    "Multiplo": "30",
+    "TiempoInteres": [
+      {
+        "valor": "Mensualmente"
+      },
+      {
+        "valor": "Al finalizar el plazo"
+      }
+    ]
+  },
+  "infoService": {
+    "withholdingTaxRate": "4",
+    "settings": {
+      "defaultDays": ["180", "360", "540"],
+      "daysRangesOld": [
+        {
+          "minimumDays": "30",
+          "maximumDays": "59",
+          "effectiveInterestRate": "2.00"
+        },
+        {
+          "minimumDays": "60",
+          "maximumDays": "89",
+          "effectiveInterestRate": "2.05"
+        },
+        {
+          "minimumDays": "90",
+          "maximumDays": "119",
+          "effectiveInterestRate": "2.10"
+        },
+        {
+          "minimumDays": "120",
+          "maximumDays": "149",
+          "effectiveInterestRate": "2.20"
+        },
+        {
+          "minimumDays": "150",
+          "maximumDays": "179",
+          "effectiveInterestRate": "2.30"
+        },
+        {
+          "minimumDays": "180",
+          "maximumDays": "239",
+          "effectiveInterestRate": "2.65"
+        },
+        {
+          "minimumDays": "240",
+          "maximumDays": "359",
+          "effectiveInterestRate": "2.90"
+        },
+        {
+          "minimumDays": "360",
+          "maximumDays": "539",
+          "effectiveInterestRate": "3.20"
+        },
+        {
+          "minimumDays": "540",
+          "maximumDays": "719",
+          "effectiveInterestRate": "4.00"
+        },
+        {
+          "minimumDays": "720",
+          "maximumDays": "899",
+          "effectiveInterestRate": "4.50"
+        },
+        {
+          "minimumDays": "1080",
+          "maximumDays": "1439",
+          "effectiveInterestRate": "5.00"
+        },
+        {
+          "minimumDays": "1440",
+          "maximumDays": "1800",
+          "effectiveInterestRate": "5.50"
+        }
+      ],
+      "daysRanges": {
+        "allRates": [
+          {
+            "montoMin": 500000,
+            "montoMax": 4999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "10.00"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "10.50"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.40"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.50"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "11.65"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.00"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.10"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.00"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.00"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.00"
+              }
+            ]
+          },
+          {
+            "montoMin": 5000000,
+            "montoMax": 19999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "10.00"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "10.50"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.40"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.50"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "11.65"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.00"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.10"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.00"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.00"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.00"
+              }
+            ]
+          },
+          {
+            "montoMin": 20000000,
+            "montoMax": 49999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "10.00"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "10.50"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.60"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.70"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "11.85"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.10"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.40"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.40"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.20"
+              }
+            ]
+          },
+          {
+            "montoMin": 50000000,
+            "montoMax": 199999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "10.30"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "10.80"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.60"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.70"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "11.85"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.10"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.40"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.40"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.20"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.20"
+              }
+            ]
+          },
+          {
+            "montoMin": 200000000,
+            "montoMax": 499999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "10.30"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "10.80"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.80"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.90"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "12.05"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.25"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.35"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.60"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.60"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.50"
+              }
+            ]
+          },
+          {
+            "montoMin": 500000000,
+            "montoMax": 999999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "11.10"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "11.30"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.80"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.90"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "12.05"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.25"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.35"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.60"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.60"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.50"
+              }
+            ]
+          },
+          {
+            "montoMin": 1000000000,
+            "montoMax": 4999999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "11.10"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "11.30"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.80"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.90"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "12.05"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.30"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.40"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.70"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.70"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.50"
+              }
+            ]
+          },
+          {
+            "montoMin": 5000000000,
+            "montoMax": 99999999999999,
+            "tasas": [
+              {
+                "minimumDays": "30",
+                "maximumDays": "59",
+                "effectiveInterestRate": "11.10"
+              },
+              {
+                "minimumDays": "60",
+                "maximumDays": "89",
+                "effectiveInterestRate": "11.30"
+              },
+              {
+                "minimumDays": "90",
+                "maximumDays": "119",
+                "effectiveInterestRate": "11.80"
+              },
+              {
+                "minimumDays": "120",
+                "maximumDays": "149",
+                "effectiveInterestRate": "11.90"
+              },
+              {
+                "minimumDays": "150",
+                "maximumDays": "179",
+                "effectiveInterestRate": "12.05"
+              },
+              {
+                "minimumDays": "180",
+                "maximumDays": "239",
+                "effectiveInterestRate": "12.30"
+              },
+              {
+                "minimumDays": "240",
+                "maximumDays": "359",
+                "effectiveInterestRate": "12.40"
+              },
+              {
+                "minimumDays": "360",
+                "maximumDays": "539",
+                "effectiveInterestRate": "12.70"
+              },
+              {
+                "minimumDays": "540",
+                "maximumDays": "719",
+                "effectiveInterestRate": "12.70"
+              },
+              {
+                "minimumDays": "720",
+                "maximumDays": "1079",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1080",
+                "maximumDays": "1439",
+                "effectiveInterestRate": "12.50"
+              },
+              {
+                "minimumDays": "1440",
+                "maximumDays": "1800",
+                "effectiveInterestRate": "12.50"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "backgroundSuperiorApp": "/wcm/connect/www.bancolombia.com-26918/34f8d46b-e8ae-4d3b-8879-2295aa3b9356/trazo-libre-inversion-superior.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-34f8d46b-e8ae-4d3b-8879-2295aa3b9356-nAutpUv",
+  "backgroundInferiorApp": "/wcm/connect/www.bancolombia.com-26918/bf5ebb05-659c-4aa1-a128-19bfa71124bb/trazo-libre-inversion-inferior.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-bf5ebb05-659c-4aa1-a128-19bfa71124bb-nAusXtu",
+  "backgroundSuperiorAppNegocios": "/wcm/connect/www.bancolombia.com-26918/f82a9d76-378d-4ee7-9488-616029ac07bb/trazo-libre-inversion-superior-negocios.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-f82a9d76-378d-4ee7-9488-616029ac07bb-o97fuwG",
+  "backgroundInferiorAppNegocios": "/wcm/connect/www.bancolombia.com-26918/3d0d0c2f-ee2f-409b-b948-1e3484f3d843/trazo-libre-inversion-inferior-negocios.svg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_K9HC1202P864E0Q30449MS3000-3d0d0c2f-ee2f-409b-b948-1e3484f3d843-o97fpxD"
+}
