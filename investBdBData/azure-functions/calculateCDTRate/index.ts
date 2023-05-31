@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { CDTTermUnitTypes } from "../models/cdt.model";
-import { getCDTRate } from "../utils/functions";
+import { getCDTRate } from "../utils/cdt.functions";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,

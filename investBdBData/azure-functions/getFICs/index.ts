@@ -1,14 +1,13 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import { calculateInvest } from "../utils/cdt.functions";
+import { getFICsProfitability } from "../utils/fic.functions";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
   try {
-    const { amount, term, termUnit } = req.body;
-    const invest = await calculateInvest(amount, term, termUnit);
-    context.res = { body: invest.toFixed(2) };
+    const fics = await getFICsProfitability();
+    context.res = { body: fics };
   } catch (error) {
     const { message } = error as Error;
     context.res = { status: 500, body: message };
