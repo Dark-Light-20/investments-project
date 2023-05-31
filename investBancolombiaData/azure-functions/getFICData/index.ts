@@ -1,15 +1,14 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import { CDTRate } from "../models/cdt.model";
-import { getCDTRateByParams } from "../utils/cdt.functions";
+import { getFICByID } from "../utils/fic.functions";
+import { FIC } from "../models/fic.model";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
   try {
-    const { amount, days } = req.body;
-    const rate: CDTRate = await getCDTRateByParams(amount, days);
-    context.res = { body: rate };
+    const fic: FIC = await getFICByID(req.params.id);
+    context.res = { body: fic };
   } catch (error) {
     const { message } = error as Error;
     context.res = { status: 500, body: message };

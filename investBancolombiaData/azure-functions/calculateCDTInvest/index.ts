@@ -1,5 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import { calculateInvest } from "../utils/functions";
+import { calculateInvest } from "../utils/cdt.functions";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
