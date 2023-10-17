@@ -1,0 +1,47 @@
+{
+  "name": "invest-web",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest --coverage",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.2.0",
+    "@angular/common": "^15.2.0",
+    "@angular/compiler": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@angular/forms": "^15.2.0",
+    "@angular/platform-browser": "^15.2.0",
+    "@angular/platform-browser-dynamic": "^15.2.0",
+    "@angular/router": "^15.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
+  },
+  "devDependencies": {
+    "@angular-eslint/builder": "15.2.1",
+    "@angular-eslint/eslint-plugin": "15.2.1",
+    "@angular-eslint/eslint-plugin-template": "15.2.1",
+    "@angular-eslint/schematics": "15.2.1",
+    "@angular-eslint/template-parser": "15.2.1",
+    "@angular/cli": "~15.2.10",
+    "@angular/compiler-cli": "^15.2.0",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.8.6",
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
+    "jest-preset-angular": "~13.0.1",
+    "prettier": "3.0.3",
+    "prettier-eslint": "^16.1.1",
+    "typescript": "~4.9.4"
+  }
+}
