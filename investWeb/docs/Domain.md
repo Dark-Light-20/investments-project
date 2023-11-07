@@ -8,11 +8,11 @@
   - [FIC](#fic)
     - [Attributes](#attributes-1)
 - [Use Cases](#use-cases)
-  - [CDT](#cdt-1)
-    - [Get CDT Rates](#1-get-cdt-rates)
-    - [Get Investment](#2-get-investment)
+  - [CDT](#cdt)
+    - [Get CDT Rates](#get-cdt-rates)
+    - [Get Investment](#get-investment)
   - [FIC](#fic-1)
-    - [Get FIC Rates](#1-get-fic-rates)
+    - [Get FIC Rates](#get-fic-rates)
 
 # Entities
 
