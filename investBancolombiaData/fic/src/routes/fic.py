@@ -1,10 +1,13 @@
 import os
+from io import BytesIO
+from re import search, findall
+
+from fitz import open  # PyMuPDF
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException
 import httpx
-from io import BytesIO
-from fitz import open  # PyMuPDF
-from re import search, findall
+from bs4 import BeautifulSoup
+
 from src.models.fic import FIC
 from src.models.fic_rq import FICRQ
 
@@ -15,7 +18,7 @@ router = APIRouter()
 
 # Constants
 ranges = ["1", "7", "30", "90", "180", "365"]
-pdf_document_url = os.getenv("FIC_DATA_URL")
+fic_data_url = os.getenv("FIC_DATA_URL")
 
 
 @router.post("/rates")
@@ -23,7 +26,19 @@ async def fetch_data(request: FICRQ):
     fund_name = request.fund_name
 
     async with httpx.AsyncClient() as client:
-        response = await client.get(pdf_document_url)
+        response = await client.get(fic_data_url)
+
+        if response.status_code == 200:
+            # Search for the PDF document URL
+            pdf_link = BeautifulSoup(response.text, "html.parser").find(
+                "section", id="CheckListModule").find("a").get("href")
+        else:
+            raise HTTPException(
+                status_code=400,
+                detail="Failed to fetch the Bancolombia website"
+            )
+
+        response = await client.get(pdf_link)
 
         if response.status_code == 200:
             # Open the PDF file
