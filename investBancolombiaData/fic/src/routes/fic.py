@@ -18,7 +18,7 @@ ranges = ["1", "7", "30", "90", "180", "365"]
 pdf_document_url = os.getenv("FIC_DATA_URL")
 
 
-@router.post("/getFicData")
+@router.post("/rates")
 async def fetch_data(request: FICRQ):
     fund_name = request.fund_name
 
