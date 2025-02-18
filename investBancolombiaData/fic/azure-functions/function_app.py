@@ -21,9 +21,15 @@ fic_data_url = os.getenv("FIC_DATA_URL")
 async def rates(req: func.HttpRequest) -> func.HttpResponse:
     fund_name = req.get_json().get('fund_name')
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=httpx.Timeout(30.0)) as client:
         # Fetch the Bancolombia website
-        response = await client.get(fic_data_url)
+        try:
+            response = await client.get(fic_data_url)
+        except httpx.ConnectTimeout:
+            return func.HttpResponse(
+                "Failed to fetch the Bancolombia website due to a timeout",
+                status_code=500,
+            )
 
         if response.status_code == 200:
             # Search for the PDF document URL
@@ -36,7 +42,13 @@ async def rates(req: func.HttpRequest) -> func.HttpResponse:
             )
 
         # Fetch the PDF document
-        response = await client.get(pdf_link)
+        try:
+            response = await client.get(pdf_link)
+        except httpx.ConnectTimeout:
+            return func.HttpResponse(
+                "Failed to download the PDF file due to a timeout",
+                status_code=500,
+            )
 
         if response.status_code == 200:
             # Open the PDF file
