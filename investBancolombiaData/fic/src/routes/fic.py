@@ -26,6 +26,7 @@ async def fetch_data(request: FICRQ):
     fund_name = request.fund_name
 
     async with httpx.AsyncClient() as client:
+        # Fetch the Bancolombia website
         response = await client.get(fic_data_url)
 
         if response.status_code == 200:
@@ -38,6 +39,7 @@ async def fetch_data(request: FICRQ):
                 detail="Failed to fetch the Bancolombia website"
             )
 
+        # Fetch the PDF document
         response = await client.get(pdf_link)
 
         if response.status_code == 200:
@@ -45,7 +47,7 @@ async def fetch_data(request: FICRQ):
             pdf_bytes = BytesIO(response.content)
             document = open(stream=pdf_bytes, filetype="pdf")
 
-            # Extract text data from page 2
+            # Search fund name in the document to extract data
             for page in document:
                 text = page.get_text()
                 if fund_name in text:
