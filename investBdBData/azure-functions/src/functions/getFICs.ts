@@ -30,7 +30,7 @@ export async function getFICs(): Promise<HttpResponseInit> {
 }
 
 app.http("getFICs", {
-  methods: ["GET", "POST"],
+  methods: ["GET"],
   authLevel: "anonymous",
   handler: getFICs,
 });
