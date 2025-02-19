@@ -11,14 +11,15 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "@azure/functions": "^4.0.0",
     "@ngneat/falso": "^7.3.0",
-    "jsdom": "^21.1.1",
-    "tabletojson": "^4.0.0"
+    "jsdom": "^26.0.0",
+    "tabletojson": "^4.1.5"
   },
   "devDependencies": {
-    "@azure/functions": "^3.0.0",
-    "@types/node": "^16.x",
+    "@types/node": "^20.x",
     "rimraf": "^5.0.0",
     "typescript": "^4.0.0"
-  }
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
 }

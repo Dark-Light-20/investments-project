@@ -26,15 +26,11 @@ route.get("/rates", async (req: Request, res: Response) => {
 route.post("/calculateRate", async (req: Request, res: Response) => {
   try {
     const { amount, term } = req.body;
-    const cdtAmount = parseInt(amount);
-    const cdtTerm = parseInt(term);
-    if (isNaN(cdtAmount) || isNaN(cdtTerm))
-      throw new Error("Invalid amount or term");
     const termUnit =
       (req.body.termUnit as CDTTermUnitTypes) || CDTTermUnitTypes.DAYS;
     if (!Object.values(CDTTermUnitTypes).includes(termUnit))
       throw new Error("Invalid term unit");
-    const rate = await getCDTRate(cdtAmount, cdtTerm, termUnit);
+    const rate = await getCDTRate(amount, term, termUnit);
     res.json(rate || "No rate found");
   } catch (error) {
     const { message } = error as Error;
