@@ -7,6 +7,7 @@ import {
   PERCENTAGE_DIV,
   PERIOTICITY,
 } from "../utils/number-constants";
+import { randUserAgent } from "@ngneat/falso";
 
 const CDT_RATES_ENDPOINT = process.env.CDT_RATES_ENDPOINT!;
 
@@ -53,7 +54,11 @@ route.post("/calculateInvest", async (req: Request, res: Response) => {
 });
 
 export async function getCDTRates(): Promise<CDT[]> {
-  const cdtInfo: CDTRawModel[] = await (await fetch(CDT_RATES_ENDPOINT)).json();
+  const cdtInfo: CDTRawModel[] = await (
+    await fetch(CDT_RATES_ENDPOINT, {
+      headers: { "user-agent": randUserAgent() },
+    })
+  ).json();
   const cdtTypes = cdtInfo.map((item) => item.ratesAttributes).flat();
   const cdtRates = cdtTypes.map((item) => CDTMapper(item));
   return cdtRates;

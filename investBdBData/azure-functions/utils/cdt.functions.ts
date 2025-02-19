@@ -1,3 +1,4 @@
+import { randUserAgent } from "@ngneat/falso";
 import { CDT, CDTRawModel, CDTTermUnitTypes } from "../models/cdt.model";
 import { CDTMapper } from "./cdt.mapper";
 import {
@@ -7,10 +8,14 @@ import {
   PERIOTICITY,
 } from "./number-constants";
 
-const CDT_RATES_ENDPOINT = process.env.CDT_RATES_ENDPOINT!;
+const CDT_RATES_ENDPOINT = process.env.CDT_RATES_ENDPOINT;
 
 export async function getCDTRates(): Promise<CDT[]> {
-  const cdtInfo: CDTRawModel[] = await (await fetch(CDT_RATES_ENDPOINT)).json();
+  const cdtInfo: CDTRawModel[] = await (
+    await fetch(CDT_RATES_ENDPOINT, {
+      headers: { "user-agent": randUserAgent() },
+    })
+  ).json();
   const cdtTypes = cdtInfo.map((item) => item.ratesAttributes).flat();
   const cdtRates = cdtTypes.map((item) => CDTMapper(item));
   return cdtRates;

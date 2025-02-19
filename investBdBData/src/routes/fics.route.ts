@@ -9,7 +9,7 @@ const RENT_TABLE_CLASS = process.env.RENT_TABLE_CLASS!;
 
 const route = Router();
 
-route.get("/", async (req: Request, res: Response) => {
+route.get("/", async (_: Request, res: Response) => {
   try {
     const fics = await getFICsProfitability();
     res.json(fics);
