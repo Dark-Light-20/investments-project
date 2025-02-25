@@ -1,0 +1,20 @@
+{
+  "date": "2025-02-22",
+  "yields": [
+    {
+      "yield_rate": "0.11",
+      "since": "2024-12-10",
+      "maturity": "0"
+    },
+    {
+      "yield_rate": "0.11",
+      "since": "2024-12-18",
+      "maturity": "90"
+    },
+    {
+      "yield_rate": "0.111",
+      "since": "2025-02-03",
+      "maturity": "120"
+    }
+  ]
+}
