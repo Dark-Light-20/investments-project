@@ -7,11 +7,11 @@
     "invest-domain",
     "investBan100",
     "invest-bancolombia/virtual-investment",
+    "invest-bancolombia/virtual-investment/azure-functions",
     "investBancoW",
     "investBdBData",
     "investNu",
-    "investWeb",
-    "invest-bancolombia-cdt-azure-functions"
+    "investWeb"
   ],
   "keywords": [
     "investments",

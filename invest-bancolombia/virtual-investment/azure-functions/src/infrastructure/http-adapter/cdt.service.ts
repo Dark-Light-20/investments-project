@@ -1,4 +1,4 @@
-import { CdtGateway, CDTRate } from "invest-domain";
+import { CdtGateway, CDTRate } from "@dark-light-20/invest-domain";
 import { CDTRS } from "../models/cdt-rs.model.js";
 import { CDTRatesMapper } from "../mappers/cdt.mapper.js";
 

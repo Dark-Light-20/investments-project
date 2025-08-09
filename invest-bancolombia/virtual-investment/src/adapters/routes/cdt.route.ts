@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { CDTRate, CdtUseCase } from "invest-domain";
+import { CDTRate, CdtUseCase } from "@dark-light-20/invest-domain";
 
 export const cdtRoutesBuilder = (cdtUseCase: CdtUseCase): Router => {
   const route = Router();

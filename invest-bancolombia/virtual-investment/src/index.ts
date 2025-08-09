@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
-import { CdtUseCase } from "invest-domain";
+import { CdtUseCase } from "@dark-light-20/invest-domain";
 import { CdtService } from "./infrastructure/http-adapter/cdt.service.js";
 import { cdtRoutesBuilder } from "./adapters/routes/cdt.route.js";
 

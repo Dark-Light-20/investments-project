@@ -1,4 +1,4 @@
-import { CDTRate, CDTTermUnit } from "invest-domain";
+import { CDTRate, CDTTermUnit } from "@dark-light-20/invest-domain";
 import { CDTRS } from "../models/cdt-rs.model.js";
 
 export const CDTRatesMapper = (data: CDTRS): CDTRate[] => {
