@@ -1,4 +1,4 @@
-export interface CDTRQ {
+export interface CdtRQ {
   amount: number;
   days: number;
 }

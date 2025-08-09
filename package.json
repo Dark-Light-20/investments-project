@@ -10,7 +10,8 @@
     "investBancoW",
     "investBdBData",
     "investNu",
-    "investWeb"
+    "investWeb",
+    "invest-bancolombia-cdt-azure-functions"
   ],
   "keywords": [
     "investments",

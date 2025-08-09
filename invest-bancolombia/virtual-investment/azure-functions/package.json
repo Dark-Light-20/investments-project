@@ -10,8 +10,10 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
+  "type": "module",
   "dependencies": {
-    "@azure/functions": "^4.0.0"
+    "@azure/functions": "^4.0.0",
+    "invest-domain": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.x",

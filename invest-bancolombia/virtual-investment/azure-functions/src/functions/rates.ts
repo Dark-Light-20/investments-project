@@ -1,19 +1,11 @@
 import { app, HttpResponseInit } from "@azure/functions";
-import { CDTRange } from "../models/cdt.model";
-import { CDTRS } from "../models/cdt-rs.model";
-import { CDTRatesMapper } from "../utils/cdt.mapper";
-
-const CDT_INFO_URL = process.env.CDT_INFO_URL;
-
-export async function getCDTRates(): Promise<CDTRange[]> {
-  const data: CDTRS = await (await fetch(CDT_INFO_URL)).json();
-  const rates: CDTRange[] = CDTRatesMapper(data);
-  return rates;
-}
+import { CDTRate, CdtUseCase } from "invest-domain";
+import { CdtService } from "../infrastructure/http-adapter/cdt.service.js";
 
 export async function rates(): Promise<HttpResponseInit> {
+  const cdtUseCase = new CdtUseCase(new CdtService());
   try {
-    const rates: CDTRange[] = await getCDTRates();
+    const rates: CDTRate[] = await cdtUseCase.getAllCDTRates();
     return { jsonBody: rates };
   } catch (error) {
     const { message } = error as Error;
