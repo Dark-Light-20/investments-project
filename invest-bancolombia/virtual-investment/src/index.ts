@@ -1,0 +1,26 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
+import { CdtUseCase } from "invest-domain";
+import { CdtService } from "./infrastructure/http-adapter/cdt.service.js";
+import { cdtRoutesBuilder } from "./adapters/routes/cdt.route.js";
+
+// Config
+const PORT = process.env.PORT ?? 3000;
+const app = express();
+app.use(express.json());
+
+// Infra
+const cdtService = new CdtService();
+
+// Use Case
+const cdtUseCase = new CdtUseCase(cdtService);
+
+// App
+const cdtRoutes = cdtRoutesBuilder(cdtUseCase);
+app.use("/cdt", cdtRoutes);
+
+app.listen(PORT, () => {
+  console.log(`App is listening on port ${PORT}!`);
+});

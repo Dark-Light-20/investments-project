@@ -1,0 +1,24 @@
+{
+  "name": "investments-project",
+  "version": "1.0.0",
+  "description": "A monorepo for an investment analysis application that queries financial products like CDTs and FICs from various banks, allowing users to compare them and calculate potential investment revenues.",
+  "private": true,
+  "workspaces": [
+    "invest-domain",
+    "investBan100",
+    "invest-bancolombia/virtual-investment",
+    "investBancoW",
+    "investBdBData",
+    "investNu",
+    "investWeb"
+  ],
+  "keywords": [
+    "investments",
+    "finance",
+    "cdt",
+    "fic",
+    "monorepo"
+  ],
+  "author": "Dark-Light-20",
+  "license": "MIT"
+}
