@@ -6,8 +6,8 @@ import { CdtRQ } from "./models/cdt-rq.model.js";
 export async function calculateInvest(
   request: HttpRequest
 ): Promise<HttpResponseInit> {
-  const cdtUseCase = new CdtUseCase(new CdtService());
   try {
+    const cdtUseCase = new CdtUseCase(new CdtService());
     const { amount, days } = (await request.json()) as CdtRQ;
     const invest: number = await cdtUseCase.calculateInvest(amount, days);
     return { jsonBody: invest.toFixed(2) };

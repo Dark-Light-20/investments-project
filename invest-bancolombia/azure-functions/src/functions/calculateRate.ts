@@ -6,8 +6,8 @@ import { CdtRQ } from "./models/cdt-rq.model.js";
 export async function calculateRate(
   request: HttpRequest
 ): Promise<HttpResponseInit> {
-  const cdtUseCase = new CdtUseCase(new CdtService());
   try {
+    const cdtUseCase = new CdtUseCase(new CdtService());
     const { amount, days } = (await request.json()) as CdtRQ;
     const rate: CDTRate = await cdtUseCase.getCDTRate(amount, days);
     return { jsonBody: rate };
