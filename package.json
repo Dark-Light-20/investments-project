@@ -5,10 +5,10 @@
   "private": true,
   "workspaces": [
     "invest-domain",
-    "investBan100",
     "invest-bancolombia",
+    "invest-bdb",
+    "investBan100",
     "investBancoW",
-    "investBdBData",
     "investNu",
     "investWeb"
   ],

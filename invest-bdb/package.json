@@ -1,5 +1,5 @@
 {
-  "name": "invest-bdb-data",
+  "name": "invest-bdb",
   "version": "1.0.0",
   "description": "Implements an Express API with clean architecture to query Banco de Bogota's CDT and FIC rates",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.11",
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.1.9",
     "tsx": "^4.20.3",
     "typescript": "^5.0.4"
   },
