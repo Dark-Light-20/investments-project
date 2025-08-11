@@ -2,7 +2,7 @@
   "name": "invest-bancolombia",
   "version": "1.0.0",
   "description": "Implements an Express API with clean architecture to query Bancolombia's CDT and FIC rates",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "type": "module",
   "directories": {
     "test": "test"

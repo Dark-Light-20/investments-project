@@ -18,7 +18,7 @@ export const cdtRoutesBuilder = (cdtUseCase: CdtUseCase): Router => {
     try {
       const { amount, days } = req.body;
       const rate: CDTRate = await cdtUseCase.getCDTRate(amount, days);
-      res.json(rate);
+      res.json(rate || "No rate found");
     } catch (error) {
       const { message } = error as Error;
       res.status(500).json(message);
