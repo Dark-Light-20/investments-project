@@ -1,24 +1,11 @@
 import { app, HttpResponseInit } from "@azure/functions";
-import { CDT, CDTRawModel } from "../models/cdt.model";
-import { randUserAgent } from "@ngneat/falso";
-import { CDTMapper } from "../utils/cdt.mapper";
-
-const CDT_RATES_ENDPOINT = process.env.CDT_RATES_ENDPOINT;
-
-export async function getRates(): Promise<CDT[]> {
-  const cdtInfo: CDTRawModel[] = await (
-    await fetch(CDT_RATES_ENDPOINT, {
-      headers: { "user-agent": randUserAgent() },
-    })
-  ).json();
-  const cdtTypes = cdtInfo.map((item) => item.ratesAttributes).flat();
-  const cdtRates = cdtTypes.map((item) => CDTMapper(item));
-  return cdtRates;
-}
+import { CdtUseCase } from "@dark-light-20/invest-domain";
+import { CdtService } from "../infrastructure/http-adapters/cdt.service.js";
 
 export async function getCDTRates(): Promise<HttpResponseInit> {
   try {
-    const cdts = await getRates();
+    const cdtUseCase = new CdtUseCase(new CdtService());
+    const cdts = await cdtUseCase.getAllCDTRates();
     return { jsonBody: cdts };
   } catch (error) {
     const { message } = error as Error;

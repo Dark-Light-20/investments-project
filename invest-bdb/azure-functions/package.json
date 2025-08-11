@@ -10,16 +10,17 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
+  "type": "module",
   "dependencies": {
     "@azure/functions": "^4.0.0",
+    "@dark-light-20/invest-domain": "^0.2.0",
     "@ngneat/falso": "^7.3.0",
-    "jsdom": "^26.0.0",
-    "tabletojson": "^4.1.5"
+    "cheerio": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "^20.x",
     "rimraf": "^5.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^5.0.0"
   },
   "main": "dist/src/{index.js,functions/*.js}"
 }
