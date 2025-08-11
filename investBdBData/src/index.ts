@@ -2,14 +2,30 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import { CdtService } from "./infrastructure/http-adapters/cdt.service.js";
+import { CdtUseCase, FICUseCase } from "@dark-light-20/invest-domain";
+import { cdtRoutesBuilder } from "./adapters/routes/cdt.route.js";
+import { ficRoutesBuilder } from "./adapters/routes/fics.route.js";
+import { FicService } from "./infrastructure/http-adapters/fic.service.js";
 
+// Config
 const PORT = process.env.PORT ?? 3001;
-
 const app = express();
 app.use(express.json());
 
-app.use("/fics", require("./routes/fics.route"));
-app.use("/cdt", require("./routes/cdt.route"));
+// Infra
+const cdtService = new CdtService();
+const ficService = new FicService();
+
+// Use Case
+const cdtUseCase = new CdtUseCase(cdtService);
+const ficUseCase = new FICUseCase(ficService);
+
+// App
+const cdtRoutes = cdtRoutesBuilder(cdtUseCase);
+const ficRoutes = ficRoutesBuilder(ficUseCase);
+app.use("/cdt", cdtRoutes);
+app.use("/fics", ficRoutes);
 
 app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}!`);

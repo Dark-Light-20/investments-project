@@ -1,3 +1,7 @@
 {
-  "conventionalCommits.scopes": ["invest-domain", "invest-bancolombia"]
+  "conventionalCommits.scopes": [
+    "invest-domain",
+    "invest-bancolombia",
+    "invest-bdb"
+  ]
 }

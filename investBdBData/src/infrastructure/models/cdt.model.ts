@@ -21,6 +21,11 @@ export interface ProductsAttributes {
 export interface RatesAttribute {
   Signo: string;
   TasaSpread: string;
+  /**
+   * CDT Term. "Code" { "Unit" }
+   * @see RateUnitType for Unit
+   * @example 2 { Dias}
+   */
   UnidadPlazo: string;
   MontoMinimo: string;
   PlazoMinimo: string;
@@ -29,19 +34,7 @@ export interface RatesAttribute {
   ProductoCDT: string;
 }
 
-export interface CDT {
-  sign: string;
-  type: string;
-  rate: string;
-  termUnit: number;
-  termUnitType: string;
-  minimumAmount: number;
-  minimumTerm: number;
-  maximumAmount: number;
-  maximumTerm: number;
-}
-
-export enum CDTTermUnitTypes {
+export enum RateUnitType {
   DAYS = "Dias",
   MONTHS = "Meses",
 }
