@@ -1,4 +1,4 @@
-import { CdtRS } from "../models/cdt-rs.model";
+import { CdtRS } from "../models/cdt.model.js";
 
 export const CDT_RS_MOCK: CdtRS[] = [
   {
