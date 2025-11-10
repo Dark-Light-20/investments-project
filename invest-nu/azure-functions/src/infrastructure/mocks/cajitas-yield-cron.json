@@ -1,0 +1,35 @@
+{
+  "date": "2025-11-08",
+  "yields": [
+    {
+      "yield_rate": "0.0825",
+      "since": "2025-08-12",
+      "maturity": "0"
+    },
+    {
+      "yield_rate": "0.092",
+      "since": "2025-09-19",
+      "maturity": "60"
+    },
+    {
+      "yield_rate": "0.0925",
+      "since": "2025-09-19",
+      "maturity": "90"
+    },
+    {
+      "yield_rate": "0.093",
+      "since": "2025-09-19",
+      "maturity": "120"
+    },
+    {
+      "yield_rate": "0.0935",
+      "since": "2025-10-15",
+      "maturity": "270"
+    },
+    {
+      "yield_rate": "0.097",
+      "since": "2025-09-19",
+      "maturity": "540"
+    }
+  ]
+}
