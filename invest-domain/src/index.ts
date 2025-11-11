@@ -2,6 +2,8 @@ export * from "./domain/value-objects/cdt-rate.js";
 export * from "./domain/value-objects/fic-rate.js";
 export * from "./domain/constants/investment.js";
 export * from "./application/ports/cdt.gateway.js";
+export * from "./application/ports/pocket.gateway.js";
 export * from "./application/ports/fic.gateway.js";
 export * from "./application/use-cases/cdt.use-case.js";
+export * from "./application/use-cases/pocket.use-case.js";
 export * from "./application/use-cases/fic.use-case.js";

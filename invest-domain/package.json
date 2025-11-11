@@ -1,6 +1,6 @@
 {
   "name": "@dark-light-20/invest-domain",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "This package contains the core domain logic for the investments project, including entities, value objects, and business rules.",
   "main": "dist/index.js",
   "module": "dist/index.js",
