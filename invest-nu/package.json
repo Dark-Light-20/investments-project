@@ -14,7 +14,7 @@
   "author": "Dark-Light-20",
   "license": "MIT",
   "dependencies": {
-    "@dark-light-20/invest-domain": "^0.2.0",
+    "@dark-light-20/invest-domain": "^0.3.0",
     "express": "^4.21.2"
   },
   "devDependencies": {
