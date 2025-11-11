@@ -12,7 +12,11 @@ export class PocketUseCase {
   }
 
   async getPocketRate(): Promise<number> {
-    return this.pocketGateway.getPocketRate();
+    const rate = await this.pocketGateway.getPocketRate();
+    if (!rate) {
+      throw new Error("No pocket rate found");
+    }
+    return rate;
   }
 
   async calculateInvest(
