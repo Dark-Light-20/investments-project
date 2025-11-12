@@ -23,10 +23,13 @@ The domain entities and use cases are explained in the [Domain](docs/Domain.md) 
 
 ## Infrastructure
 
-The app consume the data from the diferent [Invest-App APIs](https://github.com/Dark-Light-20/investData). For now there are only 2 APIs:
+The app consume the data from the diferent [Invest-App APIs](https://github.com/Dark-Light-20/investData). For now there are only 5 APIs:
 
-- investBancolombiaData
-- investBdBData
+- invest-bancolombia
+- invest-bdb
+- invest-ban100
+- invest-nu
+- invest-finandina
 
 The consumption is made by the web-app infrastructure layer using Azure functions as the data source endpoints.
 
@@ -49,7 +52,7 @@ The UI of the app is made with Angular 15 using standalone components and module
 
 1. Clone the repository
 2. Run `npm install` in the root folder
-3. Run `npm run start` in the root folder. This will run the shell app, the CDT app and the FIC app.
+3. Run `npm run start <project>` in the root folder. You need to specify which project to start: shell, cdt, or fic.
 4. Open the browser in `http://localhost:4200/`
 
 ## Tests
