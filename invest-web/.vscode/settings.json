@@ -1,0 +1,18 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "todo-tree.tree.showBadges": true,
+  "jest.runMode": "on-demand",
+  "git.openRepositoryInParentFolders": "always",
+  "conventionalCommits.scopes": ["invest-web"]
+}
