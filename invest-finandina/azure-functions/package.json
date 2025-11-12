@@ -1,0 +1,25 @@
+{
+  "name": "invest-finandina-azure-functions",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "type": "module",
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@dark-light-20/invest-domain": "^0.3.2",
+    "cheerio": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
+}
