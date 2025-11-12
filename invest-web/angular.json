@@ -58,11 +58,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shell:build:production"
+              "buildTarget": "shell:build:production"
             },
             "development": {
-              "browserTarget": "shell:build:development",
-              "port": 4200
+              "port": 4200,
+              "buildTarget": "shell:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,7 +70,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shell:build"
+            "buildTarget": "shell:build"
           }
         },
         "lint": {
@@ -136,11 +136,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "home:build:production"
+              "buildTarget": "home:build:production"
             },
             "development": {
-              "browserTarget": "home:build:development",
-              "port": 4201
+              "port": 4201,
+              "buildTarget": "home:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -148,7 +148,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "home:build"
+            "buildTarget": "home:build"
           }
         },
         "lint": {
