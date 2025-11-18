@@ -1,6 +1,7 @@
-<header>
+<div class="flex min-h-screen flex-col bg-gray-100 font-sans text-gray-900">
   <app-header />
-</header>
-<main data-bs-theme="dark" class="bg-light-subtle">
-  <router-outlet />
-</main>
+  <main class="container mx-auto flex-grow p-4 md:p-8">
+    <router-outlet />
+  </main>
+  <app-footer />
+</div>

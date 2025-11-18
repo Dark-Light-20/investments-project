@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './ui/components/header/header.component';
-import { MockComponent } from 'ng-mocks';
+import { MockComponents } from 'ng-mocks';
+import { FooterComponent } from './ui/components/footer/footer.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, MockComponent(HeaderComponent)],
+      imports: [AppComponent, MockComponents(HeaderComponent, FooterComponent)],
     }).compileComponents();
   });
 

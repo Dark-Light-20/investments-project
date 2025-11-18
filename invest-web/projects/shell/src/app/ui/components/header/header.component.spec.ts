@@ -17,9 +17,10 @@ describe('HeaderComponent', () => {
       imports: [HeaderComponent],
       providers: [
         provideRouter([
-          { path: 'cdt', component: MockComponent },
-          { path: 'fic', component: MockComponent },
           { path: 'home', component: MockComponent },
+          { path: 'cdts', component: MockComponent },
+          { path: 'fics', component: MockComponent },
+          { path: 'pockets', component: MockComponent },
         ]),
       ],
     }).compileComponents();
@@ -34,31 +35,39 @@ describe('HeaderComponent', () => {
   });
 
   test('should render title', () => {
-    const titleElement = fixture.debugElement.query(By.css('a.navbar-brand'));
+    const titleElement = fixture.debugElement.query(By.css('h1[data-testid="appTitle"]'));
     expect(titleElement.nativeElement.textContent).toContain('Invest-App');
   });
 
   test('should render home link and navigate', () => {
-    const homeLinkElement = fixture.debugElement.queryAll(By.css('a.nav-link'))[0];
+    const homeLinkElement = fixture.debugElement.query(By.css('a[data-testid="homeLink"]'));
     expect(homeLinkElement.nativeElement.textContent).toContain('Home');
     homeLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(homeLinkElement.nativeElement.classList).toContain('active');
+    expect(homeLinkElement.nativeElement.classList).toContain('text-blue-600');
   });
 
   test('should render CDTs link and navigate', () => {
-    const cdtLinkElement = fixture.debugElement.queryAll(By.css('a.nav-link'))[1];
+    const cdtLinkElement = fixture.debugElement.query(By.css('a[data-testid="cdtsLink"]'));
     expect(cdtLinkElement.nativeElement.textContent).toContain('CDTs');
     cdtLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(cdtLinkElement.nativeElement.classList).toContain('active');
+    expect(cdtLinkElement.nativeElement.classList).toContain('text-blue-600');
   });
 
   test('should render FICs link and navigate', () => {
-    const ficLinkElement = fixture.debugElement.queryAll(By.css('a.nav-link'))[2];
+    const ficLinkElement = fixture.debugElement.query(By.css('a[data-testid="ficsLink"]'));
     expect(ficLinkElement.nativeElement.textContent).toContain('FICs');
     ficLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(ficLinkElement.nativeElement.classList).toContain('active');
+    expect(ficLinkElement.nativeElement.classList).toContain('text-blue-600');
+  });
+
+  test('should render Pockets link and navigate', () => {
+    const pocketLinkElement = fixture.debugElement.query(By.css('a[data-testid="pocketsLink"]'));
+    expect(pocketLinkElement.nativeElement.textContent).toContain('Pockets');
+    pocketLinkElement.nativeElement.click();
+    fixture.detectChanges();
+    expect(pocketLinkElement.nativeElement.classList).toContain('text-blue-600');
   });
 });
