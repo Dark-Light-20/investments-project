@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { SummaryComponent } from './ui/components/summary/summary.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [SummaryComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

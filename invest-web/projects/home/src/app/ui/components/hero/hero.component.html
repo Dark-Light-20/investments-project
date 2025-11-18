@@ -1,0 +1,31 @@
+<section class="bg-white">
+  <div class="container mx-auto px-6 py-24 text-center">
+    <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+      Encuentra la mejor rentabilidad para tu dinero.
+    </h2>
+    <p class="mt-6 text-lg leading-8 text-gray-600">
+      Compara las tasas de CDT, FIC y bolsillos de los principales bancos en un solo lugar.
+      <br class="hidden sm:inline" />
+      Simple, rápido y transparente.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-x-6">
+      @for (button of actionButtons; track $index) {
+        <a
+          [routerLink]="[button.link]"
+          class="w-full sm:w-auto text-center rounded-md bg-blue-600 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          [attr.data-testid]="'heroActionButton' + button.label">
+          {{ button.label }}
+          <span aria-hidden="true">{{ button.iconLabel }}</span>
+        </a>
+      }
+      <a
+        [routerLink]="[infoButton.link]"
+        [fragment]="infoButton.fragment"
+        class="w-full sm:w-auto mt-1 sm:mt-0 text-center text-base font-semibold leading-6 text-gray-900 hover:text-gray-700"
+        [attr.data-testid]="'heroInfoButton'">
+        {{ infoButton.label }}
+        <span aria-hidden="true">{{ infoButton.iconLabel }}</span>
+      </a>
+    </div>
+  </div>
+</section>
