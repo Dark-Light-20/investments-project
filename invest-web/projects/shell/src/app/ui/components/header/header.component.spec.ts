@@ -65,7 +65,7 @@ describe('HeaderComponent', () => {
 
   test('should render Pockets link and navigate', () => {
     const pocketLinkElement = fixture.debugElement.query(By.css('a[data-testid="pocketsLink"]'));
-    expect(pocketLinkElement.nativeElement.textContent).toContain('Pockets');
+    expect(pocketLinkElement.nativeElement.textContent).toContain('Bolsillos');
     pocketLinkElement.nativeElement.click();
     fixture.detectChanges();
     expect(pocketLinkElement.nativeElement.classList).toContain('text-blue-600');
