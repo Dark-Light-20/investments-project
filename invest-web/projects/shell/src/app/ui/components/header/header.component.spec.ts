@@ -44,7 +44,7 @@ describe('HeaderComponent', () => {
     expect(homeLinkElement.nativeElement.textContent).toContain('Home');
     homeLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(homeLinkElement.nativeElement.classList).toContain('text-primary-blue');
+    expect(homeLinkElement.nativeElement.classList).toContain('text-blue-400');
   });
 
   test('should render CDTs link and navigate', () => {
@@ -52,7 +52,7 @@ describe('HeaderComponent', () => {
     expect(cdtLinkElement.nativeElement.textContent).toContain('CDTs');
     cdtLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(cdtLinkElement.nativeElement.classList).toContain('text-primary-blue');
+    expect(cdtLinkElement.nativeElement.classList).toContain('text-blue-400');
   });
 
   test('should render FICs link and navigate', () => {
@@ -60,7 +60,7 @@ describe('HeaderComponent', () => {
     expect(ficLinkElement.nativeElement.textContent).toContain('FICs');
     ficLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(ficLinkElement.nativeElement.classList).toContain('text-primary-blue');
+    expect(ficLinkElement.nativeElement.classList).toContain('text-blue-400');
   });
 
   test('should render Pockets link and navigate', () => {
@@ -68,6 +68,6 @@ describe('HeaderComponent', () => {
     expect(pocketLinkElement.nativeElement.textContent).toContain('Bolsillos');
     pocketLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(pocketLinkElement.nativeElement.classList).toContain('text-primary-blue');
+    expect(pocketLinkElement.nativeElement.classList).toContain('text-blue-400');
   });
 });
