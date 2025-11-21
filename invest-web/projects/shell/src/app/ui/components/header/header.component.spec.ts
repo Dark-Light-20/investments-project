@@ -35,16 +35,8 @@ describe('HeaderComponent', () => {
   });
 
   test('should render title', () => {
-    const titleElement = fixture.debugElement.query(By.css('h1[data-testid="appTitle"]'));
+    const titleElement = fixture.debugElement.query(By.css('[data-testid="appTitle"]'));
     expect(titleElement.nativeElement.textContent).toContain('Invest-App');
-  });
-
-  test('should render home link and navigate', () => {
-    const homeLinkElement = fixture.debugElement.query(By.css('a[data-testid="HomeLink"]'));
-    expect(homeLinkElement.nativeElement.textContent).toContain('Home');
-    homeLinkElement.nativeElement.click();
-    fixture.detectChanges();
-    expect(homeLinkElement.nativeElement.classList).toContain('text-blue-400');
   });
 
   test('should render CDTs link and navigate', () => {

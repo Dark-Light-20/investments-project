@@ -15,13 +15,48 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "shell:esbuild:production"
+            },
+            "development": {
+              "target": "shell:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "shell:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 0
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "shell:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/shell/**/*.ts", "projects/shell/**/*.html"]
+          }
+        },
+        "esbuild": {
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
               "base": "dist/shell"
             },
             "index": "projects/shell/src/index.html",
-            "polyfills": ["zone.js"],
+            "polyfills": ["zone.js", "es-module-shims"],
             "tsConfig": "projects/shell/tsconfig.app.json",
             "inlineStyleLanguage": "css",
             "assets": ["projects/shell/src/favicon.ico", "projects/shell/src/assets"],
@@ -60,29 +95,20 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
+        "serve-original": {
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shell:build:production"
+              "buildTarget": "shell:esbuild:production"
             },
             "development": {
               "port": 4200,
-              "buildTarget": "shell:build:development"
+              "buildTarget": "shell:esbuild:development"
             }
           },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
+          "defaultConfiguration": "development",
           "options": {
-            "buildTarget": "shell:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["projects/shell/**/*.ts", "projects/shell/**/*.html"]
+            "port": 4200
           }
         }
       }
@@ -99,13 +125,48 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "home:esbuild:production"
+            },
+            "development": {
+              "target": "home:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "home:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 0
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "home:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/home/**/*.ts", "projects/home/**/*.html"]
+          }
+        },
+        "esbuild": {
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
               "base": "dist/home"
             },
             "index": "projects/home/src/index.html",
-            "polyfills": ["zone.js"],
+            "polyfills": ["zone.js", "es-module-shims"],
             "tsConfig": "projects/home/tsconfig.app.json",
             "inlineStyleLanguage": "css",
             "assets": ["projects/home/src/favicon.ico", "projects/home/src/assets"],
@@ -144,29 +205,20 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
+        "serve-original": {
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "home:build:production"
+              "buildTarget": "home:esbuild:production"
             },
             "development": {
               "port": 4201,
-              "buildTarget": "home:build:development"
+              "buildTarget": "home:esbuild:development"
             }
           },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
+          "defaultConfiguration": "development",
           "options": {
-            "buildTarget": "home:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["projects/home/**/*.ts", "projects/home/**/*.html"]
+            "port": 4201
           }
         }
       }

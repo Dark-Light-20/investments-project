@@ -1,3 +1,4 @@
+import { loadRemoteModule } from '@angular-architects/native-federation';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -8,7 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./ui/components/dummy/dummy.component').then(m => m.DummyComponent),
+    loadChildren: () => loadRemoteModule('home', './HomeRoutes').then(m => m.routes),
   },
   {
     path: 'prototype',

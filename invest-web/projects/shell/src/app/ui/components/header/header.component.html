@@ -1,9 +1,12 @@
-<header class="sticky top-0 z-10 w-full bg-white shadow-md">
-  <nav class="container mx-auto flex items-center justify-between p-4">
-    <h1 class="flex items-center text-lg md:text-2xl font-bold text-blue-600" data-testid="appTitle">
+<header class="fixed top-0 w-full bg-white shadow-md">
+  <nav class="container mx-auto flex items-center justify-between px-4 py-1 md:py-4 text-sm md:text-lg">
+    <a
+      class="flex items-center text-base md:text-2xl font-bold text-blue-600"
+      routerLink="/home"
+      data-testid="appTitle">
       <img [src]="iconPath" alt="Invest-App Logo" class="h-12 w-12 mr-2" />
       <span class="align-middle">Invest-App</span>
-    </h1>
+    </a>
     <div class="flex items-center gap-4 text-gray-600">
       @for (link of links; track link.path) {
         <a
