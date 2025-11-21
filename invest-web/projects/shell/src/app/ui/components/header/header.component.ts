@@ -9,4 +9,11 @@ import { environment } from '../../../../environments/environment';
 })
 export class HeaderComponent {
   readonly iconPath = `${environment.assetsUrl}/LogoInvestApp.png`;
+
+  readonly links: { text: string; path: string }[] = [
+    { text: 'Home', path: '/home' },
+    { text: 'CDTs', path: '/cdts' },
+    { text: 'FICs', path: '/fics' },
+    { text: 'Bolsillos', path: '/pockets' },
+  ];
 }

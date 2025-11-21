@@ -8,7 +8,7 @@ import { DEFAULT_BANCOS } from './data.mock';
   standalone: true,
   imports: [CurrencyPipe, PercentPipe], // Importar pipes necesarios
   templateUrl: './prototype.component.html',
-  styleUrls: ['./prototype.component.scss'],
+  styleUrls: ['./prototype.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrototypeComponent {

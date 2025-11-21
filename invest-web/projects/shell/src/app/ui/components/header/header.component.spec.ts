@@ -40,34 +40,34 @@ describe('HeaderComponent', () => {
   });
 
   test('should render home link and navigate', () => {
-    const homeLinkElement = fixture.debugElement.query(By.css('a[data-testid="homeLink"]'));
+    const homeLinkElement = fixture.debugElement.query(By.css('a[data-testid="HomeLink"]'));
     expect(homeLinkElement.nativeElement.textContent).toContain('Home');
     homeLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(homeLinkElement.nativeElement.classList).toContain('text-blue-600');
+    expect(homeLinkElement.nativeElement.classList).toContain('text-primary-blue');
   });
 
   test('should render CDTs link and navigate', () => {
-    const cdtLinkElement = fixture.debugElement.query(By.css('a[data-testid="cdtsLink"]'));
+    const cdtLinkElement = fixture.debugElement.query(By.css('a[data-testid="CDTsLink"]'));
     expect(cdtLinkElement.nativeElement.textContent).toContain('CDTs');
     cdtLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(cdtLinkElement.nativeElement.classList).toContain('text-blue-600');
+    expect(cdtLinkElement.nativeElement.classList).toContain('text-primary-blue');
   });
 
   test('should render FICs link and navigate', () => {
-    const ficLinkElement = fixture.debugElement.query(By.css('a[data-testid="ficsLink"]'));
+    const ficLinkElement = fixture.debugElement.query(By.css('a[data-testid="FICsLink"]'));
     expect(ficLinkElement.nativeElement.textContent).toContain('FICs');
     ficLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(ficLinkElement.nativeElement.classList).toContain('text-blue-600');
+    expect(ficLinkElement.nativeElement.classList).toContain('text-primary-blue');
   });
 
   test('should render Pockets link and navigate', () => {
-    const pocketLinkElement = fixture.debugElement.query(By.css('a[data-testid="pocketsLink"]'));
+    const pocketLinkElement = fixture.debugElement.query(By.css('a[data-testid="BolsillosLink"]'));
     expect(pocketLinkElement.nativeElement.textContent).toContain('Bolsillos');
     pocketLinkElement.nativeElement.click();
     fixture.detectChanges();
-    expect(pocketLinkElement.nativeElement.classList).toContain('text-blue-600');
+    expect(pocketLinkElement.nativeElement.classList).toContain('text-primary-blue');
   });
 });

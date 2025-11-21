@@ -4,19 +4,16 @@
       <img [src]="iconPath" alt="Invest-App Logo" class="h-12 w-12 mr-2" />
       <span class="align-middle">Invest-App</span>
     </h1>
-    <div class="space-x-4 text-gray-600">
-      <a routerLink="/home" routerLinkActive="text-blue-600" class="hover:text-blue-600" data-testid="homeLink">
-        Home
-      </a>
-      <a routerLink="/cdts" routerLinkActive="text-blue-600" class="hover:text-blue-600" data-testid="cdtsLink">
-        CDTs
-      </a>
-      <a routerLink="/fics" routerLinkActive="text-blue-600" class="hover:text-blue-600" data-testid="ficsLink">
-        FICs
-      </a>
-      <a routerLink="/pockets" routerLinkActive="text-blue-600" class="hover:text-blue-600" data-testid="pocketsLink">
-        Bolsillos
-      </a>
+    <div class="flex items-center gap-4 text-gray-600">
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="text-blue-400 border-b-2 border-blue-400 pb-1"
+          class="hover:text-blue-600"
+          [attr.data-testid]="`${link.text}Link`">
+          {{ link.text }}
+        </a>
+      }
     </div>
   </nav>
 </header>

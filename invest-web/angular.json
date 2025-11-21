@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       },
       "root": "projects/shell",
@@ -23,9 +23,9 @@
             "index": "projects/shell/src/index.html",
             "polyfills": ["zone.js"],
             "tsConfig": "projects/shell/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "css",
             "assets": ["projects/shell/src/favicon.ico", "projects/shell/src/assets"],
-            "styles": ["projects/shell/src/styles.scss"],
+            "styles": ["projects/shell/src/styles.css"],
             "scripts": [],
             "browser": "projects/shell/src/main.ts"
           },
@@ -91,7 +91,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       },
       "root": "projects/home",
@@ -107,9 +107,9 @@
             "index": "projects/home/src/index.html",
             "polyfills": ["zone.js"],
             "tsConfig": "projects/home/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "css",
             "assets": ["projects/home/src/favicon.ico", "projects/home/src/assets"],
-            "styles": ["projects/home/src/styles.scss"],
+            "styles": ["projects/home/src/styles.css"],
             "scripts": [],
             "browser": "projects/home/src/main.ts"
           },
