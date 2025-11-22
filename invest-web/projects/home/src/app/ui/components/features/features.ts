@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-features',
-  templateUrl: './features.component.html',
+  templateUrl: './features.html',
 })
-export class FeaturesComponent {
+export class Features {
   readonly features = [
     {
       title: 'Compara Tasas',

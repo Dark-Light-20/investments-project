@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BanksListComponent } from './banks-list.component';
+import { BanksList } from './banks-list';
 import { By } from '@angular/platform-browser';
 
-describe('BanksListComponent', () => {
-  let component: BanksListComponent;
-  let fixture: ComponentFixture<BanksListComponent>;
+describe('BanksList', () => {
+  let component: BanksList;
+  let fixture: ComponentFixture<BanksList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BanksListComponent],
+      imports: [BanksList],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BanksListComponent);
+    fixture = TestBed.createComponent(BanksList);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

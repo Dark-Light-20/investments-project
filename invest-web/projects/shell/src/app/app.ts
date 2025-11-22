@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Header } from './ui/components/header/header';
+import { Footer } from './ui/components/footer/footer';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, Header, Footer],
+  templateUrl: './app.html',
+})
+export class App {
+  title = 'shell';
+}

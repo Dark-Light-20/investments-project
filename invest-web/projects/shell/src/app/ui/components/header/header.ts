@@ -5,9 +5,9 @@ import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-header',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './header.component.html',
+  templateUrl: './header.html',
 })
-export class HeaderComponent {
+export class Header {
   readonly iconPath = `${environment.assetsUrl}/LogoInvestApp.png`;
 
   readonly links: { text: string; path: string }[] = [

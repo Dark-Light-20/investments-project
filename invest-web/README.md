@@ -35,7 +35,7 @@ The consumption is made by the web-app infrastructure layer using Azure function
 
 ## UI
 
-The UI of the app is made with Angular 15 using standalone components and module federation (for microfrontends architecture implementation). The UI is divided in 3 main apps:
+The UI of the app is made with Angular 20 using standalone components and module federation (for microfrontends architecture implementation). The UI is divided in 3 main apps:
 
 - Shell app: This app is the main app of the web page. It contains the header and footer of the web page, a home component with a short summary of the app and the routing of the other apps.
 - CDT app: This app contains the CDT Rates search component and the CDT Calculate Investment component.

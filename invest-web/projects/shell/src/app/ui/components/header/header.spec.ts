@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderComponent } from './header.component';
+import { Header } from './header';
 import { By } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { provideRouter } from '@angular/router';
@@ -8,13 +8,13 @@ import { provideRouter } from '@angular/router';
 @Component({ selector: 'app-test', standalone: true })
 class MockComponent {}
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('Header', () => {
+  let component: Header;
+  let fixture: ComponentFixture<Header>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent],
+      imports: [Header],
       providers: [
         provideRouter([
           { path: 'home', component: MockComponent },
@@ -25,7 +25,7 @@ describe('HeaderComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

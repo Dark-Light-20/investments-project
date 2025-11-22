@@ -3,9 +3,9 @@ import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-banks-list',
-  templateUrl: './banks-list.component.html',
+  templateUrl: './banks-list.html',
 })
-export class BanksListComponent {
+export class BanksList {
   readonly banks = [
     { name: 'Bancolombia', logo: `${environment.assetsUrl}/logos/LogoBancolombia.png` },
     { name: 'Banco de Bogotá', logo: `${environment.assetsUrl}/logos/LogoBancoDeBogota.png` },

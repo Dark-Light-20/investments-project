@@ -4,9 +4,9 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-hero',
   imports: [RouterLink],
-  templateUrl: './hero.component.html',
+  templateUrl: './hero.html',
 })
-export class HeroComponent {
+export class Hero {
   readonly actionButtons = [
     {
       label: 'Simula tu CDT',
