@@ -5,11 +5,7 @@
   "projects": {
     "shell": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "css"
-        }
-      },
+      "schematics": {},
       "root": "projects/shell",
       "sourceRoot": "projects/shell/src",
       "prefix": "app",
@@ -38,10 +34,7 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
-          "options": {
-            "buildTarget": "shell:build"
-          }
+          "builder": "@angular/build:extract-i18n"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -50,32 +43,31 @@
           }
         },
         "esbuild": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "dist/shell"
-            },
-            "index": "projects/shell/src/index.html",
+            "browser": "projects/shell/src/main.ts",
             "polyfills": ["zone.js", "es-module-shims"],
             "tsConfig": "projects/shell/tsconfig.app.json",
-            "inlineStyleLanguage": "css",
-            "assets": ["projects/shell/src/favicon.ico", "projects/shell/src/assets"],
-            "styles": ["projects/shell/src/styles.css"],
-            "scripts": [],
-            "browser": "projects/shell/src/main.ts"
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/shell/public"
+              }
+            ],
+            "styles": ["projects/shell/src/styles.css"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -84,7 +76,6 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
               "fileReplacements": [
                 {
                   "replace": "projects/shell/src/environments/environment.ts",
@@ -102,7 +93,6 @@
               "buildTarget": "shell:esbuild:production"
             },
             "development": {
-              "port": 4200,
               "buildTarget": "shell:esbuild:development"
             }
           },
@@ -115,11 +105,7 @@
     },
     "home": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "css"
-        }
-      },
+      "schematics": {},
       "root": "projects/home",
       "sourceRoot": "projects/home/src",
       "prefix": "app",
@@ -148,10 +134,7 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
-          "options": {
-            "buildTarget": "home:build"
-          }
+          "builder": "@angular/build:extract-i18n"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -160,32 +143,31 @@
           }
         },
         "esbuild": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "dist/home"
-            },
-            "index": "projects/home/src/index.html",
+            "browser": "projects/home/src/main.ts",
             "polyfills": ["zone.js", "es-module-shims"],
             "tsConfig": "projects/home/tsconfig.app.json",
-            "inlineStyleLanguage": "css",
-            "assets": ["projects/home/src/favicon.ico", "projects/home/src/assets"],
-            "styles": ["projects/home/src/styles.css"],
-            "scripts": [],
-            "browser": "projects/home/src/main.ts"
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/home/public"
+              }
+            ],
+            "styles": ["projects/home/src/styles.css"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -194,7 +176,6 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
               "fileReplacements": [
                 {
                   "replace": "projects/home/src/environments/environment.ts",
@@ -212,7 +193,6 @@
               "buildTarget": "home:esbuild:production"
             },
             "development": {
-              "port": 4201,
               "buildTarget": "home:esbuild:development"
             }
           },
@@ -227,5 +207,31 @@
   "cli": {
     "analytics": "63629ac2-72a0-49f1-80ea-4a13ffd1056a",
     "schematicCollections": ["angular-eslint"]
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }

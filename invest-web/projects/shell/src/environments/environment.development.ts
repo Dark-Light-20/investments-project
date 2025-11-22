@@ -1,3 +1,3 @@
 export const environment = {
-  assetsUrl: 'http://localhost:4200/assets',
+  assetsUrl: 'http://localhost:4200',
 };
