@@ -35,11 +35,14 @@ The consumption is made by the web-app infrastructure layer using Azure function
 
 ## UI
 
-The UI of the app is made with Angular 20 using standalone components and module federation (for microfrontends architecture implementation). The UI is divided in 3 main apps:
+This project has a mockup prototyped with Google Stitch, for more details of the proposed design see the [Stitch Invest-App Web Design](./docs/UI-prototype.md) document.
 
-- Shell app: This app is the main app of the web page. It contains the header and footer of the web page, a home component with a short summary of the app and the routing of the other apps.
-- CDT app: This app contains the CDT Rates search component and the CDT Calculate Investment component.
-- FIC app: This app contains the FIC Rates search component.
+The UI of the app is made with Angular 20 using standalone components and module federation (for microfrontends architecture implementation). The UI is divided in 4 main apps:
+
+- Shell app (Host): This app is the main app of the web page. It contains the header and footer of the web page and define the layout for the remote microfrontend apps.
+- Home app (Remote): This app contains the home component with a short summary of the app features, available banks and the routing of the other apps.
+- CDT app (Remote): This app contains the CDT Rates list component and the CDT Calculate Investment component.
+- FIC app (Remote): This app contains the FIC Rates list component.
 
 ## How to run the app
 
@@ -52,8 +55,8 @@ The UI of the app is made with Angular 20 using standalone components and module
 
 1. Clone the repository
 2. Run `npm install` in the root folder
-3. Run `npm run start <project>` in the root folder. You need to specify which project to start: shell, cdt, or fic.
-4. Open the browser in `http://localhost:4200/`
+3. Run `npm run start <project>` in the root folder. You need to specify which project to start: shell, home, cdt, or fic.
+4. Open the browser in `http://localhost:<port>/`
 
 ## Tests
 
