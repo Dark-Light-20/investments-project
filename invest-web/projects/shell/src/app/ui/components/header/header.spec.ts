@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Header } from './header';
 import { By } from '@angular/platform-browser';
 import { Component } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Router } from '@angular/router';
 
 @Component({ selector: 'app-test', standalone: true })
 class MockComponent {}
@@ -11,6 +11,7 @@ class MockComponent {}
 describe('Header', () => {
   let component: Header;
   let fixture: ComponentFixture<Header>;
+  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -27,6 +28,7 @@ describe('Header', () => {
 
     fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
+    router = TestBed.inject(Router);
     fixture.detectChanges();
   });
 
@@ -39,27 +41,27 @@ describe('Header', () => {
     expect(titleElement.nativeElement.textContent).toContain('Invest-App');
   });
 
-  test('should render CDTs link and navigate', () => {
+  test('should render CDTs link and navigate', async () => {
     const cdtLinkElement = fixture.debugElement.query(By.css('a[data-testid="CDTsLink"]'));
     expect(cdtLinkElement.nativeElement.textContent).toContain('CDTs');
     cdtLinkElement.nativeElement.click();
-    fixture.detectChanges();
-    expect(cdtLinkElement.nativeElement.classList).toContain('text-blue-400');
+    await fixture.whenStable();
+    expect(router.url).toContain('/cdts');
   });
 
-  test('should render FICs link and navigate', () => {
+  test('should render FICs link and navigate', async () => {
     const ficLinkElement = fixture.debugElement.query(By.css('a[data-testid="FICsLink"]'));
     expect(ficLinkElement.nativeElement.textContent).toContain('FICs');
     ficLinkElement.nativeElement.click();
-    fixture.detectChanges();
-    expect(ficLinkElement.nativeElement.classList).toContain('text-blue-400');
+    await fixture.whenStable();
+    expect(router.url).toContain('/fics');
   });
 
-  test('should render Pockets link and navigate', () => {
+  test('should render Pockets link and navigate', async () => {
     const pocketLinkElement = fixture.debugElement.query(By.css('a[data-testid="BolsillosLink"]'));
     expect(pocketLinkElement.nativeElement.textContent).toContain('Bolsillos');
     pocketLinkElement.nativeElement.click();
-    fixture.detectChanges();
-    expect(pocketLinkElement.nativeElement.classList).toContain('text-blue-400');
+    await fixture.whenStable();
+    expect(router.url).toContain('/pockets');
   });
 });

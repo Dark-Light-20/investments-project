@@ -46,7 +46,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "projects/shell/src/main.ts",
-            "polyfills": ["zone.js", "es-module-shims"],
+            "polyfills": ["es-module-shims"],
             "tsConfig": "projects/shell/tsconfig.app.json",
             "assets": [
               {
@@ -146,7 +146,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "projects/home/src/main.ts",
-            "polyfills": ["zone.js", "es-module-shims"],
+            "polyfills": ["es-module-shims"],
             "tsConfig": "projects/home/tsconfig.app.json",
             "assets": [
               {
