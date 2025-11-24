@@ -9,13 +9,13 @@
     </a>
     <div class="flex items-center gap-4 text-gray-600">
       @for (link of links; track link.path) {
-        <a
-          [routerLink]="link.path"
-          routerLinkActive="text-blue-400 border-b-2 border-blue-400 pb-1"
-          class="hover:text-blue-600"
-          [attr.data-testid]="`${link.text}Link`">
-          {{ link.text }}
-        </a>
+      <a
+        [routerLink]="link.path"
+        routerLinkActive="text-blue-400 border-b-2 border-blue-400 pb-1"
+        class="hover:text-blue-600"
+        [attr.data-testid]="`${link.text}Link`">
+        {{ link.text }}
+      </a>
       }
     </div>
   </nav>

@@ -9,25 +9,23 @@
 
     <div class="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
       @for (feature of features; track $index) {
-        <div
-          class="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-lg"
-          [attr.data-testid]="'featureItem' + feature.title">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-8">
-              <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="feature.svg" />
-            </svg>
-          </div>
-          <h4 class="mt-5 text-xl font-semibold text-gray-900">{{ feature.title }}</h4>
-          <p class="mt-2 text-base text-gray-600">
-            {{ feature.description }}
-          </p>
+      <div
+        class="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-lg"
+        [attr.data-testid]="'featureItem' + feature.title">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-8">
+            <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="feature.svg" />
+          </svg>
         </div>
+        <h4 class="mt-5 text-xl font-semibold text-gray-900">{{ feature.title }}</h4>
+        <p class="mt-2 text-base text-gray-600">{{ feature.description }}</p>
+      </div>
       }
     </div>
   </div>
