@@ -31,6 +31,8 @@ The logo for the project was generated with Google Gemini:
 
 ## Future Improvements
 
+- 404 Page screen for invalid routes
+
 - Bank selector filter in CDT rates list screen
   ![New CDT Rates Screen](./stitch_invest_app_web_app/cdt_rates_list_v2/screen.png)
 
