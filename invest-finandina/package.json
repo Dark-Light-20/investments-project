@@ -16,9 +16,11 @@
   "dependencies": {
     "@dark-light-20/invest-domain": "^0.3.0",
     "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.5",

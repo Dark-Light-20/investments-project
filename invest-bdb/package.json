@@ -17,6 +17,7 @@
   "author": "Dark-Light-20",
   "license": "MIT",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.11",
@@ -29,6 +30,7 @@
     "@dark-light-20/invest-domain": "^0.2.0",
     "@ngneat/falso": "^7.3.0",
     "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
     "express": "^4.20.0"
   }
 }

@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import cors from "cors";
 import { CdtUseCase, PocketUseCase } from "@dark-light-20/invest-domain";
 import { CdtService } from "./infrastructure/http-adapter/cdt.service.js";
 import { PocketService } from "./infrastructure/http-adapter/pocket.service.js";
@@ -10,7 +11,19 @@ import { boxRoutesBuilder } from "./adapters/routes/box.route.js";
 
 // Config
 const PORT = process.env.PORT ?? 3004;
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") ?? [];
 const app = express();
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 app.use(express.json());
 
 // Infra
