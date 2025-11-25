@@ -1,3 +1,4 @@
 {
-  "home": "http://localhost:4201/remoteEntry.json"
+  "home": "http://localhost:4201/remoteEntry.json",
+  "cdt": "http://localhost:4202/remoteEntry.json"
 }

@@ -34,7 +34,7 @@ describe('Hero', () => {
 
   test('should render all action buttons', () => {
     const actionButtons = fixture.debugElement.queryAll(By.css('[data-testid^="heroActionButton"]'));
-    expect(actionButtons.length).toBe(component.actionButtons.length);
+    expect(actionButtons).toHaveLength(component.actionButtons.length);
     actionButtons.forEach((button, index) => {
       expect(button.nativeElement.textContent).toContain(component.actionButtons[index].label);
       expect(button.nativeElement.getAttribute('href')).toBe(component.actionButtons[index].link);

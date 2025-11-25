@@ -23,7 +23,7 @@ describe('BanksList', () => {
 
   test('should render list of banks', () => {
     const bankItems = fixture.debugElement.queryAll(By.css('[data-testid^="bankItem"]'));
-    expect(bankItems.length).toBe(component.banks.length);
+    expect(bankItems).toHaveLength(component.banks.length);
     bankItems.forEach((item, index) => {
       const bank = component.banks[index];
       const imgElement = item.query(By.css('img')).nativeElement as HTMLImageElement;

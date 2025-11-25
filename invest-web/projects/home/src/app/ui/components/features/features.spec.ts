@@ -23,7 +23,7 @@ describe('Features', () => {
 
   test('should render all features', () => {
     const featureItems = fixture.debugElement.queryAll(By.css('[data-testid^="featureItem"]'));
-    expect(featureItems.length).toBe(component.features.length);
+    expect(featureItems).toHaveLength(component.features.length);
     featureItems.forEach((item, index) => {
       const title = item.query(By.css('h4')).nativeElement.textContent;
       const description = item.query(By.css('p')).nativeElement.textContent;

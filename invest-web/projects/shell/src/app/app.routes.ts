@@ -12,6 +12,10 @@ export const routes: Routes = [
     loadChildren: () => loadRemoteModule('home', './HomeRoutes').then(m => m.routes),
   },
   {
+    path: 'cdts',
+    loadChildren: () => loadRemoteModule('cdt', './CdtRoutes').then(m => m.routes),
+  },
+  {
     path: 'prototype',
     loadComponent: () => import('./ui/pages/prototype/prototype.component').then(m => m.PrototypeComponent),
   },
