@@ -219,7 +219,13 @@
             },
             "development": {
               "target": "cdt:esbuild:development",
-              "dev": true
+              "dev": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/cdt/src/environments/environment.ts",
+                  "with": "projects/cdt/src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -288,7 +294,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/cdt/src/environments/environment.ts",
+                  "with": "projects/cdt/src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"

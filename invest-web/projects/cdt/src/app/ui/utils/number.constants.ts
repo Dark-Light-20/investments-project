@@ -1,0 +1,3 @@
+export const MAX_TERM_THRESHOLD = 999;
+export const MAX_AMOUNT_THRESHOLD = 999999999;
+export const DECIMAL_PLACES = 2;

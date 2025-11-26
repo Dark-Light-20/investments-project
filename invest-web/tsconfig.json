@@ -14,7 +14,16 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@cdt/domain/*": ["projects/cdt/src/app/domain/*"],
+      "@cdt/application/*": ["projects/cdt/src/app/application/*"],
+      "@cdt/ui/*": ["projects/cdt/src/app/ui/*"],
+      "@cdt/infrastructure/*": ["projects/cdt/src/app/infrastructure/*"],
+      "@cdt/environments/*": ["projects/cdt/src/environments/*"],
+      "@cdt/config/*": ["projects/cdt/src/app/config/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
