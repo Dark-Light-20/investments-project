@@ -41,9 +41,12 @@ jobs:
           tokenSuffix: "}#"
           files: |
             invest-web/projects/${{ env.APP }}/src/environments/environment.ts
+            invest-web/projects/${{ env.APP }}/public/federation.manifest.json
         env:
           assetsUrl: ${{ env.SHELL_ASSETS_URL }}
           manifestUrl: ${{ env.MANIFEST_URL }}
+          homeRemoteEntry: ${{ vars.HOMEREMOTEENTRY }}
+          cdtRemoteEntry: ${{ vars.CDTREMOTEENTRY }}
 
       - name: Build Shell
         run: npm run build -- ${{ env.APP }}
