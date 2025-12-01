@@ -102,7 +102,7 @@ describe('Rates', () => {
 
     const loading = fixture.debugElement.query(By.css('[data-testid="loading-row"]'));
     expect(loading).toBeTruthy();
-    expect(loading.nativeElement.textContent).toContain('Loading rates');
+    expect(loading.nativeElement.textContent).toContain('Cargando tasas');
   });
 
   test('shows error text when resource fails', async () => {
@@ -114,7 +114,7 @@ describe('Rates', () => {
 
     const error = fixture.debugElement.query(By.css('[data-testid="error-row"]'));
     expect(error).toBeTruthy();
-    expect(error.nativeElement.textContent).toContain('Failed to load rates');
+    expect(error.nativeElement.textContent).toContain('No se pudieron cargar las tasas');
   });
 
   test('shows failedBanks alert when there are failed banks', async () => {

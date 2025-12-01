@@ -6,5 +6,5 @@ import { Component, input } from '@angular/core';
 })
 export class FailedBanksAlert {
   readonly failedBanks = input<string[]>([]);
-  readonly alertMessage = input('Could not fetch rates from Banks');
+  readonly alertMessage = input('No se pudieron obtener datos de las siguientes entidades');
 }

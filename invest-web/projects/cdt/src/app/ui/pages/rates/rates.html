@@ -1,7 +1,7 @@
 <div class="container mx-auto px-4 py-8">
   <div class="mb-8">
-    <h1 class="text-3xl font-bold text-gray-900 mb-2">Compare the Best CDT Rates</h1>
-    <p class="text-gray-600">Find the highest returns for your investment based on amount and term.</p>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Compara las mejores tasas de CDT</h1>
+    <p class="text-gray-600">Encuentra los mayores rendimientos para tu inversión según monto y plazo.</p>
   </div>
 
   <div class="mb-8">
@@ -17,24 +17,24 @@
       <table class="w-full text-left text-sm">
         <thead class="bg-white border-b border-gray-200">
           <tr>
-            <th class="px-6 py-4 font-medium text-gray-900">Bank Name</th>
-            <th class="px-6 py-4 font-medium text-gray-900">Effective Annual Rate (E.A.)</th>
-            <th class="px-6 py-4 font-medium text-gray-900">Amount Range</th>
-            <th class="px-6 py-4 font-medium text-gray-900">Term (Days)</th>
+            <th class="px-6 py-4 font-medium text-gray-900">Banco</th>
+            <th class="px-6 py-4 font-medium text-gray-900">Tasa efectiva anual (E.A.)</th>
+            <th class="px-6 py-4 font-medium text-gray-900">Rango de monto</th>
+            <th class="px-6 py-4 font-medium text-gray-900">Plazo (días)</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
           @if(ratesResource.isLoading()) {
 
           <tr>
-            <td colspan="4" class="px-6 py-4 text-center text-gray-500" data-testid="loading-row">Loading rates...</td>
+            <td colspan="4" class="px-6 py-4 text-center text-gray-500" data-testid="loading-row">Cargando tasas...</td>
           </tr>
 
           } @else if(ratesResource.error()) {
 
           <tr>
             <td colspan="4" class="px-6 py-4 text-center text-red-500" data-testid="error-row">
-              Failed to load rates. Please try again later.
+              No se pudieron cargar las tasas. Inténtalo de nuevo más tarde.
             </td>
           </tr>
 

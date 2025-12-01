@@ -149,7 +149,7 @@ describe('Simulate', () => {
       const loading = fixture.debugElement.query(By.css('[data-testid="start-simulation-template"]'));
       expect(loading).toBeTruthy();
       expect(loading.nativeElement.textContent).toContain(
-        'Submit your investment details to calculate potential returns.'
+        'Ingresa los detalles de tu inversión para calcular los rendimientos potenciales.'
       );
     });
 
@@ -162,9 +162,7 @@ describe('Simulate', () => {
 
       const error = fixture.debugElement.query(By.css('[data-testid="error-simulations"]'));
       expect(error).toBeTruthy();
-      expect(error.nativeElement.textContent).toContain(
-        'No rates were found for the requested simulation, or the request to the banks failed. Please try again later.'
-      );
+      expect(error.nativeElement.textContent).toContain('No se encontraron tasas para la simulación solicitada');
     });
 
     test('shows failedBanks alert when there are failed banks', async () => {

@@ -9,10 +9,10 @@ import { RouterLink } from '@angular/router';
 export class SubMenu {
   readonly links = [
     {
-      title: 'Explore CDT Rates',
+      title: 'Explorar tasas de CDT',
       route: './rates',
-      description: 'This section provides an up-to-date list of CDT rates from various financial institutions.',
-      linkText: 'View All Rates',
+      description: 'Esta sección ofrece una lista actualizada de tasas de CDT de diversas entidades financieras.',
+      linkText: 'Ver todas las tasas',
       icon: {
         name: 'icon-tabler-list-details',
         svg: [
@@ -26,10 +26,10 @@ export class SubMenu {
       },
     },
     {
-      title: 'Find & Compare Your Best Rate',
+      title: 'Encuentra y compara tu mejor tasa',
       route: './simulate',
-      description: 'Input your investment amount and term to calculate and compare potential returns.',
-      linkText: 'Start Calculating',
+      description: 'Ingresa el monto y el plazo de tu inversión para simular y comparar los rendimientos potenciales.',
+      linkText: 'Comenzar a simular',
       icon: {
         name: 'icon-tabler-template',
         svg: [

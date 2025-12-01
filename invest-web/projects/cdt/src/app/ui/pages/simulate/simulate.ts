@@ -34,7 +34,7 @@ import {
 export class Simulate {
   private readonly _cdtUseCase = inject(Cdt);
 
-  readonly failedBanksMessage = 'Could not found data for your simulation from Banks';
+  readonly failedBanksMessage = 'No se encontraron datos para tu simulación por parte de los bancos';
 
   readonly simulationForm = new FormGroup({
     investedAmount: new FormControl<number | null>(null, [
