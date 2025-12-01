@@ -9,6 +9,7 @@ on:
 
 env:
   SHELL_ASSETS_URL: ${{ vars.SHELL_ASSETS_URL }}
+  MANIFEST_URL: ${{ vars.MANIFEST_URL }}
   APP: shell
   BUILD_DIR: invest-web/dist/shell/browser
   DESTINATION_DIR: "/"
@@ -42,6 +43,7 @@ jobs:
             invest-web/projects/${{ env.APP }}/src/environments/environment.ts
         env:
           assetsUrl: ${{ env.SHELL_ASSETS_URL }}
+          manifestUrl: ${{ env.MANIFEST_URL }}
 
       - name: Build Shell
         run: npm run build -- ${{ env.APP }}
