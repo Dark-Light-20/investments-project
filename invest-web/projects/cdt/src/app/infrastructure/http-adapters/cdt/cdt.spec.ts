@@ -7,6 +7,36 @@ import { Bank } from '@cdt/domain/models/cdt.model';
 import { CdtRateDTO } from '../../models/cdt.dto';
 import { CDTTermUnit } from '@dark-light-20/invest-domain';
 
+const rateListEndpoints = [
+  { bank: Bank.Ban100, url: `${environment.ban100Url}${environment.rateListEndpoint}` },
+  { bank: Bank.Bancolombia, url: `${environment.bancolombiaUrl}${environment.rateListEndpoint}` },
+  {
+    bank: Bank.BancoDeBogota,
+    url: `${environment.bancoDeBogotaUrl}${environment.rateListEndpoint}`,
+  },
+  { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.rateListEndpoint}` },
+  { bank: Bank.Nu, url: `${environment.nuUrl}${environment.rateListEndpoint}` },
+];
+
+const rateEndpoints = [
+  { bank: Bank.Ban100, url: `${environment.ban100Url}${environment.rateEndpoint}` },
+  { bank: Bank.Bancolombia, url: `${environment.bancolombiaUrl}${environment.rateEndpoint}` },
+  { bank: Bank.BancoDeBogota, url: `${environment.bancoDeBogotaUrl}${environment.rateEndpoint}` },
+  { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.rateEndpoint}` },
+  { bank: Bank.Nu, url: `${environment.nuUrl}${environment.rateEndpoint}` },
+];
+
+const simulationEndpoints = [
+  { bank: Bank.Ban100, url: `${environment.ban100Url}${environment.simulationEndpoint}` },
+  { bank: Bank.Bancolombia, url: `${environment.bancolombiaUrl}${environment.simulationEndpoint}` },
+  {
+    bank: Bank.BancoDeBogota,
+    url: `${environment.bancoDeBogotaUrl}${environment.simulationEndpoint}`,
+  },
+  { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.simulationEndpoint}` },
+  { bank: Bank.Nu, url: `${environment.nuUrl}${environment.simulationEndpoint}` },
+];
+
 describe('Cdt', () => {
   let service: Cdt;
   let httpMock: HttpTestingController;
@@ -43,16 +73,8 @@ describe('Cdt', () => {
       done();
     });
 
-    const banks = [
-      { bank: Bank.Ban100, url: environment.ban100Url },
-      { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
-      { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
-      { bank: Bank.Finandina, url: environment.finandinaUrl },
-      { bank: Bank.Nu, url: environment.nuUrl },
-    ];
-
-    for (const { url } of banks) {
-      const req = httpMock.expectOne(`${url}/cdt/rates`);
+    for (const { url } of rateListEndpoints) {
+      const req = httpMock.expectOne(url);
       expect(req.request.method).toBe('GET');
       req.flush([mockRate]);
     }
@@ -74,20 +96,14 @@ describe('Cdt', () => {
       done();
     });
 
-    const ban100Req = httpMock.expectOne(`${environment.ban100Url}/cdt/rates`);
-    ban100Req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
-
-    const otherBanks = [
-      { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
-      { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
-      { bank: Bank.Finandina, url: environment.finandinaUrl },
-      { bank: Bank.Nu, url: environment.nuUrl },
-    ];
-
-    for (const { url } of otherBanks) {
-      const req = httpMock.expectOne(`${url}/cdt/rates`);
+    for (const { bank, url } of rateListEndpoints) {
+      const req = httpMock.expectOne(url);
       expect(req.request.method).toBe('GET');
-      req.flush([mockRate]);
+      if (bank === Bank.Ban100) {
+        req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
+      } else {
+        req.flush([mockRate]);
+      }
     }
   });
 
@@ -99,16 +115,8 @@ describe('Cdt', () => {
       },
     });
 
-    const banks = [
-      { bank: Bank.Ban100, url: environment.ban100Url },
-      { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
-      { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
-      { bank: Bank.Finandina, url: environment.finandinaUrl },
-      { bank: Bank.Nu, url: environment.nuUrl },
-    ];
-
-    for (const { url } of banks) {
-      const req = httpMock.expectOne(`${url}/cdt/rates`);
+    for (const { url } of rateListEndpoints) {
+      const req = httpMock.expectOne(url);
       expect(req.request.method).toBe('GET');
       req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
     }
@@ -138,16 +146,8 @@ describe('Cdt', () => {
         done();
       });
 
-      const banks = [
-        { bank: Bank.Ban100, url: environment.ban100Url },
-        { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
-        { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
-        { bank: Bank.Finandina, url: environment.finandinaUrl },
-        { bank: Bank.Nu, url: environment.nuUrl },
-      ];
-
-      for (const { url } of banks) {
-        const req = httpMock.expectOne(`${url}/cdt/calculateRate`);
+      for (const { url } of rateEndpoints) {
+        const req = httpMock.expectOne(url);
         expect(req.request.method).toBe('POST');
         expect(req.request.body).toEqual({
           amount: investedAmount,
@@ -157,8 +157,8 @@ describe('Cdt', () => {
         req.flush(mockRateDTO);
       }
 
-      for (const { url } of banks) {
-        const req = httpMock.expectOne(`${url}/cdt/calculateInvest`);
+      for (const { url } of simulationEndpoints) {
+        const req = httpMock.expectOne(url);
         expect(req.request.method).toBe('POST');
         expect(req.request.body).toEqual({
           amount: investedAmount,
@@ -177,16 +177,8 @@ describe('Cdt', () => {
         done();
       });
 
-      const banks = [
-        { bank: Bank.Ban100, url: environment.ban100Url },
-        { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
-        { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
-        { bank: Bank.Finandina, url: environment.finandinaUrl },
-        { bank: Bank.Nu, url: environment.nuUrl },
-      ];
-
-      for (const { bank, url } of banks) {
-        const req = httpMock.expectOne(`${url}/cdt/calculateRate`);
+      for (const { bank, url } of rateEndpoints) {
+        const req = httpMock.expectOne(url);
         if (bank === Bank.Ban100) {
           req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
         } else {
@@ -194,8 +186,8 @@ describe('Cdt', () => {
         }
       }
 
-      for (const { bank, url } of banks) {
-        const req = httpMock.expectOne(`${url}/cdt/calculateInvest`);
+      for (const { bank, url } of simulationEndpoints) {
+        const req = httpMock.expectOne(url);
         if (bank === Bank.Bancolombia) {
           req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
         } else {
@@ -213,21 +205,13 @@ describe('Cdt', () => {
         },
       });
 
-      const banks = [
-        { bank: Bank.Ban100, url: environment.ban100Url },
-        { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
-        { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
-        { bank: Bank.Finandina, url: environment.finandinaUrl },
-        { bank: Bank.Nu, url: environment.nuUrl },
-      ];
-
-      for (const { url } of banks) {
-        const req = httpMock.expectOne(`${url}/cdt/calculateRate`);
+      for (const { url } of rateEndpoints) {
+        const req = httpMock.expectOne(url);
         req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
       }
 
-      for (const { url } of banks) {
-        const req = httpMock.expectOne(`${url}/cdt/calculateInvest`);
+      for (const { url } of simulationEndpoints) {
+        const req = httpMock.expectOne(url);
         req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
       }
     });

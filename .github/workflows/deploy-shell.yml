@@ -41,8 +41,8 @@ jobs:
         env:
           assetsUrl: ${{ vars.SHELL_ASSETS_URL }}
           manifestUrl: ${{ vars.MANIFEST_URL }}
-          homeRemoteEntry: ${{ vars.HOMEREMOTEENTRY }}
-          cdtRemoteEntry: ${{ vars.CDTREMOTEENTRY }}
+          homeRemoteEntry: ${{ vars.HOME_REMOTE_ENTRY }}
+          cdtRemoteEntry: ${{ vars.CDT_REMOTE_ENTRY }}
 
       - name: Build Shell
         run: npm run build -- ${{ env.APP }}

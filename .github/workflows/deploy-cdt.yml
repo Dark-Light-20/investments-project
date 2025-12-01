@@ -40,6 +40,9 @@ jobs:
           files: '["${{ env.PROJECT_DIR }}/src/environments/environment.ts"]'
         env:
           assetsUrl: ${{ vars.CDT_ASSETS_URL }}
+          rateListEndpoint: "${{ vars.RATE_LIST_ENDPOINT }}"
+          rateEndpoint: "${{ vars.RATE_ENDPOINT }}"
+          simulationEndpoint: "${{ vars.SIMULATION_ENDPOINT }}"
           ban100Url: "${{ vars.BAN100_URL }}"
           bancolombiaUrl: "${{ vars.BANCOLOMBIA_URL }}"
           bancoDeBogotaUrl: "${{ vars.BANCO_DE_BOGOTA_URL }}"
