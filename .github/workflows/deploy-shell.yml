@@ -38,7 +38,7 @@ jobs:
           tokenPrefix: "#{"
           tokenSuffix: "}#"
           files: |
-            projects/${{ env.APP }}/src/environments/environment.ts
+            invest-web/projects/${{ env.APP }}/src/environments/environment.ts
         env:
           assetsUrl: ${{ env.SHELL_ASSETS_URL }}
 
