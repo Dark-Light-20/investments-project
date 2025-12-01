@@ -1,0 +1,4 @@
+export const MIN_INVESTED_AMOUNT = 100000;
+export const MAX_INVESTED_AMOUNT = 10000000000;
+export const MIN_TERM_IN_DAYS = 30;
+export const MAX_TERM_IN_DAYS = 1800;

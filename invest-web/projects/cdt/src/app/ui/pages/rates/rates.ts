@@ -6,10 +6,12 @@ import { CdtProviders } from '@cdt/config/cdt.config';
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
+import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
+import { CdtRate } from '@cdt/domain/models/cdt.model';
 
 @Component({
   selector: 'app-rates',
-  imports: [BankLogoPipe, RatePropertiesPipe, NgOptimizedImage, SortRates],
+  imports: [BankLogoPipe, RatePropertiesPipe, NgOptimizedImage, SortRates, FailedBanksAlert],
   templateUrl: './rates.html',
   providers: [...CdtProviders, CurrencyPipe],
 })
@@ -28,10 +30,11 @@ export class Rates {
     () => !this.ratesResource.error() && this.ratesResource.value()?.failedBanks?.length
   );
 
-  readonly ratesList = computed(() => {
+  readonly ratesList = computed<{ rates: CdtRate[] }>(() => {
+    const emptyData = { rates: [] };
     if (this.ratesResource.error()) {
-      return [];
+      return emptyData;
     }
-    return this.ratesResource.value()?.rates || [];
+    return this.ratesResource.value() ?? emptyData;
   });
 }

@@ -27,7 +27,7 @@ export class SubMenu {
     },
     {
       title: 'Find & Compare Your Best Rate',
-      route: './calculate',
+      route: './simulate',
       description: 'Input your investment amount and term to calculate and compare potential returns.',
       linkText: 'Start Calculating',
       icon: {

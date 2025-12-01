@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'rates',
     loadComponent: () => import('@cdt/ui/pages/rates/rates').then(m => m.Rates),
   },
+  {
+    path: 'simulate',
+    loadComponent: () => import('@cdt/ui/pages/simulate/simulate').then(m => m.Simulate),
+  },
 ];

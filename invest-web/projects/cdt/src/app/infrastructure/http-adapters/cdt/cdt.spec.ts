@@ -113,4 +113,123 @@ describe('Cdt', () => {
       req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
     }
   });
+
+  describe('simulateCdt', () => {
+    const investedAmount = 1000000;
+    const termInDays = 90;
+    const mockRateDTO: CdtRateDTO = {
+      rate: 0.12,
+      minimumTerm: 30,
+      maximumTerm: 360,
+      minimumAmount: 100000,
+      maximumAmount: 500000000,
+      termUnit: CDTTermUnit.DAYS,
+    };
+    const mockInvestReturn = 30000;
+
+    test('should simulate CDT for all banks successfully', done => {
+      service.simulateCdt(investedAmount, termInDays).subscribe(result => {
+        expect(result.failedBanks).toHaveLength(0);
+        expect(result.simulations).toHaveLength(5);
+        for (const simulation of result.simulations) {
+          expect(simulation.totalInterest).toBe(mockInvestReturn);
+          expect(simulation.rate).toBe(mockRateDTO.rate);
+        }
+        done();
+      });
+
+      const banks = [
+        { bank: Bank.Ban100, url: environment.ban100Url },
+        { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
+        { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
+        { bank: Bank.Finandina, url: environment.finandinaUrl },
+        { bank: Bank.Nu, url: environment.nuUrl },
+      ];
+
+      for (const { url } of banks) {
+        const req = httpMock.expectOne(`${url}/cdt/calculateRate`);
+        expect(req.request.method).toBe('POST');
+        expect(req.request.body).toEqual({
+          amount: investedAmount,
+          term: termInDays,
+          termUnit: CDTTermUnit.DAYS,
+        });
+        req.flush(mockRateDTO);
+      }
+
+      for (const { url } of banks) {
+        const req = httpMock.expectOne(`${url}/cdt/calculateInvest`);
+        expect(req.request.method).toBe('POST');
+        expect(req.request.body).toEqual({
+          amount: investedAmount,
+          term: termInDays,
+          termUnit: CDTTermUnit.DAYS,
+        });
+        req.flush(mockInvestReturn);
+      }
+    });
+
+    test('should handle partial failures in simulation', done => {
+      service.simulateCdt(investedAmount, termInDays).subscribe(result => {
+        expect(result.failedBanks).toContain(Bank.Ban100);
+        expect(result.failedBanks).toContain(Bank.Bancolombia);
+        expect(result.simulations).toHaveLength(3);
+        done();
+      });
+
+      const banks = [
+        { bank: Bank.Ban100, url: environment.ban100Url },
+        { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
+        { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
+        { bank: Bank.Finandina, url: environment.finandinaUrl },
+        { bank: Bank.Nu, url: environment.nuUrl },
+      ];
+
+      for (const { bank, url } of banks) {
+        const req = httpMock.expectOne(`${url}/cdt/calculateRate`);
+        if (bank === Bank.Ban100) {
+          req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
+        } else {
+          req.flush(mockRateDTO);
+        }
+      }
+
+      for (const { bank, url } of banks) {
+        const req = httpMock.expectOne(`${url}/cdt/calculateInvest`);
+        if (bank === Bank.Bancolombia) {
+          req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
+        } else {
+          req.flush(mockInvestReturn);
+        }
+      }
+    });
+
+    test('should handle total failures in simulation', done => {
+      service.simulateCdt(investedAmount, termInDays).subscribe({
+        error: error => {
+          expect(error).toBeTruthy();
+          expect(error.message).toBe('All simulation sources failed');
+          done();
+        },
+      });
+
+      const banks = [
+        { bank: Bank.Ban100, url: environment.ban100Url },
+        { bank: Bank.Bancolombia, url: environment.bancolombiaUrl },
+        { bank: Bank.BancoDeBogota, url: environment.bancoDeBogotaUrl },
+        { bank: Bank.Finandina, url: environment.finandinaUrl },
+        { bank: Bank.Nu, url: environment.nuUrl },
+      ];
+
+      for (const { url } of banks) {
+        const req = httpMock.expectOne(`${url}/cdt/calculateRate`);
+        req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
+      }
+
+      for (const { url } of banks) {
+        const req = httpMock.expectOne(`${url}/cdt/calculateInvest`);
+        req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
+      }
+    });
+  });
 });

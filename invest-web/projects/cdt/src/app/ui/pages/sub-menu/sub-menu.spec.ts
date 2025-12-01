@@ -27,7 +27,7 @@ describe('SubMenu', () => {
     const linkItems = fixture.debugElement.queryAll(By.css('[data-testid^="linkItemCard"]'));
     expect(linkItems).toHaveLength(component.links.length);
 
-    component.links.forEach((link, index) => {
+    for (const [index, link] of component.links.entries()) {
       const linkItem = linkItems[index];
 
       const titleElement = linkItem.query(By.css(`[data-testid="linkItemTitle${link.title}"]`))?.nativeElement;
@@ -41,6 +41,6 @@ describe('SubMenu', () => {
       const linkElement = linkItem.query(By.css(`[data-testid="linkItemLink${link.title}"]`))
         ?.nativeElement as HTMLAnchorElement;
       expect(linkElement.textContent).toContain(link.linkText);
-    });
+    }
   });
 });

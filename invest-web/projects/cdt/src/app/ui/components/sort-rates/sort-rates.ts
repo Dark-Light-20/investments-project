@@ -8,8 +8,8 @@ import { SortType } from '@cdt/ui/models/sort.model';
   imports: [NgClass],
   templateUrl: './sort-rates.html',
 })
-export class SortRates {
-  readonly rates = input.required<CdtRate[]>();
+export class SortRates<T extends { rates: CdtRate[] }> {
+  readonly rates = input.required<T>();
 
   readonly SortType = SortType;
   readonly selectedFilter = signal<SortType | undefined>(undefined);
@@ -17,20 +17,19 @@ export class SortRates {
   protected readonly bankSortButtonClasses = computed(() => this.getSortButtonClasses(SortType.BANK));
 
   readonly sortedRates = computed(() => {
-    const resourceData = this.rates();
-    if (!resourceData.length) return [];
-
-    const rates = resourceData;
+    const data = this.rates();
     const filter = this.selectedFilter();
 
     switch (filter) {
       case SortType.RATE:
-        return rates.toSorted((a, b) => b.rate - a.rate);
+        data.rates.sort((a, b) => b.rate - a.rate);
+        break;
       case SortType.BANK:
-        return rates.toSorted((a, b) => a.bankName.localeCompare(b.bankName));
-      default:
-        return rates;
+        data.rates.sort((a, b) => a.bankName.localeCompare(b.bankName));
+        break;
     }
+
+    return data;
   });
 
   private getSortButtonClasses(type: SortType) {

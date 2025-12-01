@@ -6,6 +6,7 @@ import { CDTTermUnit } from '@dark-light-20/invest-domain';
 import { CdtGateway } from '@cdt/domain/models/cdt.gateway';
 import { MockProvider } from 'ng-mocks';
 import { of } from 'rxjs';
+import { CdtSimulation, CdtSimulationResponse, SimulationParams } from '@cdt/domain/models/simulation.model';
 
 const cdtGatewayMock = {
   getCdtRates: jest.fn().mockReturnValue(
@@ -18,6 +19,15 @@ const cdtGatewayMock = {
       ] as CdtRate[],
       failedBanks: [],
     } as CdtRatesResponse)
+  ),
+  simulateCdt: jest.fn().mockReturnValue(
+    of({
+      simulations: [
+        { termUnit: CDTTermUnit.DAYS, rate: 5.2, bankName: Bank.Bancolombia, totalInterest: 100 },
+        { termUnit: CDTTermUnit.DAYS, rate: 4.98, bankName: Bank.Ban100, totalInterest: 95 },
+      ] as CdtSimulation[],
+      failedBanks: [],
+    } as CdtSimulationResponse)
   ),
 };
 
@@ -67,5 +77,49 @@ describe('Cdt', () => {
       done();
     });
     expect(cdtGatewayMock.getCdtRates).toHaveBeenCalled();
+  });
+
+  test('simulateCdt should return simulation results', done => {
+    const params: SimulationParams = {
+      investedAmount: 1000,
+      termInDays: 180,
+    };
+
+    service.simulateCdt(params).subscribe(simulationResponse => {
+      expect(simulationResponse.simulations).toEqual([
+        { termUnit: CDTTermUnit.DAYS, rate: 5.2, bankName: Bank.Bancolombia, totalInterest: 100 },
+        { termUnit: CDTTermUnit.DAYS, rate: 4.98, bankName: Bank.Ban100, totalInterest: 95 },
+      ]);
+      expect(simulationResponse.failedBanks).toEqual([]);
+      done();
+    });
+    expect(cdtGatewayMock.simulateCdt).toHaveBeenCalledWith(params.investedAmount, params.termInDays);
+  });
+
+  test('simulateCdt should handle all banks failing', done => {
+    cdtGatewayMock.simulateCdt.mockReturnValueOnce(
+      of({
+        simulations: [],
+        failedBanks: [Bank.Ban100, Bank.Bancolombia, Bank.BancoDeBogota, Bank.Finandina, Bank.Nu],
+      } as CdtSimulationResponse)
+    );
+
+    const params: SimulationParams = {
+      investedAmount: 1000,
+      termInDays: 180,
+    };
+
+    service.simulateCdt(params).subscribe(simulationResponse => {
+      expect(simulationResponse.simulations).toEqual([]);
+      expect(simulationResponse.failedBanks).toEqual([
+        Bank.Ban100,
+        Bank.Bancolombia,
+        Bank.BancoDeBogota,
+        Bank.Finandina,
+        Bank.Nu,
+      ]);
+      done();
+    });
+    expect(cdtGatewayMock.simulateCdt).toHaveBeenCalledWith(params.investedAmount, params.termInDays);
   });
 });

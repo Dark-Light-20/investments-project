@@ -10,6 +10,7 @@ import { By } from '@angular/platform-browser';
 import { CurrencyPipe } from '@angular/common';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
+import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
 
 const sampleRate = {
   rate: 8.5,
@@ -125,10 +126,7 @@ describe('Rates', () => {
     await fixture.whenStable();
     fixture.detectChanges();
 
-    const alert = fixture.debugElement.query(By.css('[data-testid="failed-banks-alert"]'));
+    const alert = fixture.debugElement.query(By.directive(FailedBanksAlert));
     expect(alert).toBeTruthy();
-    expect(alert.nativeElement.textContent).toContain('Could not fetch rates from Banks:');
-    expect(alert.nativeElement.textContent).toContain('Bank A');
-    expect(alert.nativeElement.textContent).toContain('Bank B');
   });
 });

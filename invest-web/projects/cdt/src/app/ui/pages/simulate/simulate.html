@@ -1,0 +1,126 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">CDT Yield Calculator</h1>
+    <p class="text-gray-600">Compare and find the best return on your investment.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-1">
+      <form
+        [formGroup]="simulationForm"
+        (ngSubmit)="doSimulation()"
+        class="bg-white rounded-lg shadow-sm border border-gray-200 p-6"
+        data-testid="simulationForm">
+        <h2 class="text-xl font-semibold text-gray-900 mb-6">Investment Details</h2>
+
+        <div class="mb-4">
+          <label for="investment-amount" class="block text-sm font-medium text-gray-700 mb-1">Investment Amount</label>
+          <div class="relative rounded-md shadow-sm">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <span class="text-gray-500 sm:text-sm">$</span>
+            </div>
+            <input
+              id="investment-amount"
+              type="number"
+              formControlName="investedAmount"
+              class="block w-full rounded-md border-gray-300 pl-7 py-2 focus:border-blue-500 focus:ring-blue-500 sm:text-sm border"
+              placeholder="100,000" />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="investment-term" class="block text-sm font-medium text-gray-700 mb-1">
+            Investment Term (days)
+          </label>
+          <input
+            id="investment-term"
+            type="number"
+            formControlName="termInDays"
+            class="block w-full rounded-md border-gray-300 py-2 px-3 focus:border-blue-500 focus:ring-blue-500 sm:text-sm border"
+            placeholder="90" />
+        </div>
+
+        <button
+          [disabled]="simulationForm.invalid || simulationsResource.isLoading()"
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-150 ease-in-out disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400">
+          Calculate Yields
+        </button>
+      </form>
+    </div>
+
+    <div class="lg:col-span-2">
+      @if (showFailedBanks()) {
+      <app-failed-banks-alert
+        [failedBanks]="simulationsResource.value()?.failedBanks ?? []"
+        [alertMessage]="failedBanksMessage" />
+      }
+
+      <div class="space-y-4">
+        @if(simulationsResource.isLoading()) {
+
+        <div class="text-center text-gray-500" data-testid="loading-simulations">Calculating yields...</div>
+
+        } @else if(simulationsResource.error()) {
+
+        <div class="text-center text-red-500" data-testid="error-simulations">
+          <p>
+            No rates were found for the requested simulation, or the request to the banks failed. Please try again
+            later.
+          </p>
+        </div>
+
+        } @else { @if(simulationsList().rates.length) {
+
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+          <h2 class="text-xl font-bold text-gray-900">Estimated Returns</h2>
+          <div class="flex items-center gap-2 mt-2 sm:mt-0">
+            <app-sort-rates #sortedSimulationsList [rates]="simulationsList()" />
+          </div>
+        </div>
+
+        @for(simulation of sortedSimulationsList.sortedRates().rates; track simulation) {
+
+        <div
+          class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex flex-col sm:flex-row items-center justify-between"
+          data-testid="simulation-item">
+          <div class="flex items-center mb-4 sm:mb-0" data-testid="simulation-rate">
+            <div class="h-12 w-12 bg-white rounded-full flex items-center justify-center text-white mr-4">
+              <img
+                [ngSrc]="simulation.bankName | bankLogo"
+                width="56"
+                height="56"
+                alt="{{ simulation.bankName }} logo"
+                class="rounded-full" />
+            </div>
+            <div>
+              @let rateProperties = (simulation | rateProperties);
+              <h3 class="text-lg font-semibold text-gray-900">{{simulation.bankName}}</h3>
+              <p class="text-sm text-gray-500">E.A: <strong class="font-bold">{{rateProperties.rateValue}}</strong></p>
+            </div>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-gray-500 uppercase">Estimated Yield</p>
+            <p class="text-xl font-bold text-green-600" data-testid="simulation-result">
+              {{simulation.totalInterest | currency : 'COP' : 'symbol-narrow'}}
+            </p>
+          </div>
+        </div>
+
+        } } @else {
+
+        <ng-container [ngTemplateOutlet]="startSimulationTemplate" />
+
+        } }
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #startSimulationTemplate>
+  <div class="container mx-auto px-4 py-8" data-testid="start-simulation-template">
+    <div class="text-center text-gray-600">
+      <p class="text-lg">Submit your investment details to calculate potential returns.</p>
+    </div>
+  </div>
+</ng-template>
