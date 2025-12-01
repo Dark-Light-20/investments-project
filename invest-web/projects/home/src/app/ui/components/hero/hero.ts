@@ -10,7 +10,7 @@ export class Hero {
   readonly actionButtons = [
     {
       label: 'Simula tu CDT',
-      link: '/cdts/calculate',
+      link: '/cdts/simulate',
     },
     {
       label: 'Consulta tu FIC',
@@ -18,7 +18,7 @@ export class Hero {
     },
     {
       label: 'Simula tu bolsillo',
-      link: '/pockets/calculate',
+      link: '/pockets/simulate',
     },
   ];
   readonly infoButton = {
