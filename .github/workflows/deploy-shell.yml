@@ -2,20 +2,23 @@ name: Deploy shell (root)
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
     paths:
-      - 'projects/shell/**'
+      - "invest-web/projects/shell/**"
   workflow_dispatch:
 
 env:
   SHELL_ASSETS_URL: ${{ vars.SHELL_ASSETS_URL }}
   APP: shell
   BUILD_DIR: dist/shell/browser
-  DESTINATION_DIR: '/'
+  DESTINATION_DIR: "/"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: invest-web
 
     steps:
       - name: Checkout
@@ -32,8 +35,8 @@ jobs:
       - name: Replace tokens
         uses: cschleiden/replace-tokens@v1
         with:
-          tokenPrefix: '#{'
-          tokenSuffix: '}#'
+          tokenPrefix: "#{"
+          tokenSuffix: "}#"
           files: |
             projects/${{ env.APP }}/src/environments/environment.ts
         env:
@@ -50,5 +53,5 @@ jobs:
           projectName: ${{ secrets.SHELL_CLOUDFLARE_PROJECT_NAME }}
           directory: ${{ env.BUILD_DIR }}
           branch: main
-          wranglerVersion: '3'
+          wranglerVersion: "3"
           destinationDir: ${{ env.DESTINATION_DIR }}
