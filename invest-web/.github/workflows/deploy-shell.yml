@@ -5,6 +5,7 @@ on:
     branches: ['main']
     paths:
       - 'projects/shell/**'
+  workflow_dispatch:
 
 env:
   SHELL_ASSETS_URL: ${{ vars.SHELL_ASSETS_URL }}
