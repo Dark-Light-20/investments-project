@@ -9,13 +9,12 @@ on:
 
 env:
   APP: home
+  PROJECT_DIR: invest-web/projects/home
+  BUILD_DIR: invest-web/dist/home/browser
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_DIR: invest-web/projects/${{ env.APP }}
-      BUILD_DIR: invest-web/dist/${{ env.APP }}/browser
     defaults:
       run:
         working-directory: invest-web

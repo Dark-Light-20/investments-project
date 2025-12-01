@@ -9,13 +9,12 @@ on:
 
 env:
   APP: cdt
+  PROJECT_DIR: invest-web/projects/cdt
+  BUILD_DIR: invest-web/dist/cdt/browser
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_DIR: invest-web/projects/${{ env.APP }}
-      BUILD_DIR: invest-web/dist/${{ env.APP }}/browser
     defaults:
       run:
         working-directory: invest-web
