@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Unit Test
+        run: npm run test:${{ env.APP }}
+
       - name: Replace tokens
         uses: cschleiden/replace-tokens@v1
         with:
@@ -45,9 +48,6 @@ jobs:
 
       - name: Build CDT
         run: npm run build -- ${{ env.APP }}
-
-      - name: Unit Test
-        run: npm run test:${{ env.APP }}
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
