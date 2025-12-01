@@ -39,9 +39,8 @@ jobs:
         with:
           tokenPrefix: "#{"
           tokenSuffix: "}#"
-          files: |
-            invest-web/projects/${{ env.APP }}/src/environments/environment.ts
-            invest-web/projects/${{ env.APP }}/public/federation.manifest.json
+          files: '["invest-web/projects/${{ env.APP }}/src/environments/environment.ts", "invest-web/projects/${{ env.APP }}/public/federation.manifest.json"]'
+
         env:
           assetsUrl: ${{ env.SHELL_ASSETS_URL }}
           manifestUrl: ${{ env.MANIFEST_URL }}
