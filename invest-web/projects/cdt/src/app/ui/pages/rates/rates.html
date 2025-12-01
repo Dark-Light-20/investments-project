@@ -4,22 +4,8 @@
     <p class="text-gray-600">Find the highest returns for your investment based on amount and term.</p>
   </div>
 
-  <div class="flex items-center gap-4 mb-8">
-    <span class="text-gray-500">Sort by:</span>
-    <button
-      (click)="selectedFilter.set(SortType.RATE)"
-      [ngClass]="rateSortButtonClasses()"
-      class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
-      data-testid="rateSortButton">
-      Rate
-    </button>
-    <button
-      (click)="selectedFilter.set(SortType.BANK)"
-      [ngClass]="bankSortButtonClasses()"
-      class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
-      data-testid="bankSortButton">
-      Bank
-    </button>
+  <div class="mb-8">
+    <app-sort-rates #sortedRatesList [rates]="ratesList()" />
   </div>
 
   @if (showFailedBanks()) {
@@ -64,7 +50,7 @@
               Failed to load rates. Please try again later.
             </td>
           </tr>
-          } @else { @for(rate of sortedRates(); track rate) {
+          } @else { @for(rate of sortedRatesList.sortedRates(); track rate) {
           <tr class="hover:bg-gray-50" data-testid="rate-row">
             @let rateProperties = (rate | rateProperties);
             <td class="px-6 py-4" data-testid="cell-bank">
