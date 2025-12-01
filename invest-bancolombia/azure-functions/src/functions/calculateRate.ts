@@ -8,8 +8,8 @@ export async function calculateRate(
 ): Promise<HttpResponseInit> {
   try {
     const cdtUseCase = new CdtUseCase(new CdtService());
-    const { amount, days } = (await request.json()) as CdtRQ;
-    const rate: CDTRate = await cdtUseCase.getCDTRate(amount, days);
+    const { amount, term } = (await request.json()) as CdtRQ;
+    const rate: CDTRate = await cdtUseCase.getCDTRate(amount, term);
     return { jsonBody: rate };
   } catch (error) {
     const { message } = error as Error;

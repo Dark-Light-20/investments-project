@@ -16,8 +16,8 @@ export const cdtRoutesBuilder = (cdtUseCase: CdtUseCase): Router => {
 
   route.post("/calculateRate", async (req: Request, res: Response) => {
     try {
-      const { amount, days } = req.body;
-      const rate: CDTRate = await cdtUseCase.getCDTRate(amount, days);
+      const { amount, term } = req.body;
+      const rate: CDTRate = await cdtUseCase.getCDTRate(amount, term);
       res.json(rate || "No rate found");
     } catch (error) {
       const { message } = error as Error;
@@ -27,8 +27,8 @@ export const cdtRoutesBuilder = (cdtUseCase: CdtUseCase): Router => {
 
   route.post("/calculateInvest", async (req: Request, res: Response) => {
     try {
-      const { amount, days } = req.body;
-      const invest: number = await cdtUseCase.calculateInvest(amount, days);
+      const { amount, term } = req.body;
+      const invest: number = await cdtUseCase.calculateInvest(amount, term);
       res.json(invest.toFixed(2));
     } catch (error) {
       const { message } = error as Error;

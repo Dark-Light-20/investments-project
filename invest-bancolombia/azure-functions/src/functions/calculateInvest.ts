@@ -8,8 +8,8 @@ export async function calculateInvest(
 ): Promise<HttpResponseInit> {
   try {
     const cdtUseCase = new CdtUseCase(new CdtService());
-    const { amount, days } = (await request.json()) as CdtRQ;
-    const invest: number = await cdtUseCase.calculateInvest(amount, days);
+    const { amount, term } = (await request.json()) as CdtRQ;
+    const invest: number = await cdtUseCase.calculateInvest(amount, term);
     return { jsonBody: invest.toFixed(2) };
   } catch (error) {
     const { message } = error as Error;
