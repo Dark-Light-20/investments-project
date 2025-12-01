@@ -4,4 +4,5 @@ export const environment = {
   bancoDeBogotaUrl: 'http://localhost:3001',
   finandinaUrl: 'http://localhost:3005',
   nuUrl: 'http://localhost:3004',
+  assetsUrl: 'http://localhost:4202',
 };

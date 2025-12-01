@@ -4,4 +4,5 @@ export const environment = {
   bancoDeBogotaUrl: '#{bancoDeBogotaUrl}#',
   finandinaUrl: '#{finandinaUrl}#',
   nuUrl: '#{nuUrl}#',
+  assetsUrl: '#{assetsUrl}#',
 };

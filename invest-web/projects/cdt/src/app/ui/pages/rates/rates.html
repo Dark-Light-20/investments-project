@@ -68,13 +68,12 @@
           <tr class="hover:bg-gray-50" data-testid="rate-row">
             @let rateProperties = (rate | rateProperties);
             <td class="px-6 py-4" data-testid="cell-bank">
-              <!-- TODO: Change to bank logo -->
               <div class="flex items-center gap-3">
                 <div
-                  class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-white text-xs font-bold">
-                  {{ rate.bankName | bankInitials }}
+                  class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200 overflow-hidden shrink-0">
+                  <img [ngSrc]="rate.bankName | bankLogo" width="32" height="32" alt="{{ rate.bankName }} logo" />
                 </div>
-                <span class="font-medium text-gray-900">{{ rate.bankName }}</span>
+                <span class="font-medium text-gray-900 whitespace-nowrap">{{ rate.bankName }}</span>
               </div>
             </td>
             <td class="px-6 py-4 text-green-600 font-bold" data-testid="cell-rate">{{rateProperties.rateValue}}</td>

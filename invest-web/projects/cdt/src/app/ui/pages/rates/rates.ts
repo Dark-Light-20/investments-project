@@ -1,15 +1,15 @@
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { Cdt } from '@cdt/application/use-cases/cdt/cdt';
-import { BankInitialsPipe } from '@cdt/ui/pipes/bank-initials-pipe';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import { firstValueFrom } from 'rxjs';
 import { CdtProviders } from '@cdt/config/cdt.config';
-import { CurrencyPipe, NgClass } from '@angular/common';
+import { CurrencyPipe, NgClass, NgOptimizedImage } from '@angular/common';
 import { SortType } from '@cdt/ui/models/sort.model';
+import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 
 @Component({
   selector: 'app-rates',
-  imports: [BankInitialsPipe, RatePropertiesPipe, NgClass],
+  imports: [BankLogoPipe, RatePropertiesPipe, NgClass, NgOptimizedImage],
   templateUrl: './rates.html',
   providers: [...CdtProviders, CurrencyPipe],
 })

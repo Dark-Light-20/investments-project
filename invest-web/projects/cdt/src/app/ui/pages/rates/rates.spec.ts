@@ -8,8 +8,8 @@ import { Bank, CdtRatesResponse } from '@cdt/domain/models/cdt.model';
 import { CDTTermUnit } from '@dark-light-20/invest-domain';
 import { By } from '@angular/platform-browser';
 import { CurrencyPipe } from '@angular/common';
-import { BankInitialsPipe } from '@cdt/ui/pipes/bank-initials-pipe';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
+import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 
 const sampleRate = {
   rate: 8.5,
@@ -33,13 +33,13 @@ const cdtUseCaseMock = {
 describe('Rates', () => {
   let component: Rates;
   let fixture: ComponentFixture<Rates>;
-  let bankInitialsPipe: BankInitialsPipe;
+  let bankLogoPipe: BankLogoPipe;
   let ratePropertiesPipe: RatePropertiesPipe;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Rates],
-      providers: [BankInitialsPipe, RatePropertiesPipe, CurrencyPipe],
+      providers: [BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
     })
       .overrideComponent(Rates, {
         set: {
@@ -50,7 +50,7 @@ describe('Rates', () => {
 
     fixture = TestBed.createComponent(Rates);
     component = fixture.componentInstance;
-    bankInitialsPipe = TestBed.inject(BankInitialsPipe);
+    bankLogoPipe = TestBed.inject(BankLogoPipe);
     ratePropertiesPipe = TestBed.inject(RatePropertiesPipe);
     fixture.detectChanges();
   });
@@ -69,13 +69,14 @@ describe('Rates', () => {
     expect(rows).toHaveLength(1);
 
     const row = rows[0];
-    const bank = row.query(By.css('[data-testid="cell-bank"]'))?.nativeElement?.textContent;
+    const bankName = row.query(By.css('[data-testid="cell-bank"] span'))?.nativeElement?.textContent;
+    const bankLogo = row.query(By.css('[data-testid="cell-bank"] img'))?.nativeElement?.src;
     const rate = row.query(By.css('[data-testid="cell-rate"]'))?.nativeElement?.textContent;
     const amount = row.query(By.css('[data-testid="cell-amount"]'))?.nativeElement?.textContent;
     const term = row.query(By.css('[data-testid="cell-term"]'))?.nativeElement?.textContent;
 
-    expect(bank).toContain(Bank.Bancolombia);
-    expect(bank).toContain(bankInitialsPipe.transform(Bank.Bancolombia));
+    expect(bankName).toContain(Bank.Bancolombia);
+    expect(bankLogo).toContain(bankLogoPipe.transform(Bank.Bancolombia));
     const rateProperties = ratePropertiesPipe.transform(sampleRate);
     expect(rate).toContain(rateProperties.rateValue);
     expect(amount).toContain(rateProperties.amountRange);
