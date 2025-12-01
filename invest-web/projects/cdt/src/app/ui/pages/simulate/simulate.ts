@@ -30,6 +30,7 @@ import {
   ],
   templateUrl: './simulate.html',
   providers: [...CdtProviders, CurrencyPipe],
+  styleUrls: ['./simulate.css'],
 })
 export class Simulate {
   private readonly _cdtUseCase = inject(Cdt);

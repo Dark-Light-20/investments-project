@@ -11,10 +11,12 @@
         (ngSubmit)="doSimulation()"
         class="bg-white rounded-lg shadow-sm border border-gray-200 p-6"
         data-testid="simulationForm">
-        <h2 class="text-xl font-semibold text-gray-900 mb-6">Detalles de la inversión</h2>
+        <h2 class="text-xl font-semibold text-gray-900 mb-6">Simula tu Inversión</h2>
 
         <div class="mb-4">
-          <label for="investment-amount" class="block text-sm font-medium text-gray-700 mb-1">Monto a invertir</label>
+          <label for="investment-amount" class="block text-sm font-medium text-gray-700 mb-1">
+            Monto a invertir (COP)
+          </label>
           <div class="relative rounded-md shadow-sm">
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <span class="text-gray-500 sm:text-sm">$</span>
@@ -23,7 +25,7 @@
               id="investment-amount"
               type="number"
               formControlName="investedAmount"
-              class="block w-full rounded-md border-gray-300 pl-7 py-2 focus:border-blue-500 focus:ring-blue-500 sm:text-sm border"
+              class="block w-full rounded-md border-gray-300 p-3 pl-7 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               placeholder="100,000" />
           </div>
         </div>
@@ -36,7 +38,7 @@
             id="investment-term"
             type="number"
             formControlName="termInDays"
-            class="block w-full rounded-md border-gray-300 py-2 px-3 focus:border-blue-500 focus:ring-blue-500 sm:text-sm border"
+            class="block w-full rounded-md border-gray-300 p-3 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             placeholder="90" />
         </div>
 

@@ -16,10 +16,6 @@ export const routes: Routes = [
     loadChildren: () => loadRemoteModule('cdt', './CdtRoutes').then(m => m.routes),
   },
   {
-    path: 'prototype',
-    loadComponent: () => import('./ui/pages/prototype/prototype.component').then(m => m.PrototypeComponent),
-  },
-  {
     path: 'fics',
     // TODO
     // loadChildren: () => loadRemoteModule('fic', './FicRoutes').then(m => m.routes),
