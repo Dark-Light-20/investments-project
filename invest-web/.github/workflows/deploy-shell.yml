@@ -1,0 +1,53 @@
+name: Deploy shell (root)
+
+on:
+  push:
+    branches: ['main']
+    paths:
+      - 'projects/shell/**'
+
+env:
+  SHELL_ASSETS_URL: ${{ vars.SHELL_ASSETS_URL }}
+  APP: shell
+  BUILD_DIR: dist/shell/browser
+  DESTINATION_DIR: '/'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Replace tokens
+        uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '#{'
+          tokenSuffix: '}#'
+          files: |
+            projects/${{ env.APP }}/src/environments/environment.ts
+        env:
+          assetsUrl: ${{ env.SHELL_ASSETS_URL }}
+
+      - name: Build Shell
+        run: npm run build -- ${{ env.APP }}
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.SHELL_CLOUDFLARE_PROJECT_NAME }}
+          directory: ${{ env.BUILD_DIR }}
+          branch: main
+          wranglerVersion: '3'
+          destinationDir: ${{ env.DESTINATION_DIR }}
