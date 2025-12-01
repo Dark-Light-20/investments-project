@@ -20,6 +20,24 @@ export const routes: Routes = [
     loadComponent: () => import('./ui/pages/prototype/prototype.component').then(m => m.PrototypeComponent),
   },
   {
+    path: 'fics',
+    // TODO
+    // loadChildren: () => loadRemoteModule('fic', './FicRoutes').then(m => m.routes),
+    redirectTo: 'soon',
+    pathMatch: 'full',
+  },
+  {
+    path: 'pockets',
+    // TODO
+    // loadChildren: () => loadRemoteModule('pocket', './PocketRoutes').then(m => m.routes),
+    redirectTo: 'soon',
+    pathMatch: 'full',
+  },
+  {
+    path: 'soon',
+    loadComponent: () => import('./ui/pages/soon/soon').then(m => m.Soon),
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full',
