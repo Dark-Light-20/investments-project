@@ -10,7 +10,7 @@ on:
 env:
   SHELL_ASSETS_URL: ${{ vars.SHELL_ASSETS_URL }}
   APP: shell
-  BUILD_DIR: dist/shell/browser
+  BUILD_DIR: invest-web/dist/shell/browser
   DESTINATION_DIR: "/"
 
 jobs:
