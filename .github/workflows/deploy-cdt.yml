@@ -1,14 +1,14 @@
-name: Deploy shell
+name: Deploy cdt
 
 on:
   push:
     branches: ["main"]
     paths:
-      - "invest-web/projects/shell/**"
+      - "invest-web/projects/cdt/**"
   workflow_dispatch:
 
 env:
-  APP: shell
+  APP: cdt
 
 jobs:
   build-and-deploy:
@@ -35,14 +35,16 @@ jobs:
       - name: Replace tokens
         uses: cschleiden/replace-tokens@v1
         with:
-          files: '["${{ env.PROJECT_DIR }}/src/environments/environment.ts","${{ env.PROJECT_DIR }}/public/federation.manifest.json"]'
+          files: '["${{ env.PROJECT_DIR }}/src/environments/environment.ts"]'
         env:
-          assetsUrl: ${{ vars.SHELL_ASSETS_URL }}
-          manifestUrl: ${{ vars.MANIFEST_URL }}
-          homeRemoteEntry: ${{ vars.HOMEREMOTEENTRY }}
-          cdtRemoteEntry: ${{ vars.CDTREMOTEENTRY }}
+          assetsUrl: ${{ vars.CDT_ASSETS_URL }}
+          ban100Url: "${{ vars.BAN100_URL }}"
+          bancolombiaUrl: "${{ vars.BANCOLOMBIA_URL }}"
+          bancoDeBogotaUrl: "${{ vars.BANCO_DE_BOGOTA_URL }}"
+          finandinaUrl: "${{ vars.FINANDINA_URL }}"
+          nuUrl: "${{ vars.NU_URL }}"
 
-      - name: Build Shell
+      - name: Build CDT
         run: npm run build -- ${{ env.APP }}
 
       - name: Unit Test
@@ -53,4 +55,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ${{ env.BUILD_DIR }} --project-name=${{ vars.SHELL_CLOUDFLARE_PROJECT_NAME }}
+          command: pages deploy ${{ env.BUILD_DIR }} --project-name=${{ vars.CDT_CLOUDFLARE_PROJECT_NAME }}
