@@ -130,4 +130,73 @@ describe('Rates', () => {
     expect(alert.nativeElement.textContent).toContain('Bank A');
     expect(alert.nativeElement.textContent).toContain('Bank B');
   });
+
+  describe('Sorting functionality', () => {
+    test('sorts by rate when Rate button is clicked', async () => {
+      const rates = [
+        { ...sampleRate, rate: 7.2, bankName: Bank.Bancolombia },
+        { ...sampleRate, rate: 9.5, bankName: Bank.Nu },
+      ];
+      cdtUseCaseMock.getAllCDTRates.mockReturnValueOnce(of({ rates, failedBanks: [] } as CdtRatesResponse));
+
+      component.ratesResource.reload();
+
+      await fixture.whenStable();
+      fixture.detectChanges();
+
+      const rateButton = fixture.debugElement.query(By.css('button[data-testid="rateSortButton"]'));
+      rateButton.triggerEventHandler('click');
+      fixture.detectChanges();
+
+      const rows = fixture.debugElement.queryAll(By.css('[data-testid="rate-row"]'));
+      const firstRowBank = rows[0].query(By.css('[data-testid="cell-bank"]'))?.nativeElement?.textContent;
+
+      expect(firstRowBank).toContain(Bank.Nu);
+    });
+
+    test('sorts by bank when Bank button is clicked', async () => {
+      const rates = [
+        { ...sampleRate, rate: 7.2, bankName: Bank.Nu },
+        { ...sampleRate, rate: 9.5, bankName: Bank.Finandina },
+      ];
+      cdtUseCaseMock.getAllCDTRates.mockReturnValueOnce(of({ rates, failedBanks: [] } as CdtRatesResponse));
+
+      component.ratesResource.reload();
+
+      await fixture.whenStable();
+      fixture.detectChanges();
+
+      const bankButton = fixture.debugElement.query(By.css('button[data-testid="bankSortButton"]'));
+      bankButton.triggerEventHandler('click');
+      fixture.detectChanges();
+
+      const rows = fixture.debugElement.queryAll(By.css('[data-testid="rate-row"]'));
+      const firstRowBank = rows[0].query(By.css('[data-testid="cell-bank"]'))?.nativeElement?.textContent;
+
+      expect(firstRowBank).toContain(Bank.Finandina);
+    });
+
+    test('should update button classes based on selected sort', async () => {
+      component.selectedFilter.set(undefined);
+      fixture.detectChanges();
+
+      const rateButton = fixture.debugElement.query(By.css('button[data-testid="rateSortButton"]'));
+      const bankButton = fixture.debugElement.query(By.css('button[data-testid="bankSortButton"]'));
+
+      expect(rateButton.nativeElement.className).toContain('text-gray-600');
+      expect(bankButton.nativeElement.className).toContain('text-gray-600');
+
+      component.selectedFilter.set(component.SortType.RATE);
+      fixture.detectChanges();
+
+      expect(rateButton.nativeElement.className).toContain('text-blue-600');
+      expect(bankButton.nativeElement.className).toContain('text-gray-600');
+
+      component.selectedFilter.set(component.SortType.BANK);
+      fixture.detectChanges();
+
+      expect(rateButton.nativeElement.className).toContain('text-gray-600');
+      expect(bankButton.nativeElement.className).toContain('text-blue-600');
+    });
+  });
 });

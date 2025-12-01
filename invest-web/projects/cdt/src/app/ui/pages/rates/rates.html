@@ -4,17 +4,20 @@
     <p class="text-gray-600">Find the highest returns for your investment based on amount and term.</p>
   </div>
 
-  <!-- TODO: Logic for filters -->
   <div class="flex items-center gap-4 mb-8">
     <span class="text-gray-500">Sort by:</span>
     <button
-      class="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
-      Highest Yield
-    </button>
-    <button class="text-gray-600 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors">
+      (click)="selectedFilter.set(SortType.RATE)"
+      [ngClass]="rateSortButtonClasses()"
+      class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
+      data-testid="rateSortButton">
       Rate
     </button>
-    <button class="text-gray-600 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors">
+    <button
+      (click)="selectedFilter.set(SortType.BANK)"
+      [ngClass]="bankSortButtonClasses()"
+      class="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
+      data-testid="bankSortButton">
       Bank
     </button>
   </div>
@@ -61,10 +64,11 @@
               Failed to load rates. Please try again later.
             </td>
           </tr>
-          } @else { @for(rate of ratesResource.value()?.rates; track rate) {
+          } @else { @for(rate of sortedRates(); track rate) {
           <tr class="hover:bg-gray-50" data-testid="rate-row">
             @let rateProperties = (rate | rateProperties);
             <td class="px-6 py-4" data-testid="cell-bank">
+              <!-- TODO: Change to bank logo -->
               <div class="flex items-center gap-3">
                 <div
                   class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-white text-xs font-bold">
