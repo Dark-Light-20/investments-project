@@ -4,6 +4,7 @@ import { CurrencyPipe } from '@angular/common';
 import { Bank, CdtRate } from '@cdt/domain/models/cdt.model';
 import { CDTTermUnit } from '@dark-light-20/invest-domain';
 import { MAX_AMOUNT_THRESHOLD, MAX_TERM_THRESHOLD } from '../utils/number.constants';
+import { FROM_LABEL } from '../utils/text.constants';
 
 describe('RatePropertiesPipe', () => {
   let pipe: RatePropertiesPipe;
@@ -54,8 +55,8 @@ describe('RatePropertiesPipe', () => {
 
     expect(result).toEqual({
       rateValue: '3.20%',
-      termRange: 'From 60',
-      amountRange: 'From $2,000,000.00',
+      termRange: `${FROM_LABEL} 60`,
+      amountRange: `${FROM_LABEL} $2,000,000.00`,
     });
   });
 });
