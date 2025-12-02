@@ -13,7 +13,7 @@ export async function rates(): Promise<HttpResponseInit> {
   }
 }
 
-app.http("rates", {
+app.http("getCDTRates", {
   methods: ["GET"],
   authLevel: "anonymous",
   handler: rates,

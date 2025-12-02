@@ -13,7 +13,7 @@ export async function ficRates(): Promise<HttpResponseInit> {
   }
 }
 
-app.http("ficRates", {
+app.http("getFICs", {
   methods: ["GET"],
   authLevel: "anonymous",
   handler: ficRates,

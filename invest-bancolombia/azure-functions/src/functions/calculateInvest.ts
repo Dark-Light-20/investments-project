@@ -17,7 +17,7 @@ export async function calculateInvest(
   }
 }
 
-app.http("calculateInvest", {
+app.http("calculateCDTInvest", {
   methods: ["POST"],
   authLevel: "anonymous",
   handler: calculateInvest,

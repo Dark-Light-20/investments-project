@@ -17,7 +17,7 @@ export async function calculateRate(
   }
 }
 
-app.http("calculateRate", {
+app.http("calculateCDTRate", {
   methods: ["POST"],
   authLevel: "anonymous",
   handler: calculateRate,
