@@ -1,1 +1,1 @@
-export const FROM_LABEL = 'From';
+export const FROM_LABEL = 'Desde';
