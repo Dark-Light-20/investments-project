@@ -5,7 +5,7 @@
   </div>
 
   <div class="mb-8">
-    <app-sort-rates #sortedRatesList [rates]="ratesList()" />
+    <app-sort-rates #sortedRatesList [rates]="ratesList()" (changedFilter)="paginationComponent()?.goToPage(1)" />
   </div>
 
   @if (showFailedBanks()) {
@@ -17,32 +17,35 @@
       <table class="w-full text-left text-sm">
         <thead class="bg-white border-b border-gray-200">
           <tr>
-            <th class="px-6 py-4 font-medium text-gray-900">Banco</th>
-            <th class="px-6 py-4 font-medium text-gray-900">Tasa efectiva anual (E.A.)</th>
-            <th class="px-6 py-4 font-medium text-gray-900">Rango de monto</th>
-            <th class="px-6 py-4 font-medium text-gray-900">Plazo (días)</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">Banco</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">Tasa efectiva anual (E.A.)</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">Rango de monto</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">Plazo (días)</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
           @if(ratesResource.isLoading()) {
 
           <tr>
-            <td colspan="4" class="px-6 py-4 text-center text-gray-500" data-testid="loading-row">Cargando tasas...</td>
+            <td colspan="4" class="px-2 md:px-6 py-4 text-center text-gray-500" data-testid="loading-row">
+              Cargando tasas...
+            </td>
           </tr>
 
           } @else if(ratesResource.error()) {
 
           <tr>
-            <td colspan="4" class="px-6 py-4 text-center text-red-500" data-testid="error-row">
+            <td colspan="4" class="px-2 md:px-6 py-4 text-center text-red-500" data-testid="error-row">
               No se pudieron cargar las tasas. Inténtalo de nuevo más tarde.
             </td>
           </tr>
 
-          } @else { @for(rate of sortedRatesList.sortedRates().rates; track rate) {
+          } @else { @for( rate of sortedRatesList.sortedRates().rates.slice(pagination.initIndex(),
+          pagination.endIndex()); track rate.id ) {
 
           <tr class="hover:bg-gray-50" data-testid="rate-row">
             @let rateProperties = (rate | rateProperties);
-            <td class="px-6 py-4" data-testid="cell-bank">
+            <td class="px-2 md:px-6 py-4" data-testid="cell-bank">
               <div class="flex items-center gap-3">
                 <div
                   class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200 overflow-hidden shrink-0">
@@ -51,12 +54,20 @@
                 <span class="font-medium text-gray-900 whitespace-nowrap">{{ rate.bankName }}</span>
               </div>
             </td>
-            <td class="px-6 py-4 text-green-600 font-bold" data-testid="cell-rate">{{rateProperties.rateValue}}</td>
-            <td class="px-6 py-4 text-gray-600" data-testid="cell-amount">{{rateProperties.amountRange}}</td>
-            <td class="px-6 py-4 text-gray-600" data-testid="cell-term">{{rateProperties.termRange}}</td>
+            <td class="px-2 md:px-6 py-4 text-green-600 font-bold" data-testid="cell-rate">
+              {{rateProperties.rateValue}}
+            </td>
+            <td class="px-2 md:px-6 py-4 text-gray-600" data-testid="cell-amount">{{rateProperties.amountRange}}</td>
+            <td class="px-2 md:px-6 py-4 text-gray-600" data-testid="cell-term">{{rateProperties.termRange}}</td>
           </tr>
 
-          }}
+          }
+          <tr>
+            <td colspan="4" class="px-2 md:px-6 py-4">
+              <app-pagination #pagination [items]="sortedRatesList.sortedRates().rates" itemsLabel="tasas" />
+            </td>
+          </tr>
+          }
         </tbody>
       </table>
     </div>

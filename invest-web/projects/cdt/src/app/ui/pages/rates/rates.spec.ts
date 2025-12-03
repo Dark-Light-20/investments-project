@@ -4,15 +4,19 @@ import { Rates } from './rates';
 import { MockProvider } from 'ng-mocks';
 import { Cdt } from '@cdt/application/use-cases/cdt/cdt';
 import { of, throwError } from 'rxjs';
-import { Bank, CdtRatesResponse } from '@cdt/domain/models/cdt.model';
+import { Bank, CdtRate, CdtRatesResponse } from '@cdt/domain/models/cdt.model';
 import { CDTTermUnit } from '@dark-light-20/invest-domain';
 import { By } from '@angular/platform-browser';
 import { CurrencyPipe } from '@angular/common';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
+import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
+import { SortType } from '@cdt/ui/models/sort.model';
+import { Pagination } from '@cdt/ui/components/pagination/pagination';
 
 const sampleRate = {
+  id: 'sample-id',
   rate: 8.5,
   minimumTerm: 30,
   maximumTerm: 60,
@@ -128,5 +132,20 @@ describe('Rates', () => {
 
     const alert = fixture.debugElement.query(By.directive(FailedBanksAlert));
     expect(alert).toBeTruthy();
+  });
+
+  test('should set page 1 when sort filter changes', async () => {
+    await fixture.whenStable();
+    fixture.detectChanges();
+
+    const sortRatesComponent = fixture.debugElement.query(By.directive(SortRates)).componentInstance as SortRates<{
+      rates: CdtRate[];
+    }>;
+    const paginationComponent = fixture.debugElement.query(By.directive(Pagination)).componentInstance as Pagination;
+    const goToPageSpy = jest.spyOn(paginationComponent, 'goToPage');
+
+    sortRatesComponent.changedFilter.emit(SortType.RATE);
+
+    expect(goToPageSpy).toHaveBeenCalledWith(1);
   });
 });

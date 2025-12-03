@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { CdtRate } from '@cdt/domain/models/cdt.model';
 import { SortType } from '@cdt/ui/models/sort.model';
 
@@ -10,6 +10,7 @@ import { SortType } from '@cdt/ui/models/sort.model';
 })
 export class SortRates<T extends { rates: CdtRate[] }> {
   readonly rates = input.required<T>();
+  readonly changedFilter = output<SortType>();
 
   readonly SortType = SortType;
   readonly selectedFilter = signal<SortType | undefined>(undefined);
@@ -36,5 +37,10 @@ export class SortRates<T extends { rates: CdtRate[] }> {
     return this.selectedFilter() === type
       ? 'bg-blue-100 text-blue-600 hover:bg-blue-200'
       : 'text-gray-600 hover:bg-gray-200';
+  }
+
+  changeFilter(type: SortType) {
+    this.selectedFilter.set(type);
+    this.changedFilter.emit(type);
   }
 }

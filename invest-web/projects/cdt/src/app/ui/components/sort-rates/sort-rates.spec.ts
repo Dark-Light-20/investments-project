@@ -95,4 +95,20 @@ describe('SortRates', () => {
     expect(rateButton.nativeElement.className).toContain('text-gray-600');
     expect(bankButton.nativeElement.className).toContain('text-blue-600');
   });
+
+  test('should emit when filter is changed', async () => {
+    jest.spyOn(component.changedFilter, 'emit');
+
+    const rateButton = fixture.debugElement.query(By.css('button[data-testid="rateSortButton"]'));
+    rateButton.triggerEventHandler('click');
+    fixture.detectChanges();
+
+    expect(component.changedFilter.emit).toHaveBeenCalledWith(component.SortType.RATE);
+
+    const bankButton = fixture.debugElement.query(By.css('button[data-testid="bankSortButton"]'));
+    bankButton.triggerEventHandler('click');
+    fixture.detectChanges();
+
+    expect(component.changedFilter.emit).toHaveBeenCalledWith(component.SortType.BANK);
+  });
 });

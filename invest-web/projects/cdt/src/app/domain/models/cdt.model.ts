@@ -1,6 +1,7 @@
 import { CDTRate } from '@dark-light-20/invest-domain';
 
 export interface CdtRate extends CDTRate {
+  id: string;
   bankName: Bank;
 }
 

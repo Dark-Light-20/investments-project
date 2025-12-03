@@ -18,6 +18,7 @@ describe('cdtMapper', () => {
     const result = cdtMapper(mockDto, bankName);
 
     expect(result).toEqual({
+      id: expect.any(String),
       bankName: Bank.Bancolombia,
       rate: 12.5,
       minimumTerm: 90,
