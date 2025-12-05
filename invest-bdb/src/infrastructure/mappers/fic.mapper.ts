@@ -27,15 +27,15 @@ export const ficMapper = (rawFIC: FICRawModel): FIC => {
       },
       {
         historicDays: 360,
-        rate: parseFloat(rawFIC["Último Año"]),
+        rate: parseFloat(rawFIC["último Año"]),
       },
       {
         historicDays: 720,
-        rate: parseFloat(rawFIC["Últimos 2 Años"]),
+        rate: parseFloat(rawFIC["últimos 2 Años"]),
       },
       {
         historicDays: 1080,
-        rate: parseFloat(rawFIC["Últimos 3 Años"]),
+        rate: parseFloat(rawFIC["últimos 3 Años"]),
       },
     ],
   };

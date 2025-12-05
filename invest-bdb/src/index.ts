@@ -6,7 +6,7 @@ import cors from "cors";
 import { CdtService } from "./infrastructure/http-adapters/cdt.service.js";
 import { CdtUseCase, FICUseCase } from "@dark-light-20/invest-domain";
 import { cdtRoutesBuilder } from "./adapters/routes/cdt.route.js";
-import { ficRoutesBuilder } from "./adapters/routes/fics.route.js";
+import { ficRoutesBuilder } from "./adapters/routes/fic.route.js";
 import { FicService } from "./infrastructure/http-adapters/fic.service.js";
 
 // Config
@@ -38,7 +38,7 @@ const ficUseCase = new FICUseCase(ficService);
 const cdtRoutes = cdtRoutesBuilder(cdtUseCase);
 const ficRoutes = ficRoutesBuilder(ficUseCase);
 app.use("/cdt", cdtRoutes);
-app.use("/fics", ficRoutes);
+app.use("/fic", ficRoutes);
 
 app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}!`);

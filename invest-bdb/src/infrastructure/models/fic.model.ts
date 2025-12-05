@@ -6,9 +6,9 @@ export interface FICRawModel {
   Trimestral: string;
   Semestral: string;
   "Año Corrido": string;
-  "Último Año": string;
-  "Últimos 2 Años": string;
-  "Últimos 3 Años": string;
+  "último Año": string;
+  "últimos 2 Años": string;
+  "últimos 3 Años": string;
   "Valor Unidad": string;
   "Valor del Fondo*": string;
 }

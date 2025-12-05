@@ -1,0 +1,55 @@
+name: Deploy fic
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "invest-web/projects/fic/**"
+  workflow_dispatch:
+
+env:
+  APP: fic
+  PROJECT_DIR: invest-web/projects/fic
+  BUILD_DIR: invest-web/dist/fic/browser
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: invest-web
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Unit Test
+        run: npm run test:${{ env.APP }}
+
+      - name: Replace tokens
+        uses: cschleiden/replace-tokens@v1
+        with:
+          files: '["${{ env.PROJECT_DIR }}/src/environments/environment.ts"]'
+        env:
+          assetsUrl: ${{ vars.FIC_ASSETS_URL }}
+          ficListEndpoint: "${{ vars.FIC_LIST_ENDPOINT }}"
+          bancolombiaUrl: "${{ vars.BANCOLOMBIA_URL }}"
+          bancoDeBogotaUrl: "${{ vars.BANCO_DE_BOGOTA_URL }}"
+
+      - name: Build FIC
+        run: npm run build -- ${{ env.APP }}
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ${{ env.BUILD_DIR }} --project-name=${{ vars.FIC_CLOUDFLARE_PROJECT_NAME }}
