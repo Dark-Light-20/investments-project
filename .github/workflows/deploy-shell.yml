@@ -43,6 +43,7 @@ jobs:
           manifestUrl: ${{ vars.MANIFEST_URL }}
           homeRemoteEntry: ${{ vars.HOME_REMOTE_ENTRY }}
           cdtRemoteEntry: ${{ vars.CDT_REMOTE_ENTRY }}
+          ficRemoteEntry: ${{ vars.FIC_REMOTE_ENTRY }}
 
       - name: Build Shell
         run: npm run build -- ${{ env.APP }}
