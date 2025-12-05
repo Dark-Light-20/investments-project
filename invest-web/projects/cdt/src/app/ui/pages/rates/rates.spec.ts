@@ -14,6 +14,7 @@ import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-b
 import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { SortType } from '@cdt/ui/models/sort.model';
 import { Pagination } from '@cdt/ui/components/pagination/pagination';
+import { provideRouter } from '@angular/router';
 
 const sampleRate = {
   id: 'sample-id',
@@ -44,7 +45,7 @@ describe('Rates', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Rates],
-      providers: [BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
+      providers: [provideRouter([]), BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
     })
       .overrideComponent(Rates, {
         set: {

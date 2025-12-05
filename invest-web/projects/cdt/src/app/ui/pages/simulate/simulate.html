@@ -1,7 +1,29 @@
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
   <div class="mb-8">
-    <h1 class="text-3xl font-bold text-gray-900 mb-2">Simulador de rendimientos de CDT</h1>
-    <p class="text-gray-600">Compara y encuentra el mejor retorno para tu inversión.</p>
+    <div class="flex items-start gap-4 mb-4">
+      <a
+        routerLink="/cdts"
+        class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+        data-testid="backToCDTsButton"
+        title="Volver al menú de CDT">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 6l-6 6l6 6" />
+        </svg>
+      </a>
+      <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Simulador de rendimientos de CDT</h1>
+    </div>
+    <p class="mt-4 text-lg text-gray-500 max-w-3xl">Compara y encuentra el mejor retorno para tu inversión.</p>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">

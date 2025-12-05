@@ -13,7 +13,7 @@ export class SortRates<T extends { rates: CdtRate[] }> {
   readonly changedFilter = output<SortType>();
 
   readonly SortType = SortType;
-  readonly selectedFilter = signal<SortType | undefined>(undefined);
+  readonly selectedFilter = signal<SortType>(SortType.RATE);
   protected readonly rateSortButtonClasses = computed(() => this.getSortButtonClasses(SortType.RATE));
   protected readonly bankSortButtonClasses = computed(() => this.getSortButtonClasses(SortType.BANK));
 

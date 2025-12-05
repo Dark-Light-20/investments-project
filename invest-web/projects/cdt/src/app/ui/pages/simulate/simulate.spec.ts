@@ -12,8 +12,10 @@ import { MockProvider } from 'ng-mocks';
 import { Cdt } from '@cdt/application/use-cases/cdt/cdt';
 import { By } from '@angular/platform-browser';
 import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
+import { provideRouter } from '@angular/router';
 
 const sampleSimulation: CdtSimulation = {
+  id: 'sample-simulation-id',
   rate: 8.5,
   minimumTerm: 30,
   maximumTerm: 60,
@@ -43,7 +45,7 @@ describe('Simulate', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Simulate],
-      providers: [BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
+      providers: [provideRouter([]), BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
     })
       .overrideComponent(Simulate, {
         set: {
