@@ -17,17 +17,13 @@ export const routes: Routes = [
   },
   {
     path: 'fics',
-    // TODO
-    // loadChildren: () => loadRemoteModule('fic', './FicRoutes').then(m => m.routes),
-    redirectTo: 'soon',
-    pathMatch: 'full',
+    loadChildren: () => loadRemoteModule('fic', './FicRoutes').then(m => m.routes),
   },
   {
     path: 'pockets',
     // TODO
     // loadChildren: () => loadRemoteModule('pocket', './PocketRoutes').then(m => m.routes),
-    redirectTo: 'soon',
-    pathMatch: 'full',
+    children: [{ path: '**', redirectTo: '/soon', pathMatch: 'full' }],
   },
   {
     path: 'soon',

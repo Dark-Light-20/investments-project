@@ -1,0 +1,132 @@
+<div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+  <div class="mb-8">
+    <div class="flex items-start gap-4 mb-4">
+      <a
+        routerLink="/fics"
+        class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+        data-testid="backToFicsButton"
+        title="Volver al menú de FIC">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 6l-6 6l6 6" />
+        </svg>
+      </a>
+      <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Compara las mejores tasas de FIC</h1>
+    </div>
+    <p class="mt-4 text-lg text-gray-500 max-w-3xl">
+      Encuentra el comportamiento de la tasa Efectiva Anual (E.A.) del mercado de fondos de inversión a través del
+      tiempo para tomar la mejor decisión de inversión a largo plazo.
+    </p>
+  </div>
+
+  <div class="mb-8">
+    <app-sort-rates #sortedRatesList [rates]="ratesList()" (changedFilter)="paginationComponent()?.goToPage(1)" />
+  </div>
+
+  @if (showFailedBanks()) {
+  <app-failed-banks-alert [failedBanks]="ratesResource.value()?.failedBanks ?? []" />
+  }
+
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-white border-b border-gray-200">
+          <tr>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">Nombre de Fondo</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">Hoy</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">1 semana</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">1 mes</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">6 meses</th>
+            <th class="min-w-28 px-2 md:px-6 py-4 font-medium text-gray-900">1 año</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          @if(ratesResource.isLoading()) {
+
+          <tr>
+            <td colspan="6" class="px-2 md:px-6 py-4 text-center text-gray-500" data-testid="loading-row">
+              Cargando fondos...
+            </td>
+          </tr>
+
+          } @else if(ratesResource.error()) {
+
+          <tr>
+            <td colspan="6" class="px-2 md:px-6 py-4 text-center text-red-500" data-testid="error-row">
+              No se pudieron cargar los fondos. Inténtalo de nuevo más tarde.
+            </td>
+          </tr>
+
+          } @else { @for( rate of sortedRatesList.sortedRates().rates.slice(pagination.initIndex(),
+          pagination.endIndex()); track rate.id ) {
+
+          <tr class="hover:bg-gray-50" data-testid="rate-row">
+            <td class="px-2 md:px-6 py-4" data-testid="cell-bank">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200 overflow-hidden shrink-0">
+                  <img [ngSrc]="rate.bankName | bankLogo" width="32" height="32" alt="{{ rate.bankName }} logo" />
+                </div>
+                <div>
+                  <span class="font-medium text-gray-900 whitespace-nowrap" data-testid="fic-name">
+                    {{ rate.name }}
+                  </span>
+                  <br />
+                  <span class="font-small text-gray-500 whitespace-nowrap" data-testid="bank-name">
+                    {{ rate.bankName }}
+                  </span>
+                </div>
+              </div>
+            </td>
+            <ng-container *ngTemplateOutlet="rateCell; context: {rate: rate, days: 1, testId: 'cell-1-day-rate'}">
+            </ng-container>
+            <ng-container *ngTemplateOutlet="rateCell; context: {rate: rate, days: 7, testId: 'cell-1-week-rate'}">
+            </ng-container>
+            <ng-container *ngTemplateOutlet="rateCell; context: {rate: rate, days: 30, testId: 'cell-1-month-rate'}">
+            </ng-container>
+            <ng-container *ngTemplateOutlet="rateCell; context: {rate: rate, days: 180, testId: 'cell-6-months-rate'}">
+            </ng-container>
+            <ng-container
+              *ngTemplateOutlet="rateCell; context: {rate: rate, days: [360, 365], testId: 'cell-1-year-rate'}">
+            </ng-container>
+          </tr>
+
+          }
+          <tr>
+            <td colspan="6" class="px-2 md:px-6 py-4">
+              <app-pagination #pagination [items]="sortedRatesList.sortedRates().rates" itemsLabel="fondos" />
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #rateCell let-rate="rate" let-days="days" let-testId="testId">
+  <td class="px-2 md:px-6 py-4" [attr.data-testid]="testId">
+    @let rateValue = findRateByDays(rate, days)?.rate; @if(rateValue) {
+    <span
+      [ngClass]="{'font-bold': days===1, 'font-semibold': days!==1, 'text-green-600': rateValue>0 && days===1, 'text-red-600': rateValue<0 && days===1, 
+      'text-green-400': rateValue>0 && days!==1, 'text-red-400': rateValue<0 && days!==1 }">
+      {{(rateValue / 100) | percent:'1.2-2'}}
+    </span>
+
+    } @else {
+
+    <span>--</span>
+
+    }
+  </td>
+</ng-template>

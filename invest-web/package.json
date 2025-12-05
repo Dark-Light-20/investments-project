@@ -10,6 +10,7 @@
     "test:shell": "jest --coverage projects/shell",
     "test:home": "jest --coverage projects/home",
     "test:cdt": "jest --coverage projects/cdt",
+    "test:fic": "jest --coverage projects/fic",
     "lint": "ng lint --fix",
     "format": "prettier --write ."
   },

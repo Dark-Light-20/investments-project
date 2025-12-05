@@ -18,12 +18,20 @@
     "module": "preserve",
     "baseUrl": "./",
     "paths": {
+      // CDT
       "@cdt/domain/*": ["projects/cdt/src/app/domain/*"],
       "@cdt/application/*": ["projects/cdt/src/app/application/*"],
       "@cdt/ui/*": ["projects/cdt/src/app/ui/*"],
       "@cdt/infrastructure/*": ["projects/cdt/src/app/infrastructure/*"],
       "@cdt/environments/*": ["projects/cdt/src/environments/*"],
-      "@cdt/config/*": ["projects/cdt/src/app/config/*"]
+      "@cdt/config/*": ["projects/cdt/src/app/config/*"],
+      // FIC
+      "@fic/domain/*": ["projects/fic/src/app/domain/*"],
+      "@fic/application/*": ["projects/fic/src/app/application/*"],
+      "@fic/ui/*": ["projects/fic/src/app/ui/*"],
+      "@fic/infrastructure/*": ["projects/fic/src/app/infrastructure/*"],
+      "@fic/environments/*": ["projects/fic/src/environments/*"],
+      "@fic/config/*": ["projects/fic/src/app/config/*"]
     }
   },
   "angularCompilerOptions": {
@@ -52,6 +60,12 @@
     },
     {
       "path": "./projects/cdt/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/fic/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/fic/tsconfig.spec.json"
     }
   ]
 }

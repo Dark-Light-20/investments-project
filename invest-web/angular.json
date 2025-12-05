@@ -219,13 +219,7 @@
             },
             "development": {
               "target": "cdt:esbuild:development",
-              "dev": true,
-              "fileReplacements": [
-                {
-                  "replace": "projects/cdt/src/environments/environment.ts",
-                  "with": "projects/cdt/src/environments/environment.development.ts"
-                }
-              ]
+              "dev": true
             }
           },
           "defaultConfiguration": "production"
@@ -318,6 +312,119 @@
           "defaultConfiguration": "development",
           "options": {
             "port": 4202
+          }
+        }
+      }
+    },
+    "fic": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/fic",
+      "sourceRoot": "projects/fic/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {},
+          "configurations": {
+            "production": {
+              "target": "fic:esbuild:production"
+            },
+            "development": {
+              "target": "fic:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "fic:serve-original:development",
+            "rebuildDelay": 0,
+            "dev": true,
+            "port": 0
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/fic/tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/fic/public"
+              }
+            ],
+            "styles": ["projects/fic/src/styles.css"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/fic/**/*.ts", "projects/fic/**/*.html"]
+          }
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/fic/src/main.ts",
+            "tsConfig": "projects/fic/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/fic/public"
+              }
+            ],
+            "styles": ["projects/fic/src/styles.css"],
+            "polyfills": ["es-module-shims"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/fic/src/environments/environment.ts",
+                  "with": "projects/fic/src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "fic:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "fic:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4203
           }
         }
       }

@@ -14,7 +14,7 @@ export class Hero {
     },
     {
       label: 'Consulta tu FIC',
-      link: '/fics',
+      link: '/fics/rates',
     },
     {
       label: 'Simula tu bolsillo',

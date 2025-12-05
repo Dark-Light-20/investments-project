@@ -14,5 +14,5 @@
   "todo-tree.tree.showBadges": true,
   "jest.runMode": "on-demand",
   "git.openRepositoryInParentFolders": "always",
-  "conventionalCommits.scopes": ["invest-web", "home", "shell", "cdt"]
+  "conventionalCommits.scopes": ["invest-web", "home", "shell", "cdt", "fic"]
 }
