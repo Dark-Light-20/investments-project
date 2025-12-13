@@ -12,8 +12,7 @@ import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { SortType } from '@cdt/ui/models/sort.model';
-import { Pagination } from '@cdt/ui/components/pagination/pagination';
-import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
 
 const sampleRate = {
   id: 'sample-id',

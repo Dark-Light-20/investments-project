@@ -7,8 +7,7 @@ import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { CdtRate } from '@cdt/domain/models/cdt.model';
-import { Pagination } from '@cdt/ui/components/pagination/pagination';
-import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
 
 @Component({
   selector: 'app-rates',
