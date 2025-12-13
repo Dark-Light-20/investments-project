@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubMenu } from './sub-menu';
 import { By } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import { SubMenu as SubMenuLib } from 'invest-web-lib';
+import { MockComponent } from 'ng-mocks';
 
 describe('SubMenu', () => {
   let component: SubMenu;
@@ -10,8 +11,7 @@ describe('SubMenu', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubMenu],
-      providers: [provideRouter([])],
+      imports: [SubMenu, MockComponent(SubMenuLib)],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SubMenu);
@@ -23,24 +23,12 @@ describe('SubMenu', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should render link items correctly', () => {
-    const linkItems = fixture.debugElement.queryAll(By.css('[data-testid^="linkItemCard"]'));
-    expect(linkItems).toHaveLength(component.links.length);
-
-    for (const [index, link] of component.links.entries()) {
-      const linkItem = linkItems[index];
-
-      const titleElement = linkItem.query(By.css(`[data-testid="linkItemTitle${link.title}"]`))?.nativeElement;
-      expect(titleElement?.textContent).toContain(link.title);
-
-      const descriptionElement = linkItem.query(
-        By.css(`[data-testid="linkItemDescription${link.title}"]`)
-      )?.nativeElement;
-      expect(descriptionElement?.textContent).toContain(link.description);
-
-      const linkElement = linkItem.query(By.css(`[data-testid="linkItemLink${link.title}"]`))
-        ?.nativeElement as HTMLAnchorElement;
-      expect(linkElement.textContent).toContain(link.linkText);
-    }
+  test('should render sub menu component with link items correctly', () => {
+    const subMenuElement = fixture.debugElement.query(By.directive(SubMenuLib));
+    expect(subMenuElement).toBeTruthy();
+    expect(subMenuElement.componentInstance.links).toEqual(component.links);
+    expect(subMenuElement.componentInstance.backLink).toEqual('/');
+    expect(subMenuElement.componentInstance.title).toEqual(component.title);
+    expect(subMenuElement.componentInstance.description).toEqual(component.description);
   });
 });

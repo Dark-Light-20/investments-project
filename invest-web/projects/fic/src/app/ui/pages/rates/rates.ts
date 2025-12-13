@@ -2,13 +2,11 @@ import { CurrencyPipe, NgClass, NgOptimizedImage, NgTemplateOutlet, PercentPipe 
 import { Component, computed, inject, resource, viewChild } from '@angular/core';
 import { Fic } from '@fic/application/use-cases/fic/fic';
 import { FicProviders } from '@fic/config/fic.config';
-import { FailedBanksAlert } from '@fic/ui/components/failed-banks-alert/failed-banks-alert';
 import { SortRates } from '@fic/ui/components/sort-rates/sort-rates';
 import { BankLogoPipe } from '@fic/ui/pipes/bank-logo-pipe';
 import { firstValueFrom } from 'rxjs';
 import { Fic as FicModel } from '@fic/domain/models/fic.model';
-import { Pagination } from '@fic/ui/components/pagination/pagination';
-import { RouterLink } from '@angular/router';
+import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
 
 @Component({
   selector: 'app-rates',
@@ -21,7 +19,7 @@ import { RouterLink } from '@angular/router';
     NgOptimizedImage,
     NgTemplateOutlet,
     NgClass,
-    RouterLink,
+    PageHeader,
   ],
   templateUrl: './rates.html',
   providers: [...FicProviders, CurrencyPipe],

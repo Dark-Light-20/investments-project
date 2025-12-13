@@ -17,6 +17,7 @@ export default {
     '^@fic/application/(.*)$': '<rootDir>/projects/fic/src/app/application/$1',
     '^@fic/config/(.*)$': '<rootDir>/projects/fic/src/app/config/$1',
     '^@fic/environments/(.*)$': '<rootDir>/projects/fic/src/environments/$1',
+    '^invest-web-lib$': '<rootDir>/projects/invest-web-lib/src/public-api.ts',
   },
   transformIgnorePatterns: [String.raw`node_modules/(?!.*\.mjs$|@dark-light-20/invest-domain)`],
 } satisfies Config;

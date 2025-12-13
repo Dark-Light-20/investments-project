@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-failed-banks-alert',
+  selector: 'lib-failed-banks-alert',
   templateUrl: './failed-banks-alert.html',
 })
 export class FailedBanksAlert {

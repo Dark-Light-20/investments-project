@@ -1,8 +1,7 @@
 import { Component, computed, input, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-pagination',
-  imports: [],
+  selector: 'lib-pagination',
   templateUrl: './pagination.html',
 })
 export class Pagination<T = unknown> {

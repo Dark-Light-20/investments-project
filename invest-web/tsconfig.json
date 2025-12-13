@@ -31,7 +31,9 @@
       "@fic/ui/*": ["projects/fic/src/app/ui/*"],
       "@fic/infrastructure/*": ["projects/fic/src/app/infrastructure/*"],
       "@fic/environments/*": ["projects/fic/src/environments/*"],
-      "@fic/config/*": ["projects/fic/src/app/config/*"]
+      "@fic/config/*": ["projects/fic/src/app/config/*"],
+      // LIB
+      "invest-web-lib": ["projects/invest-web-lib/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
@@ -66,6 +68,12 @@
     },
     {
       "path": "./projects/fic/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/invest-web-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/invest-web-lib/tsconfig.spec.json"
     }
   ]
 }

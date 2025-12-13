@@ -1,0 +1,58 @@
+<div class="mb-8">
+  <lib-page-header [backLink]="backLink()" [title]="title()" [subtitle]="description()" />
+</div>
+
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+  @for(link of links(); track link.title) {
+  <div
+    class="bg-white overflow-hidden shadow-lg rounded-lg p-8 flex flex-col items-start"
+    [attr.data-testid]="'linkItemCard' + link.title">
+    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-6">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-8 icon icon-tabler icons-tabler-outline {{link.icon.name}}">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        @for(path of link.icon.svg; track path) {
+        <path [attr.d]="path" />
+        }
+      </svg>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-900" [attr.data-testid]="'linkItemTitle' + link.title">
+      {{link.title}}
+    </h3>
+    <p class="mt-2 text-base text-gray-600 mb-6" [attr.data-testid]="'linkItemDescription' + link.title">
+      {{link.description}}
+    </p>
+    <div class="mt-auto">
+      <a
+        routerLink="{{link.route}}"
+        class="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center"
+        [attr.data-testid]="'linkItemLink' + link.title">
+        {{link.linkText}}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-4 icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M9 6l6 6l-6 6" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  }
+</div>

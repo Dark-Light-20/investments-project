@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { SubMenuLink, SubMenu as SubMenuLib } from 'invest-web-lib';
 
 @Component({
   selector: 'app-sub-menu',
-  imports: [RouterLink],
+  imports: [SubMenuLib],
   templateUrl: './sub-menu.html',
 })
 export class SubMenu {
-  readonly links = [
+  readonly title = 'Herramientas para Certificados de Depósito a Término (CDT)';
+  readonly description =
+    'Esta sección está diseñada para ayudarte a tomar decisiones informadas sobre tus inversiones en CDT. Puedes explorar una lista actualizada de tasas o usar nuestro simulador para comparar opciones y encontrar la que mejor se ajuste a tus objetivos financieros.';
+  readonly links: SubMenuLink[] = [
     {
       title: 'Explorar tasas de CDT',
       route: './rates',
