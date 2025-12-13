@@ -11,6 +11,7 @@
     "test:home": "jest --coverage projects/home",
     "test:cdt": "jest --coverage projects/cdt",
     "test:fic": "jest --coverage projects/fic",
+    "test:invest-web-lib": "jest --coverage projects/invest-web-lib",
     "lint": "ng lint --fix",
     "format": "prettier --write ."
   },
@@ -47,6 +48,7 @@
     "jest-preset-angular": "^15.0.3",
     "jsdom": "^27.2.0",
     "ng-mocks": "^14.14.0",
+    "ng-packagr": "^20.3.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-eslint": "^16.4.2",

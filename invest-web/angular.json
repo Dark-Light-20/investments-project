@@ -428,6 +428,39 @@
           }
         }
       }
+    },
+    "invest-web-lib": {
+      "projectType": "library",
+      "root": "projects/invest-web-lib",
+      "sourceRoot": "projects/invest-web-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/invest-web-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/invest-web-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/invest-web-lib/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/invest-web-lib/**/*.ts", "projects/invest-web-lib/**/*.html"],
+            "eslintConfig": "projects/invest-web-lib/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {
