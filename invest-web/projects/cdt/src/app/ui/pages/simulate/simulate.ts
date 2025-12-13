@@ -15,7 +15,7 @@ import {
   MIN_INVESTED_AMOUNT,
   MIN_TERM_IN_DAYS,
 } from '@cdt/ui/models/simulation.model';
-import { RouterLink } from '@angular/router';
+import { PageHeader } from 'invest-web-lib';
 
 @Component({
   selector: 'app-simulate',
@@ -28,7 +28,7 @@ import { RouterLink } from '@angular/router';
     CurrencyPipe,
     NgTemplateOutlet,
     RatePropertiesPipe,
-    RouterLink,
+    PageHeader,
   ],
   templateUrl: './simulate.html',
   providers: [...CdtProviders, CurrencyPipe],

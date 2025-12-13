@@ -9,11 +9,11 @@ import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
 import { CdtRate } from '@cdt/domain/models/cdt.model';
 import { Pagination } from '@cdt/ui/components/pagination/pagination';
-import { RouterLink } from '@angular/router';
+import { PageHeader } from 'invest-web-lib';
 
 @Component({
   selector: 'app-rates',
-  imports: [BankLogoPipe, RatePropertiesPipe, NgOptimizedImage, SortRates, FailedBanksAlert, Pagination, RouterLink],
+  imports: [BankLogoPipe, RatePropertiesPipe, NgOptimizedImage, SortRates, FailedBanksAlert, Pagination, PageHeader],
   templateUrl: './rates.html',
   providers: [...CdtProviders, CurrencyPipe],
 })

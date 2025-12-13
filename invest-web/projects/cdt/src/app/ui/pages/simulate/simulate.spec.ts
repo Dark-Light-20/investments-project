@@ -8,11 +8,11 @@ import { Bank } from '@cdt/domain/models/cdt.model';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import { CurrencyPipe } from '@angular/common';
-import { MockProvider } from 'ng-mocks';
+import { MockComponent, MockProvider } from 'ng-mocks';
 import { Cdt } from '@cdt/application/use-cases/cdt/cdt';
 import { By } from '@angular/platform-browser';
 import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
-import { provideRouter } from '@angular/router';
+import { PageHeader } from 'invest-web-lib';
 
 const sampleSimulation: CdtSimulation = {
   id: 'sample-simulation-id',
@@ -44,8 +44,8 @@ describe('Simulate', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Simulate],
-      providers: [provideRouter([]), BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
+      imports: [Simulate, MockComponent(PageHeader)],
+      providers: [BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
     })
       .overrideComponent(Simulate, {
         set: {

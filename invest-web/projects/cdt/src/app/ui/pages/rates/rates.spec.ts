@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Rates } from './rates';
-import { MockProvider } from 'ng-mocks';
+import { MockComponent, MockProvider } from 'ng-mocks';
 import { Cdt } from '@cdt/application/use-cases/cdt/cdt';
 import { of, throwError } from 'rxjs';
 import { Bank, CdtRate, CdtRatesResponse } from '@cdt/domain/models/cdt.model';
@@ -14,7 +14,7 @@ import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-b
 import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { SortType } from '@cdt/ui/models/sort.model';
 import { Pagination } from '@cdt/ui/components/pagination/pagination';
-import { provideRouter } from '@angular/router';
+import { PageHeader } from 'invest-web-lib';
 
 const sampleRate = {
   id: 'sample-id',
@@ -44,8 +44,8 @@ describe('Rates', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Rates],
-      providers: [provideRouter([]), BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
+      imports: [Rates, MockComponent(PageHeader)],
+      providers: [BankLogoPipe, RatePropertiesPipe, CurrencyPipe],
     })
       .overrideComponent(Rates, {
         set: {
