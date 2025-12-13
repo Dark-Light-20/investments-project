@@ -1,0 +1,41 @@
+<div class="mt-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+  <div class="text-sm text-gray-600">{{ paginationLabel() }}</div>
+  <div class="flex gap-2 flex-wrap">
+    <button
+      (click)="previousPage()"
+      [disabled]="currentPage() === 1"
+      class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      data-testid="prev-page-btn">
+      Anterior
+    </button>
+
+    @for(page of visiblePages(); track page) { @if(page === -1) {
+
+    <span class="px-4 py-2 text-gray-500">...</span>
+
+    } @else {
+
+    <button
+      (click)="goToPage(page)"
+      [class.bg-blue-600]="currentPage() === page"
+      [class.text-white]="currentPage() === page"
+      [class.hover:bg-blue-700]="currentPage() === page"
+      [class.bg-white]="currentPage() !== page"
+      [class.text-gray-700]="currentPage() !== page"
+      [class.hover:bg-gray-50]="currentPage() !== page"
+      class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium transition-colors"
+      data-testid="page-btn">
+      {{ page }}
+    </button>
+
+    } }
+
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage() === totalPages()"
+      class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      data-testid="next-page-btn">
+      Siguiente
+    </button>
+  </div>
+</div>
