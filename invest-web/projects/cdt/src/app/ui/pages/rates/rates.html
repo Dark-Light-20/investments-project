@@ -11,7 +11,7 @@
   </div>
 
   @if (showFailedBanks()) {
-  <app-failed-banks-alert [failedBanks]="ratesResource.value()?.failedBanks ?? []" />
+  <lib-failed-banks-alert [failedBanks]="ratesResource.value()?.failedBanks ?? []" />
   }
 
   <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">

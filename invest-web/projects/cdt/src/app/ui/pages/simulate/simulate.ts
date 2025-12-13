@@ -6,7 +6,6 @@ import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { firstValueFrom } from 'rxjs';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CdtSimulation, SimulationParams } from '@cdt/domain/models/simulation.model';
-import { FailedBanksAlert } from '@cdt/ui/components/failed-banks-alert/failed-banks-alert';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import {
@@ -15,7 +14,7 @@ import {
   MIN_INVESTED_AMOUNT,
   MIN_TERM_IN_DAYS,
 } from '@cdt/ui/models/simulation.model';
-import { PageHeader } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
 
 @Component({
   selector: 'app-simulate',

@@ -55,7 +55,7 @@
 
     <div class="lg:col-span-2">
       @if (showFailedBanks()) {
-      <app-failed-banks-alert
+      <lib-failed-banks-alert
         [failedBanks]="simulationsResource.value()?.failedBanks ?? []"
         [alertMessage]="failedBanksMessage" />
       }
