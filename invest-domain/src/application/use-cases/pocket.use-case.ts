@@ -1,8 +1,9 @@
 import {
   MONTHS_IN_YEAR,
   PERCENTAGE_DIV,
-} from "../../domain/constants/investment.js";
-import type { PocketGateway } from "../ports/pocket.gateway.js";
+} from "../../domain/constants/investment";
+import type { PocketSimulation } from "../../domain/value-objects/pocket-simulation";
+import { PocketGateway } from "../ports/pocket.gateway";
 
 export class PocketUseCase {
   private readonly pocketGateway: PocketGateway;
@@ -19,11 +20,11 @@ export class PocketUseCase {
     return rate;
   }
 
-  async calculateInvest(
+  async simulateInvest(
     amount: number,
     months: number,
     monthlyIncrement: number = 0
-  ): Promise<number> {
+  ): Promise<PocketSimulation> {
     const rate = await this.getPocketRate();
     const effectiveRate = rate / PERCENTAGE_DIV;
     const periodRate = (1 + effectiveRate) ** (1 / MONTHS_IN_YEAR) - 1;
@@ -41,6 +42,12 @@ export class PocketUseCase {
       balance += monthlyIncrement + interestBalance;
       interestBalance = balance * periodRate;
     }
-    return invest;
+    return {
+      investedAmount: totalBalance,
+      term: months,
+      rate: rate,
+      earnings: invest,
+      finalAmount: totalBalance + invest,
+    };
   }
 }

@@ -1,11 +1,9 @@
 {
   "name": "@dark-light-20/invest-domain",
-  "version": "0.3.2",
+  "version": "1.0.0-alpha.1",
   "description": "This package contains the core domain logic for the investments project, including entities, value objects, and business rules.",
   "main": "dist/index.js",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "files": [
     "dist/**/*"
   ],
@@ -23,11 +21,14 @@
     "build": "tsc",
     "prepare": "tsc",
     "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Dark-Light-20",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
     "typescript": "^5.9.2"
   },
   "publishConfig": {
