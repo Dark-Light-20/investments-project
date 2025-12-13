@@ -4,14 +4,13 @@ import { Bank, Fic as FicModel, FicsResponse } from '@fic/domain/models/fic.mode
 import { of, throwError } from 'rxjs';
 import { BankLogoPipe } from '@fic/ui/pipes/bank-logo-pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
-import { MockComponent, MockProvider } from 'ng-mocks';
+import { MockComponents, MockProvider } from 'ng-mocks';
 import { Fic } from '@fic/application/use-cases/fic/fic';
 import { By } from '@angular/platform-browser';
-import { FailedBanksAlert } from '@fic/ui/components/failed-banks-alert/failed-banks-alert';
 import { SortRates } from '@fic/ui/components/sort-rates/sort-rates';
 import { Pagination } from '@fic/ui/components/pagination/pagination';
 import { SortType } from '@fic/domain/models/sort.model';
-import { PageHeader } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
 
 const sampleFic: FicModel = {
   id: 'sample-id',
@@ -43,7 +42,7 @@ describe('Rates', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Rates, MockComponent(PageHeader)],
+      imports: [Rates, MockComponents(PageHeader, FailedBanksAlert)],
       providers: [BankLogoPipe, PercentPipe, CurrencyPipe],
     })
       .overrideComponent(Rates, {
