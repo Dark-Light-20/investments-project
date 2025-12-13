@@ -6,8 +6,7 @@ import { SortRates } from '@fic/ui/components/sort-rates/sort-rates';
 import { BankLogoPipe } from '@fic/ui/pipes/bank-logo-pipe';
 import { firstValueFrom } from 'rxjs';
 import { Fic as FicModel } from '@fic/domain/models/fic.model';
-import { Pagination } from '@fic/ui/components/pagination/pagination';
-import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
 
 @Component({
   selector: 'app-rates',

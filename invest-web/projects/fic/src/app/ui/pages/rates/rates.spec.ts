@@ -8,9 +8,8 @@ import { MockComponents, MockProvider } from 'ng-mocks';
 import { Fic } from '@fic/application/use-cases/fic/fic';
 import { By } from '@angular/platform-browser';
 import { SortRates } from '@fic/ui/components/sort-rates/sort-rates';
-import { Pagination } from '@fic/ui/components/pagination/pagination';
 import { SortType } from '@fic/domain/models/sort.model';
-import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
 
 const sampleFic: FicModel = {
   id: 'sample-id',
