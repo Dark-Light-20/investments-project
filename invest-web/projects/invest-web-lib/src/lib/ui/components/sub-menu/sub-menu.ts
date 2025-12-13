@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { PageHeader } from '../page-header/page-header';
 
 export interface SubMenuLink {
   title: string;
@@ -14,7 +15,7 @@ export interface SubMenuLink {
 
 @Component({
   selector: 'lib-sub-menu',
-  imports: [RouterLink],
+  imports: [RouterLink, PageHeader],
   templateUrl: './sub-menu.html',
 })
 export class SubMenu {

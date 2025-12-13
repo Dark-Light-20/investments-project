@@ -1,28 +1,5 @@
 <div class="mb-8">
-  <div class="flex items-start gap-4 mb-4">
-    <a
-      [routerLink]="backLink()"
-      class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-      data-testid="backButton"
-      title="Volver">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <path d="M15 6l-6 6l6 6" />
-      </svg>
-    </a>
-    <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl" data-testid="subMenuTitle">{{title()}}</h1>
-  </div>
-  <p class="mt-4 text-lg text-gray-500 max-w-3xl" data-testid="subMenuDescription">{{description()}}</p>
+  <lib-page-header [backLink]="backLink()" [title]="title()" [subtitle]="description()" />
 </div>
 
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">

@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SubMenu, SubMenuLink } from './sub-menu';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
+import { PageHeader } from '../page-header/page-header';
+import { MockComponent } from 'ng-mocks';
 
 const mockLinks: SubMenuLink[] = [
   {
@@ -27,7 +29,7 @@ describe('SubMenu', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubMenu],
+      imports: [SubMenu, MockComponent(PageHeader)],
       providers: [provideRouter([])],
     }).compileComponents();
 
@@ -42,6 +44,15 @@ describe('SubMenu', () => {
 
   test('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  test('should render page header', () => {
+    const pageHeaderDebug = fixture.debugElement.query(By.directive(PageHeader));
+    expect(pageHeaderDebug).toBeTruthy();
+    const pageHeaderInstance = pageHeaderDebug.componentInstance as PageHeader;
+    expect(pageHeaderInstance.backLink).toBe(component.backLink());
+    expect(pageHeaderInstance.title).toBe(component.title());
+    expect(pageHeaderInstance.subtitle).toBe(component.description());
   });
 
   test('should render link items correctly', () => {
