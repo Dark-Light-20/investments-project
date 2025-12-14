@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dark-Light-20/investments-project.git"
+    "url": "git+https://github.com/Dark-Light-20/investments-project.git"
   },
   "keywords": [
     "investments",
