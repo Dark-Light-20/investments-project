@@ -1,5 +1,5 @@
-import type { FIC } from "../../domain/value-objects/fic-rate.js";
-import type { FICGateway } from "../ports/fic.gateway.js";
+import type { FIC } from "../../domain/value-objects/fic-rate";
+import type { FICGateway } from "../ports/fic.gateway";
 
 export class FICUseCase {
   private readonly ficGateway: FICGateway;

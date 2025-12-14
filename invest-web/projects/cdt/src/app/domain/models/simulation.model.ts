@@ -1,7 +1,9 @@
 import { Bank, CdtRate } from './cdt.model';
+import { CDTSimulation } from '@dark-light-20/invest-domain';
 
-export interface CdtSimulation extends CdtRate {
-  totalInterest: number;
+export interface CdtSimulation extends CDTSimulation {
+  rate: CdtRate;
+  bankName: Bank;
 }
 
 export interface SimulationParams {

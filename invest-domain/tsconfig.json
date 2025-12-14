@@ -7,8 +7,8 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "ES2022",
     "types": [],
     // For nodejs:
@@ -17,7 +17,7 @@
     // and npm install -D @types/node
 
     // Other Outputs
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": true,
     "declarationMap": true,
 
@@ -35,7 +35,6 @@
 
     // Recommended Options
     "strict": true,
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
@@ -43,5 +42,6 @@
 
     "esModuleInterop": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
 }

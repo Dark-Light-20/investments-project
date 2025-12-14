@@ -1,11 +1,10 @@
-import { Bank, CdtRate } from '@cdt/domain/models/cdt.model';
-import { CDTTermUnit } from '@dark-light-20/invest-domain';
+import { Bank } from '@cdt/domain/models/cdt.model';
+import { CDTSimulation, CDTTermUnit } from '@dark-light-20/invest-domain';
 
 export interface InvestCDTRequest {
-  amount: number;
-  term: number;
+  amount: string;
+  term: string;
   termUnit: CDTTermUnit;
 }
 
-export type RateResult = { success: true; data: CdtRate; bank: Bank } | { success: false; bank: Bank };
-export type InvestResult = { success: true; data: number; bank: Bank } | { success: false; bank: Bank };
+export type InvestResult = { success: true; data: CDTSimulation; bank: Bank } | { success: false; bank: Bank };

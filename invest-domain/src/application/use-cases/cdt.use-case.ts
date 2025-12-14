@@ -3,12 +3,10 @@ import {
   DAYS_IN_YEAR,
   PERCENTAGE_DIV,
   PERIODICITY,
-} from "../../domain/constants/investment.js";
-import type { CdtGateway } from "../ports/cdt.gateway.js";
-import {
-  CDTTermUnit,
-  type CDTRate,
-} from "../../domain/value-objects/cdt-rate.js";
+} from "../../domain/constants/investment";
+import type { CdtGateway } from "../ports/cdt.gateway";
+import { CDTTermUnit, type CDTRate } from "../../domain/value-objects/cdt-rate";
+import type { CDTSimulation } from "../../domain/value-objects/cdt-simulation";
 
 export class CdtUseCase {
   private readonly cdtGateway: CdtGateway;
@@ -19,6 +17,25 @@ export class CdtUseCase {
 
   async getAllCDTRates(): Promise<CDTRate[]> {
     return this.cdtGateway.getAllCDTRates();
+  }
+
+  async simulateCDT(
+    amount: number,
+    term: number,
+    termUnit = CDTTermUnit.DAYS
+  ): Promise<CDTSimulation> {
+    const cdtRate: CDTRate = await this.getCDTRate(amount, term, termUnit);
+    const invest = this.calculateEarnings(amount, term, cdtRate, termUnit);
+    const operationTerm =
+      termUnit === CDTTermUnit.DAYS ? term : term * DAYS_IN_MONTH;
+
+    return {
+      investedAmount: amount,
+      term: operationTerm,
+      rate: cdtRate,
+      earnings: invest,
+      finalAmount: amount + invest,
+    };
   }
 
   async getCDTRate(
@@ -46,12 +63,12 @@ export class CdtUseCase {
     return rate;
   }
 
-  async calculateInvest(
+  private calculateEarnings(
     amount: number,
     term: number,
+    cdtRate: CDTRate,
     termUnit = CDTTermUnit.DAYS
-  ): Promise<number> {
-    const cdtRate: CDTRate = await this.getCDTRate(amount, term, termUnit);
+  ): number {
     const effectiveRate = cdtRate.rate / PERCENTAGE_DIV;
     const operationTerm =
       termUnit === CDTTermUnit.DAYS ? term : term * DAYS_IN_MONTH;
@@ -61,7 +78,7 @@ export class CdtUseCase {
     return invest;
   }
 
-  getNominalRate(
+  private getNominalRate(
     efectiveRate: number,
     capitalization: number,
     periodicity: number = PERIODICITY

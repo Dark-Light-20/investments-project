@@ -14,15 +14,21 @@ import { By } from '@angular/platform-browser';
 import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
 
 const sampleSimulation: CdtSimulation = {
-  id: 'sample-simulation-id',
-  rate: 8.5,
-  minimumTerm: 30,
-  maximumTerm: 60,
-  minimumAmount: 100000,
-  maximumAmount: 10000000,
-  termUnit: CDTTermUnit.DAYS,
+  investedAmount: 100000,
+  term: 30,
   bankName: Bank.Bancolombia,
-  totalInterest: 8500,
+  earnings: 8500,
+  finalAmount: 108500,
+  rate: {
+    id: 'sample-simulation-id',
+    rate: 8.5,
+    minimumTerm: 30,
+    maximumTerm: 60,
+    minimumAmount: 100000,
+    maximumAmount: 10000000,
+    termUnit: CDTTermUnit.DAYS,
+    bankName: Bank.Bancolombia,
+  },
 };
 
 const cdtUseCaseMock = {
@@ -126,9 +132,9 @@ describe('Simulate', () => {
 
       expect(bankName).toContain(Bank.Bancolombia);
       expect(bankLogo).toContain(bankLogoPipe.transform(Bank.Bancolombia));
-      const rateProperties = ratePropertiesPipe.transform(sampleSimulation);
+      const rateProperties = ratePropertiesPipe.transform(sampleSimulation.rate);
       expect(rate).toContain(rateProperties.rateValue);
-      expect(amount).toContain(currencyPipe.transform(sampleSimulation.totalInterest, 'COP', 'symbol-narrow'));
+      expect(amount).toContain(currencyPipe.transform(sampleSimulation.earnings, 'COP', 'symbol-narrow'));
     });
 
     test('does not render any row when there are no rates', async () => {

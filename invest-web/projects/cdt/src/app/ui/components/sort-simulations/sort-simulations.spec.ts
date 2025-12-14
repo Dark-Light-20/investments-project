@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SortRates } from './sort-rates';
+import { SortSimulations } from './sort-simulations';
+import { CdtSimulation } from '@cdt/domain/models/simulation.model';
+import { CdtRate, Bank } from '@cdt/domain/models/cdt.model';
 import { CDTTermUnit } from '@dark-light-20/invest-domain';
-import { Bank, CdtRate } from '@cdt/domain/models/cdt.model';
 import { By } from '@angular/platform-browser';
 
 const sampleRate: CdtRate = {
@@ -16,16 +17,16 @@ const sampleRate: CdtRate = {
   bankName: Bank.Bancolombia,
 };
 
-describe('SortRates', () => {
-  let component: SortRates<{ rates: CdtRate[] }>;
-  let fixture: ComponentFixture<SortRates<{ rates: CdtRate[] }>>;
+describe('SortSimulations', () => {
+  let component: SortSimulations<{ simulations: CdtSimulation[] }>;
+  let fixture: ComponentFixture<SortSimulations<{ simulations: CdtSimulation[] }>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SortRates],
+      imports: [SortSimulations],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SortRates);
+    fixture = TestBed.createComponent(SortSimulations);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -35,13 +36,27 @@ describe('SortRates', () => {
   });
 
   test('sorts by rate when Rate button is clicked', async () => {
-    const rates = {
-      rates: [
-        { ...sampleRate, rate: 7.2, bankName: Bank.Bancolombia },
-        { ...sampleRate, rate: 9.5, bankName: Bank.Nu },
+    const simulations = {
+      simulations: [
+        {
+          investedAmount: 100000,
+          term: 30,
+          rate: { ...sampleRate, rate: 7.2 },
+          earnings: 0,
+          finalAmount: 0,
+          bankName: Bank.Bancolombia,
+        },
+        {
+          investedAmount: 100000,
+          term: 30,
+          rate: { ...sampleRate, rate: 9.5 },
+          earnings: 0,
+          finalAmount: 0,
+          bankName: Bank.Nu,
+        },
       ],
     };
-    fixture.componentRef.setInput('rates', rates);
+    fixture.componentRef.setInput('simulations', simulations);
 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -50,18 +65,32 @@ describe('SortRates', () => {
     rateButton.triggerEventHandler('click');
     fixture.detectChanges();
 
-    const firstRate = component.sortedRates().rates[0];
-    expect(firstRate.bankName).toContain(Bank.Nu);
+    const firstSim = component.sortedSimulations().simulations[0];
+    expect(firstSim.bankName).toContain(Bank.Nu);
   });
 
   test('sorts by bank when Bank button is clicked', async () => {
-    const rates = {
-      rates: [
-        { ...sampleRate, rate: 7.2, bankName: Bank.Nu },
-        { ...sampleRate, rate: 9.5, bankName: Bank.Finandina },
+    const simulations = {
+      simulations: [
+        {
+          investedAmount: 100000,
+          term: 30,
+          rate: { ...sampleRate, rate: 7.2 },
+          earnings: 0,
+          finalAmount: 0,
+          bankName: Bank.Nu,
+        },
+        {
+          investedAmount: 100000,
+          term: 30,
+          rate: { ...sampleRate, rate: 9.5 },
+          earnings: 0,
+          finalAmount: 0,
+          bankName: Bank.Finandina,
+        },
       ],
     };
-    fixture.componentRef.setInput('rates', rates);
+    fixture.componentRef.setInput('simulations', simulations);
 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -70,8 +99,8 @@ describe('SortRates', () => {
     bankButton.triggerEventHandler('click');
     fixture.detectChanges();
 
-    const firstRate = component.sortedRates().rates[0];
-    expect(firstRate.bankName).toContain(Bank.Finandina);
+    const firstSim = component.sortedSimulations().simulations[0];
+    expect(firstSim.bankName).toContain(Bank.Finandina);
   });
 
   test('should update button classes based on selected sort', async () => {

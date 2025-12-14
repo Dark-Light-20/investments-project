@@ -1,8 +1,7 @@
 export const environment = {
   assetsUrl: 'http://localhost:4202',
   rateListEndpoint: '/cdt/rates',
-  rateEndpoint: '/cdt/calculateRate',
-  simulationEndpoint: '/cdt/calculateInvest',
+  simulationEndpoint: '/cdt/simulation',
   ban100Url: 'http://localhost:3003',
   bancolombiaUrl: 'http://localhost:3000',
   bancoDeBogotaUrl: 'http://localhost:3001',

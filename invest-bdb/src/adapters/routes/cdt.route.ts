@@ -14,10 +14,11 @@ export const cdtRoutesBuilder = (cdtUseCase: CdtUseCase): Router => {
     }
   });
 
-  route.post("/calculateRate", async (req: Request, res: Response) => {
+  route.get("/rate", async (req: Request, res: Response) => {
     try {
-      const { amount, term } = req.body;
-      const termUnit = (req.body.termUnit as CDTTermUnit) || CDTTermUnit.DAYS;
+      const amount = Number(req.query.amount);
+      const term = Number(req.query.term);
+      const termUnit = (req.query.termUnit as CDTTermUnit) || CDTTermUnit.DAYS;
       if (!Object.values(CDTTermUnit).includes(termUnit))
         throw new Error("Invalid term unit");
       const rate = await cdtUseCase.getCDTRate(amount, term, termUnit);
@@ -28,11 +29,13 @@ export const cdtRoutesBuilder = (cdtUseCase: CdtUseCase): Router => {
     }
   });
 
-  route.post("/calculateInvest", async (req: Request, res: Response) => {
+  route.get("/simulation", async (req: Request, res: Response) => {
     try {
-      const { amount, term, termUnit } = req.body;
-      const invest = await cdtUseCase.calculateInvest(amount, term, termUnit);
-      res.json(invest.toFixed(2));
+      const amount = Number(req.query.amount);
+      const term = Number(req.query.term);
+      const termUnit = (req.query.termUnit as CDTTermUnit) || CDTTermUnit.DAYS;
+      const simulation = await cdtUseCase.simulateCDT(amount, term, termUnit);
+      res.json(simulation);
     } catch (error) {
       const { message } = error as Error;
       res.status(500).json(message);

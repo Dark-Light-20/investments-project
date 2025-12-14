@@ -14,15 +14,15 @@ export const boxRoutesBuilder = (pocketUseCase: PocketUseCase): Router => {
     }
   });
 
-  route.post("/calculateInvest", async (req: Request, res: Response) => {
+  route.get("/simulation", async (req: Request, res: Response) => {
     try {
-      const { amount, months, monthlyIncrement } = req.body;
-      const invest = await pocketUseCase.calculateInvest(
-        amount,
-        months,
-        monthlyIncrement
+      const { amount, months, monthlyIncrement } = req.query;
+      const simulation = await pocketUseCase.simulateInvest(
+        Number(amount),
+        Number(months),
+        Number(monthlyIncrement) || undefined
       );
-      res.json(invest.toFixed(2));
+      res.json(simulation);
     } catch (error) {
       const { message } = error as Error;
       res.status(400).json(message);

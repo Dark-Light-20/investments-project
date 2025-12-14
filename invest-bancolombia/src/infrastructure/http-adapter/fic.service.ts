@@ -19,7 +19,7 @@ export class FICService implements FICGateway {
     const pdfParser = new PDFParser();
 
     return new Promise((resolve, reject) => {
-      pdfParser.on("pdfParser_dataError", (err) => reject(err.parserError));
+      pdfParser.on("pdfParser_dataError", (err) => reject(err));
       pdfParser.on("pdfParser_dataReady", (pdfData) => {
         const rawFicData = getFicRawData(pdfData);
         const ficData = extractFICs(rawFicData);

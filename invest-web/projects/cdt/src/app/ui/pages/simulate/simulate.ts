@@ -2,7 +2,6 @@ import { CurrencyPipe, NgOptimizedImage, NgTemplateOutlet } from '@angular/commo
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { Cdt } from '@cdt/application/use-cases/cdt/cdt';
 import { CdtProviders } from '@cdt/config/cdt.config';
-import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { firstValueFrom } from 'rxjs';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CdtSimulation, SimulationParams } from '@cdt/domain/models/simulation.model';
@@ -15,11 +14,12 @@ import {
   MIN_TERM_IN_DAYS,
 } from '@cdt/ui/models/simulation.model';
 import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
+import { SortSimulations } from '@cdt/ui/components/sort-simulations/sort-simulations';
 
 @Component({
   selector: 'app-simulate',
   imports: [
-    SortRates,
+    SortSimulations,
     ReactiveFormsModule,
     FailedBanksAlert,
     NgOptimizedImage,
@@ -65,12 +65,12 @@ export class Simulate {
     () => !this.simulationsResource.error() && this.simulationsResource.value()?.failedBanks?.length
   );
 
-  readonly simulationsList = computed<{ rates: CdtSimulation[] }>(() => {
-    const emptyData = { rates: [] };
+  readonly simulationsList = computed<{ simulations: CdtSimulation[] }>(() => {
+    const emptyData = { simulations: [] };
     if (this.simulationsResource.error()) {
       return emptyData;
     }
-    return { rates: this.simulationsResource.value()?.simulations ?? [] };
+    return { simulations: this.simulationsResource.value()?.simulations ?? [] };
   });
 
   doSimulation() {

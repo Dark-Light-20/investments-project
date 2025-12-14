@@ -1,4 +1,5 @@
 {
+  "jest.runMode": "on-demand",
   "conventionalCommits.scopes": [
     "invest-domain",
     "invest-bancolombia",

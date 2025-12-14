@@ -1,17 +1,25 @@
 {
   "name": "@dark-light-20/invest-domain",
-  "version": "0.3.2",
-  "description": "This package contains the core domain logic for the investments project, including entities, value objects, and business rules.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.1",
   "type": "module",
+  "description": "This package contains the core domain logic for the investments project, including entities, value objects, and business rules.",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
   "files": [
     "dist/**/*"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dark-Light-20/investments-project.git"
+    "url": "git+https://github.com/Dark-Light-20/investments-project.git"
   },
   "keywords": [
     "investments",
@@ -20,14 +28,17 @@
     "clean-architecture"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepare": "tsc",
+    "build": "tsup",
     "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Dark-Light-20",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.2"
   },
   "publishConfig": {
