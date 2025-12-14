@@ -25,7 +25,7 @@
     "@angular/forms": "^20.3.13",
     "@angular/platform-browser": "^20.3.13",
     "@angular/router": "^20.3.13",
-    "@dark-light-20/invest-domain": "^0.3.2",
+    "@dark-light-20/invest-domain": "^1.0.1",
     "@softarc/native-federation-node": "^3.3.4",
     "es-module-shims": "^1.5.12",
     "rxjs": "~7.8.0",

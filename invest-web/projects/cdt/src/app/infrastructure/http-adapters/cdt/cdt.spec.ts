@@ -3,9 +3,10 @@ import { HttpStatusCode, provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { Cdt } from './cdt';
 import { environment } from '@cdt/environments/environment';
-import { Bank } from '@cdt/domain/models/cdt.model';
+import { Bank, CdtRate } from '@cdt/domain/models/cdt.model';
 import { CdtRateDTO } from '../../models/cdt.dto';
 import { CDTTermUnit } from '@dark-light-20/invest-domain';
+import { CdtSimulation } from '@cdt/domain/models/simulation.model';
 
 const rateListEndpoints = [
   { bank: Bank.Ban100, url: `${environment.ban100Url}${environment.rateListEndpoint}` },
@@ -16,14 +17,6 @@ const rateListEndpoints = [
   },
   { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.rateListEndpoint}` },
   { bank: Bank.Nu, url: `${environment.nuUrl}${environment.rateListEndpoint}` },
-];
-
-const rateEndpoints = [
-  { bank: Bank.Ban100, url: `${environment.ban100Url}${environment.rateEndpoint}` },
-  { bank: Bank.Bancolombia, url: `${environment.bancolombiaUrl}${environment.rateEndpoint}` },
-  { bank: Bank.BancoDeBogota, url: `${environment.bancoDeBogotaUrl}${environment.rateEndpoint}` },
-  { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.rateEndpoint}` },
-  { bank: Bank.Nu, url: `${environment.nuUrl}${environment.rateEndpoint}` },
 ];
 
 const simulationEndpoints = [
@@ -125,7 +118,9 @@ describe('Cdt', () => {
   describe('simulateCdt', () => {
     const investedAmount = 1000000;
     const termInDays = 90;
-    const mockRateDTO: CdtRateDTO = {
+    const mockRateDTO: CdtRate = {
+      id: crypto.randomUUID(),
+      bankName: Bank.Bancolombia,
       rate: 0.12,
       minimumTerm: 30,
       maximumTerm: 360,
@@ -134,64 +129,50 @@ describe('Cdt', () => {
       termUnit: CDTTermUnit.DAYS,
     };
     const mockInvestReturn = 30000;
+    const mockSimulationResponse: CdtSimulation = {
+      investedAmount: investedAmount,
+      term: termInDays,
+      finalAmount: investedAmount + mockInvestReturn,
+      earnings: mockInvestReturn,
+      rate: mockRateDTO,
+      bankName: mockRateDTO.bankName,
+    };
 
     test('should simulate CDT for all banks successfully', done => {
       service.simulateCdt(investedAmount, termInDays).subscribe(result => {
         expect(result.failedBanks).toHaveLength(0);
         expect(result.simulations).toHaveLength(5);
         for (const simulation of result.simulations) {
-          expect(simulation.totalInterest).toBe(mockInvestReturn);
-          expect(simulation.rate).toBe(mockRateDTO.rate);
+          expect(simulation.earnings).toBe(mockInvestReturn);
+          expect(simulation.rate).toBeTruthy();
+          expect(simulation.bankName).toBeTruthy();
         }
         done();
       });
 
-      for (const { url } of rateEndpoints) {
-        const req = httpMock.expectOne(url);
-        expect(req.request.method).toBe('POST');
-        expect(req.request.body).toEqual({
-          amount: investedAmount,
-          term: termInDays,
-          termUnit: CDTTermUnit.DAYS,
-        });
-        req.flush(mockRateDTO);
-      }
-
-      for (const { url } of simulationEndpoints) {
-        const req = httpMock.expectOne(url);
-        expect(req.request.method).toBe('POST');
-        expect(req.request.body).toEqual({
-          amount: investedAmount,
-          term: termInDays,
-          termUnit: CDTTermUnit.DAYS,
-        });
-        req.flush(mockInvestReturn);
+      for (const { bank, url } of simulationEndpoints) {
+        const req = httpMock.expectOne(req => req.url === url);
+        expect(req.request.method).toBe('GET');
+        expect(req.request.params.get('amount')).toBe(investedAmount.toString());
+        expect(req.request.params.get('term')).toBe(termInDays.toString());
+        expect(req.request.params.get('termUnit')).toBe(CDTTermUnit.DAYS);
+        req.flush({ ...mockSimulationResponse, bankName: bank });
       }
     });
 
     test('should handle partial failures in simulation', done => {
       service.simulateCdt(investedAmount, termInDays).subscribe(result => {
         expect(result.failedBanks).toContain(Bank.Ban100);
-        expect(result.failedBanks).toContain(Bank.Bancolombia);
-        expect(result.simulations).toHaveLength(3);
+        expect(result.simulations).toHaveLength(4);
         done();
       });
 
-      for (const { bank, url } of rateEndpoints) {
-        const req = httpMock.expectOne(url);
+      for (const { bank, url } of simulationEndpoints) {
+        const req = httpMock.expectOne(req => req.url === url);
         if (bank === Bank.Ban100) {
           req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
         } else {
-          req.flush(mockRateDTO);
-        }
-      }
-
-      for (const { bank, url } of simulationEndpoints) {
-        const req = httpMock.expectOne(url);
-        if (bank === Bank.Bancolombia) {
-          req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
-        } else {
-          req.flush(mockInvestReturn);
+          req.flush({ ...mockSimulationResponse, bankName: bank });
         }
       }
     });
@@ -205,13 +186,8 @@ describe('Cdt', () => {
         },
       });
 
-      for (const { url } of rateEndpoints) {
-        const req = httpMock.expectOne(url);
-        req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
-      }
-
       for (const { url } of simulationEndpoints) {
-        const req = httpMock.expectOne(url);
+        const req = httpMock.expectOne(req => req.url === url);
         req.flush('Error', { status: HttpStatusCode.InternalServerError, statusText: 'Server Error' });
       }
     });

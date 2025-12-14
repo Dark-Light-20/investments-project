@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
 import { map, catchError, delay } from 'rxjs/operators';
 import { environment } from '@cdt/environments/environment';
@@ -7,8 +7,8 @@ import { CdtGateway } from '@cdt/domain/models/cdt.gateway';
 import { Bank, CdtRate, CdtRatesResponse } from '@cdt/domain/models/cdt.model';
 import { CdtRateDTO } from '../../models/cdt.dto';
 import { cdtMapper } from './cdt.mapper';
-import { InvestCDTRequest, InvestResult, RateResult } from '@cdt/infrastructure/models/cdt.rq';
-import { CDTTermUnit } from '@dark-light-20/invest-domain';
+import { InvestCDTRequest, InvestResult } from '@cdt/infrastructure/models/cdt.rq';
+import { CDTSimulation, CDTTermUnit } from '@dark-light-20/invest-domain';
 import { CdtSimulation, CdtSimulationResponse } from '@cdt/domain/models/simulation.model';
 
 const REQUEST_DELAY_MS = 1000;
@@ -25,14 +25,6 @@ export class Cdt implements CdtGateway {
     [Bank.BancoDeBogota]: `${environment.bancoDeBogotaUrl}${environment.rateListEndpoint}`,
     [Bank.Finandina]: `${environment.finandinaUrl}${environment.rateListEndpoint}`,
     [Bank.Nu]: `${environment.nuUrl}${environment.rateListEndpoint}`,
-  };
-
-  private readonly _rateEndpoints: Record<Bank, string> = {
-    [Bank.Ban100]: `${environment.ban100Url}${environment.rateEndpoint}`,
-    [Bank.Bancolombia]: `${environment.bancolombiaUrl}${environment.rateEndpoint}`,
-    [Bank.BancoDeBogota]: `${environment.bancoDeBogotaUrl}${environment.rateEndpoint}`,
-    [Bank.Finandina]: `${environment.finandinaUrl}${environment.rateEndpoint}`,
-    [Bank.Nu]: `${environment.nuUrl}${environment.rateEndpoint}`,
   };
 
   private readonly _simulationEndpoints: Record<Bank, string> = {
@@ -74,63 +66,49 @@ export class Cdt implements CdtGateway {
   }
 
   simulateCdt(investedAmount: number, termInDays: number): Observable<CdtSimulationResponse> {
-    const rateEntries = Object.entries(this._rateEndpoints);
     const simulationEntries = Object.entries(this._simulationEndpoints);
 
     const simulationBody: InvestCDTRequest = {
-      amount: investedAmount,
-      term: termInDays,
+      amount: investedAmount.toString(),
+      term: termInDays.toString(),
       termUnit: CDTTermUnit.DAYS,
     };
 
-    const rateRequests = rateEntries.map(([bank, url]) =>
-      this._http.post<CdtRateDTO>(url, simulationBody).pipe(
-        delay(REQUEST_DELAY_MS),
-        map((data): RateResult => ({ success: true, data: cdtMapper(data, bank as Bank), bank: bank as Bank })),
-        catchError((): Observable<RateResult> => of({ success: false, bank: bank as Bank }))
-      )
+    const simulationRequests = simulationEntries.map(([bank, url]) =>
+      this._http
+        .get<CDTSimulation>(url, {
+          params: new HttpParams({
+            fromObject: {
+              amount: simulationBody.amount,
+              term: simulationBody.term,
+              termUnit: simulationBody.termUnit,
+            },
+          }),
+        })
+        .pipe(
+          delay(REQUEST_DELAY_MS),
+          map(
+            (data): InvestResult => ({
+              success: true,
+              data: { ...data, rate: cdtMapper(data.rate, bank as Bank) },
+              bank: bank as Bank,
+            })
+          ),
+          catchError((): Observable<InvestResult> => of({ success: false, bank: bank as Bank }))
+        )
     );
 
-    const investRequests = simulationEntries.map(([bank, url]) =>
-      this._http.post<number>(url, simulationBody).pipe(
-        delay(REQUEST_DELAY_MS),
-        map((data): InvestResult => ({ success: true, data, bank: bank as Bank })),
-        catchError((): Observable<InvestResult> => of({ success: false, bank: bank as Bank }))
-      )
-    );
-
-    return forkJoin([...rateRequests, ...investRequests]).pipe(
+    return forkJoin(simulationRequests).pipe(
       map(results => {
-        const rateResults = results.slice(0, rateEntries.length) as RateResult[];
-        const investResults = results.slice(rateEntries.length) as InvestResult[];
+        const simulations: CdtSimulation[] = results
+          .filter((r): r is { success: true; data: CdtSimulation; bank: Bank } => r.success)
+          .flatMap(r => ({ ...r.data, bankName: r.bank }));
 
-        const simulations: CdtSimulation[] = [];
-        const failedBanksSet = new Set<Bank>();
+        const failedBanks: Bank[] = results
+          .filter((r): r is { success: false; bank: Bank } => !r.success)
+          .map(r => r.bank);
 
-        for (const rateResult of rateResults) {
-          if (rateResult.success) {
-            const investResult = investResults.find(
-              investRes => investRes.bank === rateResult.bank && investRes.success
-            );
-            if (investResult?.success) {
-              simulations.push({ ...rateResult.data, totalInterest: investResult.data });
-            } else {
-              failedBanksSet.add(rateResult.bank);
-            }
-          } else {
-            failedBanksSet.add(rateResult.bank);
-          }
-        }
-
-        for (const investResult of investResults) {
-          if (!investResult.success) {
-            failedBanksSet.add(investResult.bank);
-          }
-        }
-
-        const failedBanks = Array.from(failedBanksSet);
-
-        if (failedBanks.length === rateEntries.length) {
+        if (failedBanks.length === simulationEntries.length) {
           throw new Error('All simulation sources failed');
         }
 
