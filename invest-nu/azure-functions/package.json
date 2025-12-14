@@ -13,7 +13,7 @@
   "type": "module",
   "dependencies": {
     "@azure/functions": "^4.0.0",
-    "@dark-light-20/invest-domain": "^1.0.0"
+    "@dark-light-20/invest-domain": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.x",

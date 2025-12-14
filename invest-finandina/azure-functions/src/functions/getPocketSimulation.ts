@@ -1,6 +1,6 @@
 import { app, HttpRequest, HttpResponseInit } from "@azure/functions";
-import { PocketUseCase } from "@dark-light-20/invest-domain/dist/application/use-cases/pocket.use-case.js";
 import { PocketService } from "../infrastructure/http-adapter/pocket.service.js";
+import { PocketUseCase } from "@dark-light-20/invest-domain";
 
 export async function getPocketSimulation(
   request: HttpRequest
