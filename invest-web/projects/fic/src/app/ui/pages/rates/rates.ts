@@ -54,7 +54,7 @@ export class Rates implements AfterViewInit {
   readonly paginationComponent = viewChild<Pagination>('pagination');
 
   ngAfterViewInit(): void {
-    this.sortListComponent()?.selectedFilter.set(SortType.BANK);
+    this.sortListComponent()?.changeFilter(SortType.BANK);
   }
 
   findRateByDays(fic: FicModel, days: number | number[]) {
