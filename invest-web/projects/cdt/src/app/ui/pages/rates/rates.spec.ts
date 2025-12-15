@@ -10,9 +10,7 @@ import { By } from '@angular/platform-browser';
 import { CurrencyPipe } from '@angular/common';
 import { RatePropertiesPipe } from '@cdt/ui/pipes/rate-properties-pipe';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
-import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
-import { SortType } from '@cdt/ui/models/sort.model';
-import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination, SortList, SortType } from 'invest-web-lib';
 
 const sampleRate = {
   id: 'sample-id',
@@ -137,9 +135,8 @@ describe('Rates', () => {
     await fixture.whenStable();
     fixture.detectChanges();
 
-    const sortRatesComponent = fixture.debugElement.query(By.directive(SortRates)).componentInstance as SortRates<{
-      rates: CdtRate[];
-    }>;
+    const sortRatesComponent = fixture.debugElement.query(By.directive(SortList))
+      .componentInstance as SortList<CdtRate>;
     const paginationComponent = fixture.debugElement.query(By.directive(Pagination)).componentInstance as Pagination;
     const goToPageSpy = jest.spyOn(paginationComponent, 'goToPage');
 

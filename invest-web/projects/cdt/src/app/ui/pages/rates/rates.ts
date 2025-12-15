@@ -5,13 +5,12 @@ import { firstValueFrom } from 'rxjs';
 import { CdtProviders } from '@cdt/config/cdt.config';
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { BankLogoPipe } from '@cdt/ui/pipes/bank-logo-pipe';
-import { SortRates } from '@cdt/ui/components/sort-rates/sort-rates';
 import { CdtRate } from '@cdt/domain/models/cdt.model';
-import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination, SortList, SortType } from 'invest-web-lib';
 
 @Component({
   selector: 'app-rates',
-  imports: [BankLogoPipe, RatePropertiesPipe, NgOptimizedImage, SortRates, FailedBanksAlert, Pagination, PageHeader],
+  imports: [BankLogoPipe, RatePropertiesPipe, NgOptimizedImage, SortList, FailedBanksAlert, Pagination, PageHeader],
   templateUrl: './rates.html',
   providers: [...CdtProviders, CurrencyPipe],
 })
@@ -30,13 +29,17 @@ export class Rates {
     () => !this.ratesResource.error() && this.ratesResource.value()?.failedBanks?.length
   );
 
-  readonly ratesList = computed<{ rates: CdtRate[] }>(() => {
-    const emptyData = { rates: [] };
+  readonly ratesList = computed<CdtRate[]>(() => {
     if (this.ratesResource.error()) {
-      return emptyData;
+      return [];
     }
-    return this.ratesResource.value() ?? emptyData;
+    return this.ratesResource.value()?.rates ?? [];
   });
+
+  readonly sortComparators: Record<SortType, (a: CdtRate, b: CdtRate) => number> = {
+    [SortType.RATE]: (a, b) => b.rate - a.rate,
+    [SortType.BANK]: (a, b) => a.bankName.localeCompare(b.bankName),
+  };
 
   readonly paginationComponent = viewChild<Pagination>('pagination');
 }

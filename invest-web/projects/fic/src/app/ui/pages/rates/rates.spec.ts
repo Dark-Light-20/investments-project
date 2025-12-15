@@ -7,9 +7,7 @@ import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { MockComponents, MockProvider } from 'ng-mocks';
 import { Fic } from '@fic/application/use-cases/fic/fic';
 import { By } from '@angular/platform-browser';
-import { SortRates } from '@fic/ui/components/sort-rates/sort-rates';
-import { SortType } from '@fic/domain/models/sort.model';
-import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination, SortList, SortType } from 'invest-web-lib';
 
 const sampleFic: FicModel = {
   id: 'sample-id',
@@ -147,9 +145,9 @@ describe('Rates', () => {
     await fixture.whenStable();
     fixture.detectChanges();
 
-    const sortRatesComponent = fixture.debugElement.query(By.directive(SortRates)).componentInstance as SortRates<{
-      rates: FicModel[];
-    }>;
+    const sortRatesComponent = fixture.debugElement.query(By.directive(SortList)).componentInstance as SortList<
+      FicModel
+    >;
     const paginationComponent = fixture.debugElement.query(By.directive(Pagination)).componentInstance as Pagination;
     const goToPageSpy = jest.spyOn(paginationComponent, 'goToPage');
 

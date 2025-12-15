@@ -12,14 +12,13 @@ import {
   MAX_TERM_IN_DAYS,
   MIN_INVESTED_AMOUNT,
   MIN_TERM_IN_DAYS,
-} from '@cdt/ui/models/simulation.model';
-import { FailedBanksAlert, PageHeader } from 'invest-web-lib';
-import { SortSimulations } from '@cdt/ui/components/sort-simulations/sort-simulations';
+} from '@cdt/ui/utils/simulation.constants';
+import { FailedBanksAlert, PageHeader, SortList, SortType } from 'invest-web-lib';
 
 @Component({
   selector: 'app-simulate',
   imports: [
-    SortSimulations,
+    SortList,
     ReactiveFormsModule,
     FailedBanksAlert,
     NgOptimizedImage,
@@ -65,13 +64,17 @@ export class Simulate {
     () => !this.simulationsResource.error() && this.simulationsResource.value()?.failedBanks?.length
   );
 
-  readonly simulationsList = computed<{ simulations: CdtSimulation[] }>(() => {
-    const emptyData = { simulations: [] };
+  readonly simulationsList = computed<CdtSimulation[]>(() => {
     if (this.simulationsResource.error()) {
-      return emptyData;
+      return [];
     }
-    return { simulations: this.simulationsResource.value()?.simulations ?? [] };
+    return this.simulationsResource.value()?.simulations ?? [];
   });
+
+  readonly sortComparators: Record<SortType, (a: CdtSimulation, b: CdtSimulation) => number> = {
+    [SortType.RATE]: (a, b) => b.rate.rate - a.rate.rate,
+    [SortType.BANK]: (a, b) => a.bankName.localeCompare(b.bankName),
+  };
 
   doSimulation() {
     const investedAmount = this.simulationForm.get('investedAmount')!.value!;

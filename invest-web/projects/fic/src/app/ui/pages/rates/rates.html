@@ -7,7 +7,11 @@
   </div>
 
   <div class="mb-8">
-    <app-sort-rates #sortedRatesList [rates]="ratesList()" (changedFilter)="paginationComponent()?.goToPage(1)" />
+    <lib-sort-list
+      #sortedRatesList
+      [items]="ratesList()"
+      [comparators]="sortComparators"
+      (changedFilter)="paginationComponent()?.goToPage(1)" />
   </div>
 
   @if (showFailedBanks()) {
@@ -44,8 +48,8 @@
             </td>
           </tr>
 
-          } @else { @for( rate of sortedRatesList.sortedRates().rates.slice(pagination.initIndex(),
-          pagination.endIndex()); track rate.id ) {
+          } @else { @for( rate of sortedRatesList.sortedItems().slice(pagination.initIndex(), pagination.endIndex());
+          track rate.id ) {
 
           <tr class="hover:bg-gray-50" data-testid="rate-row">
             <td class="px-2 md:px-6 py-4" data-testid="cell-bank">
@@ -81,7 +85,7 @@
           }
           <tr>
             <td colspan="6" class="px-2 md:px-6 py-4">
-              <lib-pagination #pagination [items]="sortedRatesList.sortedRates().rates" itemsLabel="fondos" />
+              <lib-pagination #pagination [items]="sortedRatesList.sortedItems()" itemsLabel="fondos" />
             </td>
           </tr>
           }

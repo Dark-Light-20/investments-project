@@ -1,17 +1,16 @@
 import { CurrencyPipe, NgClass, NgOptimizedImage, NgTemplateOutlet, PercentPipe } from '@angular/common';
-import { Component, computed, inject, resource, viewChild } from '@angular/core';
+import { AfterViewInit, Component, computed, inject, resource, viewChild } from '@angular/core';
 import { Fic } from '@fic/application/use-cases/fic/fic';
 import { FicProviders } from '@fic/config/fic.config';
-import { SortRates } from '@fic/ui/components/sort-rates/sort-rates';
 import { BankLogoPipe } from '@fic/ui/pipes/bank-logo-pipe';
 import { firstValueFrom } from 'rxjs';
 import { Fic as FicModel } from '@fic/domain/models/fic.model';
-import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
+import { FailedBanksAlert, PageHeader, Pagination, SortList, SortType } from 'invest-web-lib';
 
 @Component({
   selector: 'app-rates',
   imports: [
-    SortRates,
+    SortList,
     FailedBanksAlert,
     Pagination,
     PercentPipe,
@@ -24,7 +23,7 @@ import { FailedBanksAlert, PageHeader, Pagination } from 'invest-web-lib';
   templateUrl: './rates.html',
   providers: [...FicProviders, CurrencyPipe],
 })
-export class Rates {
+export class Rates implements AfterViewInit {
   private readonly _ficUseCase = inject(Fic);
 
   /* 
@@ -39,15 +38,24 @@ export class Rates {
     () => !this.ratesResource.error() && this.ratesResource.value()?.failedBanks?.length
   );
 
-  readonly ratesList = computed<{ rates: FicModel[] }>(() => {
-    const emptyData = { rates: [] };
+  readonly ratesList = computed<FicModel[]>(() => {
     if (this.ratesResource.error()) {
-      return emptyData;
+      return [];
     }
-    return { rates: this.ratesResource.value()?.fics ?? [] };
+    return this.ratesResource.value()?.fics ?? [];
   });
 
+  readonly sortComparators: Record<SortType, (a: FicModel, b: FicModel) => number> = {
+    [SortType.RATE]: (a, b) => b.rates[0].rate - a.rates[0].rate,
+    [SortType.BANK]: (a, b) => a.bankName.localeCompare(b.bankName),
+  };
+
+  readonly sortListComponent = viewChild<SortList<FicModel>>('sortedRatesList');
   readonly paginationComponent = viewChild<Pagination>('pagination');
+
+  ngAfterViewInit(): void {
+    this.sortListComponent()?.changeFilter(SortType.BANK);
+  }
 
   findRateByDays(fic: FicModel, days: number | number[]) {
     if (Array.isArray(days)) {
