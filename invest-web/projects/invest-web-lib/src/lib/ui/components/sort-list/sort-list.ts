@@ -1,15 +1,19 @@
 import { NgClass } from '@angular/common';
 import { Component, computed, input, output, signal } from '@angular/core';
-import { CdtRate } from '@cdt/domain/models/cdt.model';
-import { SortType } from '@cdt/ui/models/sort.model';
+
+export enum SortType {
+  RATE = 'rate',
+  BANK = 'bank',
+}
 
 @Component({
-  selector: 'app-sort-rates',
+  selector: 'lib-sort-list',
   imports: [NgClass],
-  templateUrl: './sort-rates.html',
+  templateUrl: './sort-list.html',
 })
-export class SortRates<T extends { rates: CdtRate[] }> {
-  readonly rates = input.required<T>();
+export class SortList<T> {
+  readonly items = input.required<T[]>();
+  readonly comparators = input.required<Record<SortType, (a: T, b: T) => number>>();
   readonly changedFilter = output<SortType>();
 
   readonly SortType = SortType;
@@ -17,20 +21,10 @@ export class SortRates<T extends { rates: CdtRate[] }> {
   protected readonly rateSortButtonClasses = computed(() => this.getSortButtonClasses(SortType.RATE));
   protected readonly bankSortButtonClasses = computed(() => this.getSortButtonClasses(SortType.BANK));
 
-  readonly sortedRates = computed(() => {
-    const data = this.rates();
+  readonly sortedItems = computed(() => {
     const filter = this.selectedFilter();
-
-    switch (filter) {
-      case SortType.RATE:
-        data.rates.sort((a, b) => b.rate - a.rate);
-        break;
-      case SortType.BANK:
-        data.rates.sort((a, b) => a.bankName.localeCompare(b.bankName));
-        break;
-    }
-
-    return data;
+    const comparator = this.comparators()[filter];
+    return comparator ? this.items().toSorted(comparator) : this.items();
   });
 
   private getSortButtonClasses(type: SortType) {
