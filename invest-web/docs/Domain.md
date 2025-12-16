@@ -7,12 +7,17 @@
     - [Attributes](#attributes)
   - [FIC](#fic)
     - [Attributes](#attributes-1)
+  - [Pocket](#pocket)
+    - [Attributes](#attributes-2)
 - [Use Cases](#use-cases)
   - [CDT](#cdt)
     - [Get CDT Rates](#get-cdt-rates)
     - [Get Investment](#get-investment)
   - [FIC](#fic-1)
     - [Get FIC Rates](#get-fic-rates)
+  - [Pocket](#pocket-1)
+    - [Get Pocket Rates](#get-pocket-rates)
+    - [Simulate Pocket](#simulate-pocket)
 
 # Entities
 
@@ -48,6 +53,17 @@ A FIC (Fondo de Inversión Coletiva) is a type of investment fund similar to a m
 
 The FIC rate is the interest rate that the bank made profitable its value in the historic time. The bank attribute is related to the financial institution that offers the FIC. The profile attribute is related to the risk profile of the FIC. The name attribute is the name of the FIC. The unit value is the value of the FIC unit. The fund value is the value of the FIC fund.
 
+## Pocket
+
+A Pocket is a flexible savings product offered by banks, often referred to as "Cajitas" or "Bolsillos". It allows users to set aside money from their main account, earning interest on the balance.
+
+### Attributes
+
+- Rate (EA: Annual Effective)
+- Bank
+
+The Pocket rate is the interest rate paid by the bank for the money kept in the pocket. The bank attribute is related to the financial institution that offers the Pocket.
+
 # Use Cases
 
 ## CDT
@@ -65,3 +81,13 @@ The FIC rate is the interest rate that the bank made profitable its value in the
 1. Get FIC Rates:
    <br>
    This use case describes the process of getting the FICs rates of all banks that the app can retrieve with its informational attributes.
+
+## Pocket
+
+1. Get Pocket Rates:
+   <br>
+   This use case describes the process of getting the Pocket rates of all banks that the app can retrieve.
+
+2. Simulate Pocket:
+   <br>
+   This use case describes the process of simulating an investment in a Pocket, calculating the earnings and final amount based on the invested amount, term in months, and an optional monthly increment.

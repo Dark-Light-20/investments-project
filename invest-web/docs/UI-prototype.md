@@ -23,6 +23,9 @@ The mockup includes the following screens:
 - FIC Rates Screen: This screen allows the user to search for FIC rates offered by different banks.
   ![FIC Rates Screen](./stitch_invest_app_web_app/fic_list/screen.png)
 
+- Pocket Simulator Screen: This screen allows the user to simulate pocket investments.
+  ![Pocket Simulator Screen](./stitch_invest_app_web_app/savings_pocket_calculator_table/screen.png)
+
 ## Logo
 
 The logo for the project was generated with Google Gemini:
@@ -39,4 +42,5 @@ The logo for the project was generated with Google Gemini:
 - Trend column in FIC rates list table screen
   ![New FIC Rates Screen](./stitch_invest_app_web_app/fic_list_v2/screen.png)
 
-- All new screen for new domain `Pockets`
+- Card view for Pocket simulations
+  ![New Pocket Simulator Screen](./stitch_invest_app_web_app/savings_pocket_calculator_cards/screen.png)
