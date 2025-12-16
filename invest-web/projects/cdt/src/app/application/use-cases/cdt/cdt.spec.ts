@@ -23,8 +23,40 @@ const cdtGatewayMock = {
   simulateCdt: jest.fn().mockReturnValue(
     of({
       simulations: [
-        { termUnit: CDTTermUnit.DAYS, rate: 5.2, bankName: Bank.Bancolombia, totalInterest: 100 },
-        { termUnit: CDTTermUnit.DAYS, rate: 4.98, bankName: Bank.Ban100, totalInterest: 95 },
+        {
+          investedAmount: 1000,
+          term: 30,
+          rate: {
+            id: 'mock-id-1',
+            bankName: Bank.Bancolombia,
+            rate: 5.16,
+            minimumAmount: 1000,
+            minimumTerm: 30,
+            maximumAmount: 100000,
+            maximumTerm: 365,
+            termUnit: CDTTermUnit.DAYS,
+          },
+          earnings: 52,
+          finalAmount: 1052,
+          bankName: Bank.Bancolombia,
+        },
+        {
+          investedAmount: 1000,
+          term: 30,
+          rate: {
+            id: 'mock-id-2',
+            bankName: Bank.Ban100,
+            rate: 4.98,
+            minimumAmount: 500,
+            minimumTerm: 30,
+            maximumAmount: 50000,
+            maximumTerm: 180,
+            termUnit: CDTTermUnit.DAYS,
+          },
+          earnings: 60,
+          finalAmount: 1060,
+          bankName: Bank.Ban100,
+        },
       ] as CdtSimulation[],
       failedBanks: [],
     } as CdtSimulationResponse)
@@ -87,8 +119,40 @@ describe('Cdt', () => {
 
     service.simulateCdt(params).subscribe(simulationResponse => {
       expect(simulationResponse.simulations).toEqual([
-        { termUnit: CDTTermUnit.DAYS, rate: 5.2, bankName: Bank.Bancolombia, totalInterest: 100 },
-        { termUnit: CDTTermUnit.DAYS, rate: 4.98, bankName: Bank.Ban100, totalInterest: 95 },
+        {
+          investedAmount: 1000,
+          term: 30,
+          rate: {
+            id: 'mock-id-1',
+            bankName: Bank.Bancolombia,
+            rate: 5.16,
+            minimumAmount: 1000,
+            minimumTerm: 30,
+            maximumAmount: 100000,
+            maximumTerm: 365,
+            termUnit: CDTTermUnit.DAYS,
+          },
+          earnings: 52,
+          finalAmount: 1052,
+          bankName: Bank.Bancolombia,
+        },
+        {
+          investedAmount: 1000,
+          term: 30,
+          rate: {
+            id: 'mock-id-2',
+            bankName: Bank.Ban100,
+            rate: 4.98,
+            minimumAmount: 500,
+            minimumTerm: 30,
+            maximumAmount: 50000,
+            maximumTerm: 180,
+            termUnit: CDTTermUnit.DAYS,
+          },
+          earnings: 60,
+          finalAmount: 1060,
+          bankName: Bank.Ban100,
+        },
       ]);
       expect(simulationResponse.failedBanks).toEqual([]);
       done();

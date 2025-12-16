@@ -11,6 +11,7 @@
     "test:home": "jest --coverage projects/home",
     "test:cdt": "jest --coverage projects/cdt",
     "test:fic": "jest --coverage projects/fic",
+    "test:pocket": "jest --coverage projects/pocket",
     "test:invest-web-lib": "jest --coverage projects/invest-web-lib",
     "lint": "ng lint --fix",
     "format": "prettier --write ."

@@ -1,0 +1,6 @@
+export const MIN_INVESTED_AMOUNT = 100000;
+export const MAX_INVESTED_AMOUNT = 10000000000;
+export const MIN_TERM_IN_MONTHS = 1;
+export const MAX_TERM_IN_MONTHS = 60;
+export const MIN_INCREMENTAL_AMOUNT = 0;
+export const MAX_INCREMENTAL_AMOUNT = 1000000000;
