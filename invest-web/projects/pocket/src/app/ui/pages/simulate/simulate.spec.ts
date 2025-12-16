@@ -95,7 +95,7 @@ describe('Simulate', () => {
     beforeEach(() => {
       component.simulationForm.setValue({
         investedAmount: 500000,
-        termInMonths: 90,
+        termInMonths: 5,
         monthlyIncrement: 50000,
       });
       component.doSimulation();
