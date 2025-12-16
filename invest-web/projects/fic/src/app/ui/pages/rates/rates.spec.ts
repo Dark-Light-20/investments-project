@@ -145,9 +145,8 @@ describe('Rates', () => {
     await fixture.whenStable();
     fixture.detectChanges();
 
-    const sortRatesComponent = fixture.debugElement.query(By.directive(SortList)).componentInstance as SortList<
-      FicModel
-    >;
+    const sortRatesComponent = fixture.debugElement.query(By.directive(SortList))
+      .componentInstance as SortList<FicModel>;
     const paginationComponent = fixture.debugElement.query(By.directive(Pagination)).componentInstance as Pagination;
     const goToPageSpy = jest.spyOn(paginationComponent, 'goToPage');
 
