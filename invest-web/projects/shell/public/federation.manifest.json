@@ -1,5 +1,6 @@
 {
   "home": "#{homeRemoteEntry}#",
   "cdt": "#{cdtRemoteEntry}#",
-  "fic": "#{ficRemoteEntry}#"
+  "fic": "#{ficRemoteEntry}#",
+  "pocket": "#{pocketRemoteEntry}#"
 }

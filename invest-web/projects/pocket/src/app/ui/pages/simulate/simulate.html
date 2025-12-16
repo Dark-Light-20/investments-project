@@ -1,0 +1,134 @@
+<div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+  <div class="mb-8">
+    <lib-page-header
+      backLink="/"
+      title="Simulador de rendimientos de Bolsillo de ahorros"
+      subtitle="Compara y encuentra el mejor retorno para tu inversión disponiendo de tu dinero cuando necesites." />
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-1">
+      <form
+        [formGroup]="simulationForm"
+        (ngSubmit)="doSimulation()"
+        class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-6">Simula tu Inversión</h2>
+
+        <div class="mb-4">
+          <label for="investment-amount" class="block text-sm font-medium text-gray-700 mb-1">
+            Monto a invertir (COP)
+          </label>
+          <div class="relative rounded-md shadow-sm">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <span class="text-gray-500 sm:text-sm">$</span>
+            </div>
+            <input
+              id="investment-amount"
+              type="number"
+              formControlName="investedAmount"
+              class="block w-full rounded-md border-gray-300 p-3 pl-7 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="100,000" />
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="investment-term" class="block text-sm font-medium text-gray-700 mb-1">
+            Periodo de inversión (meses)
+          </label>
+          <div class="relative rounded-md shadow-sm">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gray-500 icon icon-tabler icons-tabler-outline icon-tabler-calendar">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                <path d="M16 3v4" />
+                <path d="M8 3v4" />
+                <path d="M4 11h16" />
+                <path d="M11 15h1" />
+                <path d="M12 15v3" />
+              </svg>
+            </div>
+            <input
+              id="investment-term"
+              type="number"
+              formControlName="termInMonths"
+              class="block w-full rounded-md border-gray-300 p-3 pl-7 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="5" />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="investment-increment" class="block text-sm font-medium text-gray-700 mb-1">
+            Depósito mensual opcional (COP)
+          </label>
+          <div class="relative rounded-md shadow-sm">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <span class="text-gray-500 sm:text-sm">$</span>
+            </div>
+            <input
+              id="investment-increment"
+              type="number"
+              formControlName="monthlyIncrement"
+              class="block w-full rounded-md border-gray-300 p-3 pl-7 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="50,000" />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="simulationForm.invalid || simulationsResource.isLoading()"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition duration-150 ease-in-out disabled:bg-gray-400">
+          Simular rendimientos
+        </button>
+      </form>
+    </div>
+
+    <div class="lg:col-span-2">
+      @if (showFailedBanks()) {
+
+      <lib-failed-banks-alert
+        [failedBanks]="simulationsResource.value()?.failedBanks ?? []"
+        [alertMessage]="failedBanksMessage" />
+
+      } @if(simulationsResource.isLoading()) {
+
+      <div class="text-center text-gray-500" data-testid="loading-simulations">Calculando rendimientos...</div>
+
+      } @else if(simulationsResource.error()) {
+
+      <div class="text-center text-red-500" data-testid="error-simulations">
+        <p>
+          No se encontraron tasas para la simulación solicitada, o falló la solicitud a los bancos. Inténtalo de nuevo
+          más tarde.
+        </p>
+      </div>
+
+      } @else { @if(simulationsList().length) {
+
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+        <h2 class="text-xl font-bold text-gray-900">Rendimientos estimados</h2>
+      </div>
+
+      <app-simulations-table [simulations]="simulationsList()" />
+
+      } @else {
+
+      <div class="container mx-auto px-4 py-8" data-testid="start-simulation-template">
+        <div class="text-center text-gray-600">
+          <p class="text-lg">Ingresa los detalles de tu inversión para calcular los rendimientos potenciales.</p>
+        </div>
+      </div>
+
+      } }
+    </div>
+  </div>
+</div>

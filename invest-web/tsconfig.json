@@ -32,6 +32,13 @@
       "@fic/infrastructure/*": ["projects/fic/src/app/infrastructure/*"],
       "@fic/environments/*": ["projects/fic/src/environments/*"],
       "@fic/config/*": ["projects/fic/src/app/config/*"],
+      // Pocket
+      "@pocket/domain/*": ["projects/pocket/src/app/domain/*"],
+      "@pocket/application/*": ["projects/pocket/src/app/application/*"],
+      "@pocket/ui/*": ["projects/pocket/src/app/ui/*"],
+      "@pocket/infrastructure/*": ["projects/pocket/src/app/infrastructure/*"],
+      "@pocket/environments/*": ["projects/pocket/src/environments/*"],
+      "@pocket/config/*": ["projects/pocket/src/app/config/*"],
       // LIB
       "invest-web-lib": ["projects/invest-web-lib/src/public-api.ts"]
     }
@@ -74,6 +81,12 @@
     },
     {
       "path": "./projects/invest-web-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pocket/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pocket/tsconfig.spec.json"
     }
   ]
 }

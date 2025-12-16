@@ -21,9 +21,7 @@ export const routes: Routes = [
   },
   {
     path: 'pockets',
-    // TODO
-    // loadChildren: () => loadRemoteModule('pocket', './PocketRoutes').then(m => m.routes),
-    children: [{ path: '**', redirectTo: '/soon', pathMatch: 'full' }],
+    loadChildren: () => loadRemoteModule('pocket', './PocketRoutes').then(m => m.routes),
   },
   {
     path: 'soon',

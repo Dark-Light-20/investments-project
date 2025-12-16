@@ -1,0 +1,45 @@
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+  <div
+    class="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200 text-xs font-medium text-gray-500 uppercase tracking-wider">
+    <div class="col-span-1">Banco</div>
+    <div class="text-right">Tasa E.A.</div>
+    <div class="text-right">Intereses</div>
+    <div class="text-right">Saldo Final</div>
+  </div>
+
+  <div class="divide-y divide-gray-200" data-testid="simulations-list">
+    @for(simulation of simulations(); track simulation) {
+
+    <div
+      class="grid grid-cols-4 gap-4 p-4 items-center hover:bg-gray-50 transition duration-150"
+      data-testid="simulation-item">
+      <div class="col-span-1 flex items-center">
+        <div class="flex-shrink-0 h-8 w-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+          <img
+            [ngSrc]="simulation.bankName | bankLogo"
+            width="32"
+            height="32"
+            class="rounded-full"
+            alt="{{ simulation.bankName }} logo"
+            data-testid="simulationBankLogo" />
+        </div>
+        <span class="text-sm font-medium text-gray-900" data-testid="simulationBankName">
+          {{ simulation.bankName }}
+        </span>
+      </div>
+
+      <div class="text-right text-sm text-gray-900 font-medium" data-testid="simulationRate">
+        {{ simulation.rate | number:'1.2-2' }}%
+      </div>
+
+      <div class="text-right text-sm text-green-600 font-medium" data-testid="simulationEarnings">
+        + {{ simulation.earnings | currency : 'COP' : 'symbol-narrow' }}
+      </div>
+
+      <div class="text-right text-sm text-gray-900 font-bold" data-testid="simulationFinalAmount">
+        {{ simulation.finalAmount | currency : 'COP' : 'symbol-narrow'}}
+      </div>
+    </div>
+    }
+  </div>
+</div>
