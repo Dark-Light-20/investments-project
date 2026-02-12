@@ -14,7 +14,9 @@ export class FICService implements FICGateway {
       .first()
       .attr("href");
     const ficBufferPDF = Buffer.from(
-      await (await fetch(ficDataLink!)).arrayBuffer()
+      await (
+        await fetch(`https://www.bancolombia.com${ficDataLink}`)
+      ).arrayBuffer(),
     );
     const pdfParser = new PDFParser();
 
