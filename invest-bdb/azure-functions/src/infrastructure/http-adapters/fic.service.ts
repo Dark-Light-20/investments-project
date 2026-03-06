@@ -1,55 +1,76 @@
 import * as cheerio from "cheerio";
 import { FIC, FICGateway } from "@dark-light-20/invest-domain";
 import { ficMapper } from "../mappers/fic.mapper.js";
-import { FICRawModel } from "../models/fic.model.js";
+import { FICConfig, FICRawModel } from "../models/fic.model.js";
 
 export class FicService implements FICGateway {
-  private readonly FIC_INFO_URL = process.env.FIC_INFO_URL!;
+  private readonly ficConfigs: FICConfig[] = JSON.parse(
+    process.env.FIC_CONFIG!,
+  );
 
   async getFICs(): Promise<FIC[]> {
-    const response = await fetch(this.FIC_INFO_URL);
+    const allFics: FIC[] = [];
+
+    // Fetch and parse each configured FIC
+    for (const config of this.ficConfigs) {
+      try {
+        const fic = await this.extractFIC(config);
+        if (fic) {
+          allFics.push(fic);
+        }
+      } catch (error) {
+        console.error(
+          `Error fetching FIC "${config.name}" from ${config.url}:`,
+          error,
+        );
+        // Continue with other FICs even if one fails
+      }
+    }
+
+    return allFics;
+  }
+
+  private async extractFIC(config: FICConfig): Promise<FIC | null> {
+    const { name, url, rowName } = config;
+    const response = await fetch(url);
     const ficInfoText = await response.text();
 
-    const ficDocument = cheerio.load(ficInfoText);
+    const $ = cheerio.load(ficInfoText);
 
-    // FIC types (by historic days available entries)
-    const types = ficDocument(".renta-content").find("table");
-    const fics = types
-      .map((_, table) => {
-        const ficType = ficDocument(table);
-        const keys = ficType
-          .find("th")
-          .map((_, th) => ficDocument(th).text().trim() as keyof FICRawModel)
-          .get()
-          .slice(1); // Skip first entry, which is empty, because is name column
-
-        return ficType
-          .find("tbody tr") // FIC data row
-          .map((_, ficData) => {
-            const dataItem = ficDocument(ficData).find("td");
-
-            // FIC category case
-            if (dataItem.length <= 1) {
-              return null;
-            }
-
-            const ficDataValues = dataItem
-              .map((_, data) => ficDocument(data).text().trim())
-              .get();
-
-            const rawFIC = Object.fromEntries([
-              ["0", ficDataValues[0]],
-              ...keys.map((key, i) => [key, ficDataValues[i + 1]]),
-            ]);
-
-            return ficMapper(rawFIC as FICRawModel);
-          })
-          .get()
-          .filter((fic): fic is FIC => fic !== null); // Delete invalid FICs (category row case)
+    const table = $(".tabla-redondeada table");
+    const keys = table
+      .find("thead th")
+      .map((_, th) => {
+        // Normalize column names: remove line breaks and extra text like "% E.A"
+        const text = $(th)
+          .text()
+          .replace(/\s+/g, " ") // Replace multiple whitespace/newlines with single space
+          .replace(/% E\.A/gi, "") // Remove "% E.A" text
+          .trim();
+        return text as keyof FICRawModel;
       })
       .get()
-      .flat();
+      .slice(1); // Skip first column header (name column)
 
-    return fics;
+    // Find the specific row matching the configured rowName
+    const targetRow = table.find("tbody tr").filter((_, row) => {
+      const firstCell = $(row).find("td").first().text().trim();
+      return firstCell.toLowerCase() === rowName.toLowerCase();
+    });
+
+    if (targetRow.length === 0) {
+      console.warn(`FIC row "${rowName}" not found in ${url}`);
+      return null;
+    }
+
+    const cells = targetRow.find("td");
+    const ficDataValues = cells.map((_, td) => $(td).text().trim()).get();
+
+    const rawFIC = Object.fromEntries([
+      ["name", name],
+      ...keys.map((key, i) => [key, ficDataValues[i + 1]]),
+    ]);
+
+    return ficMapper(rawFIC as FICRawModel);
   }
 }

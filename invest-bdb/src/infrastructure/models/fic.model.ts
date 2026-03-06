@@ -1,14 +1,15 @@
 export interface FICRawModel {
-  "0": string;
-  "1 Día": string;
-  "7 Días": string;
-  Mensual: string;
-  Trimestral: string;
-  Semestral: string;
-  "Año Corrido": string;
-  "último Año": string;
-  "últimos 2 Años": string;
-  "últimos 3 Años": string;
-  "Valor Unidad": string;
-  "Valor del Fondo*": string;
+  name: string;
+  Diaria: string;
+  "30 días": string;
+  "180 días": string;
+  "1° año": string;
+  "2° año": string;
+  "3° año": string;
+}
+
+export interface FICConfig {
+  name: string; // Display name for the FIC
+  url: string; // URL where the table is located
+  rowName: string; // Exact row name in the HTML table (case-insensitive)
 }
