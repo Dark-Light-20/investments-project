@@ -15,12 +15,12 @@ const isAllSpanishUppercase = (str: string) =>
 
 export function getFicRawData(pdfData: Output): string[] {
   const raw = pdfData.Pages.flatMap((page) =>
-    page.Texts.map((text) => decodeURIComponent(text.R[0].T))
+    page.Texts.map((text) => decodeURIComponent(text.R[0].T)),
   );
   const start = raw.findIndex(isAllSpanishUppercase);
   const end =
     raw.findIndex(
-      (item) => item.trim() === "Rentabilidad fondos de inversión colectiva"
+      (item) => item.trim() === "Rentabilidad fondos de inversión colectiva",
     ) - 4;
   return raw.slice(start, end);
 }
@@ -70,9 +70,17 @@ export function extractFICs(data: string[]) {
     }
 
     if (isName(item)) {
-      if (current && current.rates.length) push();
+      if (current && !current.rates.length) {
+        current.name = `${current.name} ${item}`;
+      } else if (current && current.rates.length) {
+        push();
+      }
+
       if (category) {
-        current = { name: item, rates: [], amount: 0, unitValue: 0 };
+        if (!current) {
+          current = { name: item, rates: [], amount: 0, unitValue: 0 };
+        }
+
         const money = tryReadMoneyPair(data, i + 1);
         if (money) {
           current.amount = money.amount;
@@ -81,6 +89,17 @@ export function extractFICs(data: string[]) {
         }
       }
       continue;
+    }
+
+    if (isNumericToken(item) && current && !current.rates.length) {
+      const money = tryReadMoneyPair(data, i + 1);
+      if (money) {
+        current.name = `${current.name} ${item}`;
+        current.amount = money.amount;
+        current.unitValue = money.unitValue;
+        i = money.nextIndex - 1;
+        continue;
+      }
     }
 
     if (isNumericToken(item) && isPercent(data[i + 1])) {

@@ -6,6 +6,7 @@ import { ficMapper } from "../mappers/fic.mapper.js";
 
 export class FICService implements FICGateway {
   private readonly FIC_INFO_URL = process.env.FIC_INFO_URL!;
+  private readonly FIC_NAMES = process.env.FIC_NAMES!.split(",");
 
   async getFICs(): Promise<FIC[]> {
     const ficInfoText = await (await fetch(this.FIC_INFO_URL)).text();
@@ -21,10 +22,12 @@ export class FICService implements FICGateway {
     const pdfParser = new PDFParser();
 
     return new Promise((resolve, reject) => {
-      pdfParser.on("pdfParser_dataError", (err) => reject(err.parserError));
+      pdfParser.on("pdfParser_dataError", (err) => reject(err));
       pdfParser.on("pdfParser_dataReady", (pdfData) => {
         const rawFicData = getFicRawData(pdfData);
-        const ficData = extractFICs(rawFicData);
+        const ficData = extractFICs(rawFicData).filter((fic) =>
+          this.FIC_NAMES.includes(fic.name),
+        );
         resolve(ficMapper(ficData));
       });
       pdfParser.parseBuffer(ficBufferPDF);

@@ -1,0 +1,997 @@
+[
+  {
+    "name": "Fiducuenta",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 15.05
+      },
+      {
+        "historicDays": 7,
+        "rate": 6.9
+      },
+      {
+        "historicDays": 30,
+        "rate": 7.39
+      },
+      {
+        "historicDays": 90,
+        "rate": 5.65
+      },
+      {
+        "historicDays": 180,
+        "rate": 5.92
+      },
+      {
+        "historicDays": 365,
+        "rate": 7.06
+      }
+    ]
+  },
+  {
+    "name": "Fiduexcedentes",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 10.63
+      },
+      {
+        "historicDays": 7,
+        "rate": 4.96
+      },
+      {
+        "historicDays": 30,
+        "rate": 6.32
+      },
+      {
+        "historicDays": 90,
+        "rate": 5.31
+      },
+      {
+        "historicDays": 180,
+        "rate": 5.69
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.96
+      }
+    ]
+  },
+  {
+    "name": "Renta Liquidez Tipo B",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 11.02
+      },
+      {
+        "historicDays": 7,
+        "rate": 7.57
+      },
+      {
+        "historicDays": 30,
+        "rate": 8.57
+      },
+      {
+        "historicDays": 90,
+        "rate": 7.39
+      },
+      {
+        "historicDays": 180,
+        "rate": 7.49
+      },
+      {
+        "historicDays": 365,
+        "rate": 8.3
+      }
+    ]
+  },
+  {
+    "name": "Renta Liquidez Tipo C",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 10.24
+      },
+      {
+        "historicDays": 7,
+        "rate": 6.82
+      },
+      {
+        "historicDays": 30,
+        "rate": 7.82
+      },
+      {
+        "historicDays": 90,
+        "rate": 6.64
+      },
+      {
+        "historicDays": 180,
+        "rate": 6.74
+      },
+      {
+        "historicDays": 365,
+        "rate": 7.54
+      }
+    ]
+  },
+  // NO
+  {
+    "name": "Renta Liquidez Tipo D",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 10.46
+      },
+      {
+        "historicDays": 7,
+        "rate": 7.04
+      },
+      {
+        "historicDays": 30,
+        "rate": 8.03
+      },
+      {
+        "historicDays": 90,
+        "rate": 6.85
+      },
+      {
+        "historicDays": 180,
+        "rate": 6.95
+      },
+      {
+        "historicDays": 365,
+        "rate": 7.76
+      }
+    ]
+  },
+  {
+    "name": "Renta Liquidez Tipo E",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 10.74
+      },
+      {
+        "historicDays": 7,
+        "rate": 7.31
+      },
+      {
+        "historicDays": 30,
+        "rate": 7.47
+      },
+      {
+        "historicDays": 90,
+        "rate": 0.03
+      },
+      {
+        "historicDays": 180,
+        "rate": 0.14
+      },
+      {
+        "historicDays": 365,
+        "rate": 0.59
+      }
+    ]
+  },
+  {
+    "name": "Renta Liquidez Tipo F",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 7.53
+      },
+      {
+        "historicDays": 7,
+        "rate": 4.78
+      },
+      {
+        "historicDays": 30,
+        "rate": 5.87
+      },
+      {
+        "historicDays": 90,
+        "rate": 0.02
+      },
+      {
+        "historicDays": 180,
+        "rate": 0.09
+      },
+      {
+        "historicDays": 365,
+        "rate": 0.47
+      }
+    ]
+  },
+  {
+    "name": "Renta Liquidez Tipo G",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 9.91
+      },
+      {
+        "historicDays": 7,
+        "rate": 6.5
+      },
+      {
+        "historicDays": 30,
+        "rate": 7.49
+      },
+      {
+        "historicDays": 90,
+        "rate": 6.32
+      },
+      {
+        "historicDays": 180,
+        "rate": 6.42
+      },
+      {
+        "historicDays": 365,
+        "rate": 7.22
+      }
+    ]
+  },
+  //
+  {
+    "name": "Fidurenta Participación 30",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 18.45
+      },
+      {
+        "historicDays": 7,
+        "rate": 3.64
+      },
+      {
+        "historicDays": 30,
+        "rate": 0.48
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.36
+      },
+      {
+        "historicDays": 180,
+        "rate": 3.76
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.09
+      }
+    ]
+  },
+  {
+    "name": "Fidurenta Participación 60",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 18.38
+      },
+      {
+        "historicDays": 7,
+        "rate": 3.64
+      },
+      {
+        "historicDays": 30,
+        "rate": 0.58
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.48
+      },
+      {
+        "historicDays": 180,
+        "rate": 3.88
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.19
+      }
+    ]
+  },
+  {
+    "name": "Fidurenta Participación 90",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 18.47
+      },
+      {
+        "historicDays": 7,
+        "rate": 3.72
+      },
+      {
+        "historicDays": 30,
+        "rate": 0.59
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.51
+      },
+      {
+        "historicDays": 180,
+        "rate": 3.89
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.21
+      }
+    ]
+  },
+  {
+    "name": "Fidurenta Participación 180",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 19.56
+      },
+      {
+        "historicDays": 7,
+        "rate": 4.04
+      },
+      {
+        "historicDays": 30,
+        "rate": 0.73
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.62
+      },
+      {
+        "historicDays": 180,
+        "rate": 4
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.32
+      }
+    ]
+  },
+  {
+    "name": "Fidurenta Participación 360",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 18.55
+      },
+      {
+        "historicDays": 7,
+        "rate": 5.36
+      },
+      {
+        "historicDays": 30,
+        "rate": 1.17
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.81
+      },
+      {
+        "historicDays": 180,
+        "rate": 4.23
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.53
+      }
+    ]
+  },
+  {
+    "name": "Renta Fija Plazo",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 64.31
+      },
+      {
+        "historicDays": 7,
+        "rate": 8.78
+      },
+      {
+        "historicDays": 30,
+        "rate": 20.67
+      },
+      {
+        "historicDays": 90,
+        "rate": 5.7
+      },
+      {
+        "historicDays": 180,
+        "rate": 0.12
+      },
+      {
+        "historicDays": 365,
+        "rate": 3.6
+      }
+    ]
+  },
+  {
+    "name": "Plan Semilla",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 21.45
+      },
+      {
+        "historicDays": 7,
+        "rate": 2.07
+      },
+      {
+        "historicDays": 30,
+        "rate": 5.34
+      },
+      {
+        "historicDays": 90,
+        "rate": 0
+      },
+      {
+        "historicDays": 180,
+        "rate": 2.11
+      },
+      {
+        "historicDays": 365,
+        "rate": 5.18
+      }
+    ]
+  },
+  {
+    "name": "Renta Fija Plus Tipo C",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 15.21
+      },
+      {
+        "historicDays": 7,
+        "rate": 4.24
+      },
+      {
+        "historicDays": 30,
+        "rate": 3.07
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.9
+      },
+      {
+        "historicDays": 180,
+        "rate": 3.45
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.35
+      }
+    ]
+  },
+  // NO
+  {
+    "name": "Renta Fija Valor",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": null
+      },
+      {
+        "historicDays": 7,
+        "rate": null
+      },
+      {
+        "historicDays": 30,
+        "rate": null
+      },
+      {
+        "historicDays": 90,
+        "rate": null
+      },
+      {
+        "historicDays": 180,
+        "rate": null
+      },
+      {
+        "historicDays": 365,
+        "rate": null
+      }
+    ]
+  },
+  //
+  {
+    "name": "Fiducuenta dólares",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 359.48
+      },
+      {
+        "historicDays": 7,
+        "rate": 36.41
+      },
+      {
+        "historicDays": 30,
+        "rate": 61.56
+      },
+      {
+        "historicDays": 90,
+        "rate": 3.98
+      },
+      {
+        "historicDays": 180,
+        "rate": 6.84
+      },
+      {
+        "historicDays": 365,
+        "rate": 5.9
+      }
+    ]
+  },
+  // NO
+  {
+    "name": "Bancolombia Clasificación Pública * EA: corresponde a una tasa Efectiva Anual, a través de la cual se anualiza la rentabilidad nominal obtenida durante el peri odo señalado. ** Nominal: rentabilidad periódica de la inversión. Corresponde al cambio porcentual entre el valor de unidad del fondo entre el inicio del periodo señalado y la fecha de reporte. *** Corresponde a la rentabilidad consolidada de todas los participaciones del fondo. N.D.  = No Disponible para el plazo de rentabilidad correspondiente. Tipo de Fondo Saldo Actual Valor unidad Rentabilidad Neta (EA)(*) Rentabilidad Neta (Nominal)(**) Diaria Año Corrido Diaria Año Corrido",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": null
+      },
+      {
+        "historicDays": 7,
+        "rate": null
+      },
+      {
+        "historicDays": 30,
+        "rate": null
+      },
+      {
+        "historicDays": 90,
+        "rate": null
+      },
+      {
+        "historicDays": 180,
+        "rate": null
+      },
+      {
+        "historicDays": 365,
+        "rate": null
+      }
+    ]
+  },
+  {
+    "name": "Renta Futuro Tipo C",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 23.87
+      },
+      {
+        "historicDays": 7,
+        "rate": 55.73
+      },
+      {
+        "historicDays": 30,
+        "rate": 16.87
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.51
+      },
+      {
+        "historicDays": 180,
+        "rate": 3.35
+      },
+      {
+        "historicDays": 365,
+        "rate": 7.01
+      }
+    ]
+  },
+  {
+    "name": "Renta Balanceado",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 56.71
+      },
+      {
+        "historicDays": 7,
+        "rate": 47.91
+      },
+      {
+        "historicDays": 30,
+        "rate": 10.85
+      },
+      {
+        "historicDays": 90,
+        "rate": 1.4
+      },
+      {
+        "historicDays": 180,
+        "rate": 6.73
+      },
+      {
+        "historicDays": 365,
+        "rate": 10.54
+      }
+    ]
+  },
+  {
+    "name": "Renta Sostenible Global Tipo C",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 60.73
+      },
+      {
+        "historicDays": 7,
+        "rate": 65.85
+      },
+      {
+        "historicDays": 30,
+        "rate": 41.85
+      },
+      {
+        "historicDays": 90,
+        "rate": 3.76
+      },
+      {
+        "historicDays": 180,
+        "rate": 1.29
+      },
+      {
+        "historicDays": 365,
+        "rate": 1.89
+      }
+    ]
+  },
+  {
+    "name": "Renta Digital Crecimiento",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 685.32
+      },
+      {
+        "historicDays": 7,
+        "rate": 60.32
+      },
+      {
+        "historicDays": 30,
+        "rate": 1.87
+      },
+      {
+        "historicDays": 90,
+        "rate": 4.32
+      },
+      {
+        "historicDays": 180,
+        "rate": 7.33
+      },
+      {
+        "historicDays": 365,
+        "rate": 12.35
+      }
+    ]
+  },
+  {
+    "name": "Renta Digital Conservador",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 146.45
+      },
+      {
+        "historicDays": 7,
+        "rate": 26.19
+      },
+      {
+        "historicDays": 30,
+        "rate": 2.75
+      },
+      {
+        "historicDays": 90,
+        "rate": 0.97
+      },
+      {
+        "historicDays": 180,
+        "rate": 3.53
+      },
+      {
+        "historicDays": 365,
+        "rate": 6.19
+      }
+    ]
+  },
+  {
+    "name": "Renta Digital Moderado",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 329.7
+      },
+      {
+        "historicDays": 7,
+        "rate": 43.98
+      },
+      {
+        "historicDays": 30,
+        "rate": 1.28
+      },
+      {
+        "historicDays": 90,
+        "rate": 2.62
+      },
+      {
+        "historicDays": 180,
+        "rate": 5.29
+      },
+      {
+        "historicDays": 365,
+        "rate": 8.78
+      }
+    ]
+  },
+  {
+    "name": "Renta Digital Alto Crecimiento",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 3334.6
+      },
+      {
+        "historicDays": 7,
+        "rate": 72.05
+      },
+      {
+        "historicDays": 30,
+        "rate": 9.04
+      },
+      {
+        "historicDays": 90,
+        "rate": 5.12
+      },
+      {
+        "historicDays": 180,
+        "rate": 11.4
+      },
+      {
+        "historicDays": 365,
+        "rate": 17.18
+      }
+    ]
+  },
+  {
+    "name": "Renta Acciones Latam",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 99.99
+      },
+      {
+        "historicDays": 7,
+        "rate": 96.5
+      },
+      {
+        "historicDays": 30,
+        "rate": 38.29
+      },
+      {
+        "historicDays": 90,
+        "rate": 42.08
+      },
+      {
+        "historicDays": 180,
+        "rate": 36.87
+      },
+      {
+        "historicDays": 365,
+        "rate": 35.33
+      }
+    ]
+  },
+  {
+    "name": "Renta Variable Colombia Tipo C",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 256.17
+      },
+      {
+        "historicDays": 7,
+        "rate": 92.55
+      },
+      {
+        "historicDays": 30,
+        "rate": 75.99
+      },
+      {
+        "historicDays": 90,
+        "rate": 10.66
+      },
+      {
+        "historicDays": 180,
+        "rate": 35.41
+      },
+      {
+        "historicDays": 365,
+        "rate": 40.39
+      }
+    ]
+  },
+  {
+    "name": "Renta Alta Convicción Tipo C",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 97.76
+      },
+      {
+        "historicDays": 7,
+        "rate": 75.12
+      },
+      {
+        "historicDays": 30,
+        "rate": 14.12
+      },
+      {
+        "historicDays": 90,
+        "rate": 0.6
+      },
+      {
+        "historicDays": 180,
+        "rate": 11.96
+      },
+      {
+        "historicDays": 365,
+        "rate": 18.33
+      }
+    ]
+  },
+  {
+    "name": "FICI Sura AM Inmobiliario Serie A",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 15.15
+      },
+      {
+        "historicDays": 7,
+        "rate": 15.27
+      },
+      {
+        "historicDays": 30,
+        "rate": 5.35
+      },
+      {
+        "historicDays": 90,
+        "rate": 1.34
+      },
+      {
+        "historicDays": 180,
+        "rate": 8.36
+      },
+      {
+        "historicDays": 365,
+        "rate": 3.38
+      }
+    ]
+  },
+  // NO
+  {
+    "name": "FICI Sura AM Inmobiliario Serie B",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 15.15
+      },
+      {
+        "historicDays": 7,
+        "rate": 15.27
+      },
+      {
+        "historicDays": 30,
+        "rate": 5.35
+      },
+      {
+        "historicDays": 90,
+        "rate": 1.55
+      },
+      {
+        "historicDays": 180,
+        "rate": 8.14
+      },
+      {
+        "historicDays": 365,
+        "rate": 3.18
+      }
+    ]
+  },
+  //
+  {
+    "name": "Renta Alternativo Global Tipo D",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 39.14
+      },
+      {
+        "historicDays": 7,
+        "rate": 28.44
+      },
+      {
+        "historicDays": 30,
+        "rate": 24.09
+      },
+      {
+        "historicDays": 90,
+        "rate": 4.79
+      },
+      {
+        "historicDays": 180,
+        "rate": 4.64
+      },
+      {
+        "historicDays": 365,
+        "rate": 7.09
+      }
+    ]
+  },
+  // NO
+  {
+    "name": "Ómnibus Sura Crédito Privado",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 8.87
+      },
+      {
+        "historicDays": 7,
+        "rate": 9.34
+      },
+      {
+        "historicDays": 30,
+        "rate": 13.83
+      },
+      {
+        "historicDays": 90,
+        "rate": 9.77
+      },
+      {
+        "historicDays": 180,
+        "rate": 8.82
+      },
+      {
+        "historicDays": 365,
+        "rate": 8.71
+      }
+    ]
+  },
+  {
+    "name": "Ómnibus Sura Crédito Privado III",
+    "rates": [
+      {
+        "historicDays": 1,
+        "rate": 14.59
+      },
+      {
+        "historicDays": 7,
+        "rate": 14.67
+      },
+      {
+        "historicDays": 30,
+        "rate": 18.73
+      },
+      {
+        "historicDays": 90,
+        "rate": 15.2
+      },
+      {
+        "historicDays": 180,
+        "rate": 13.99
+      },
+      {
+        "historicDays": 365,
+        "rate": 13.88
+      }
+    ]
+  }
+  //
+]
