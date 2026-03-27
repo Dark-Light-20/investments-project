@@ -48,6 +48,7 @@ jobs:
           bancoDeBogotaUrl: "${{ vars.BANCO_DE_BOGOTA_URL }}"
           finandinaUrl: "${{ vars.FINANDINA_URL }}"
           nuUrl: "${{ vars.NU_URL }}"
+          daviviendaUrl: "${{ vars.DAVIVIENDA_URL }}"
 
       - name: Build CDT
         run: npm run build -- ${{ env.APP }}
