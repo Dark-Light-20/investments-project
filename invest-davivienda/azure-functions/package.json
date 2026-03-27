@@ -1,0 +1,27 @@
+{
+  "name": "invest-davivienda-cdt-azure-functions",
+  "version": "1.0.0",
+  "description": "Azure Functions for Davivienda CDT rates and simulation",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "type": "module",
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@dark-light-20/invest-domain": "^1.0.1",
+    "@ngneat/falso": "^7.3.0",
+    "cheerio": "^1.0.1",
+    "pdf2json": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
+}
