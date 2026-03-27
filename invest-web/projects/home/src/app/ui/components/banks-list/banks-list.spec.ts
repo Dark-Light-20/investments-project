@@ -34,4 +34,10 @@ describe('BanksList', () => {
       expect(spanElement.textContent).toBe(bank.name);
     });
   });
+
+  test('should include Davivienda in banks list', () => {
+    const davivienda = component.banks.find(bank => bank.name === 'Davivienda');
+    expect(davivienda).toBeTruthy();
+    expect(davivienda?.logo).toContain('LogoDavivienda.png');
+  });
 });
