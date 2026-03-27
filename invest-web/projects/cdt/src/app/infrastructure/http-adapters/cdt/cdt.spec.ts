@@ -15,6 +15,7 @@ const rateListEndpoints = [
     bank: Bank.BancoDeBogota,
     url: `${environment.bancoDeBogotaUrl}${environment.rateListEndpoint}`,
   },
+  { bank: Bank.Davivienda, url: `${environment.daviviendaUrl}${environment.rateListEndpoint}` },
   { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.rateListEndpoint}` },
   { bank: Bank.Nu, url: `${environment.nuUrl}${environment.rateListEndpoint}` },
 ];
@@ -26,6 +27,7 @@ const simulationEndpoints = [
     bank: Bank.BancoDeBogota,
     url: `${environment.bancoDeBogotaUrl}${environment.simulationEndpoint}`,
   },
+  { bank: Bank.Davivienda, url: `${environment.daviviendaUrl}${environment.simulationEndpoint}` },
   { bank: Bank.Finandina, url: `${environment.finandinaUrl}${environment.simulationEndpoint}` },
   { bank: Bank.Nu, url: `${environment.nuUrl}${environment.simulationEndpoint}` },
 ];
@@ -62,7 +64,7 @@ describe('Cdt', () => {
 
     service.getCdtRates().subscribe(result => {
       expect(result.failedBanks).toHaveLength(0);
-      expect(result.rates).toHaveLength(5);
+      expect(result.rates).toHaveLength(6);
       done();
     });
 
@@ -85,7 +87,7 @@ describe('Cdt', () => {
 
     service.getCdtRates().subscribe(result => {
       expect(result.failedBanks).toContain(Bank.Ban100);
-      expect(result.rates).toHaveLength(4);
+      expect(result.rates).toHaveLength(5);
       done();
     });
 
@@ -141,7 +143,7 @@ describe('Cdt', () => {
     test('should simulate CDT for all banks successfully', done => {
       service.simulateCdt(investedAmount, termInDays).subscribe(result => {
         expect(result.failedBanks).toHaveLength(0);
-        expect(result.simulations).toHaveLength(5);
+        expect(result.simulations).toHaveLength(6);
         for (const simulation of result.simulations) {
           expect(simulation.earnings).toBe(mockInvestReturn);
           expect(simulation.rate).toBeTruthy();
@@ -163,7 +165,7 @@ describe('Cdt', () => {
     test('should handle partial failures in simulation', done => {
       service.simulateCdt(investedAmount, termInDays).subscribe(result => {
         expect(result.failedBanks).toContain(Bank.Ban100);
-        expect(result.simulations).toHaveLength(4);
+        expect(result.simulations).toHaveLength(5);
         done();
       });
 

@@ -29,6 +29,11 @@ describe('BankLogoPipe', () => {
     expect(result).toBe(`${assetsUrl}/logos/LogoBancoDeBogota.png`);
   });
 
+  test('should return correct logo path for Davivienda', () => {
+    const result = pipe.transform(Bank.Davivienda);
+    expect(result).toBe(`${assetsUrl}/logos/LogoDavivienda.png`);
+  });
+
   test('should return correct logo path for Finandina', () => {
     const result = pipe.transform(Bank.Finandina);
     expect(result).toBe(`${assetsUrl}/logos/LogoFinandina.png`);

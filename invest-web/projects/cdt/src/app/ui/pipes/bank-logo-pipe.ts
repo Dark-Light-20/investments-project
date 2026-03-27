@@ -12,6 +12,7 @@ export class BankLogoPipe implements PipeTransform {
     [Bank.Ban100, `${this._assetsUrl}/logos/LogoBan100.png`],
     [Bank.Bancolombia, `${this._assetsUrl}/logos/LogoBancolombia.png`],
     [Bank.BancoDeBogota, `${this._assetsUrl}/logos/LogoBancoDeBogota.png`],
+    [Bank.Davivienda, `${this._assetsUrl}/logos/LogoDavivienda.png`],
     [Bank.Finandina, `${this._assetsUrl}/logos/LogoFinandina.png`],
     [Bank.Nu, `${this._assetsUrl}/logos/LogoNu.png`],
   ]);

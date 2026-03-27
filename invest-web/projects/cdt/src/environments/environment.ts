@@ -5,6 +5,7 @@ export const environment = {
   ban100Url: '#{ban100Url}#',
   bancolombiaUrl: '#{bancolombiaUrl}#',
   bancoDeBogotaUrl: '#{bancoDeBogotaUrl}#',
+  daviviendaUrl: '#{daviviendaUrl}#',
   finandinaUrl: '#{finandinaUrl}#',
   nuUrl: '#{nuUrl}#',
 };

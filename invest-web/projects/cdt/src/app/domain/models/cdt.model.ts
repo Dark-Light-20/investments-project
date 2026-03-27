@@ -9,6 +9,7 @@ export enum Bank {
   Ban100 = 'Ban100',
   Bancolombia = 'Bancolombia',
   BancoDeBogota = 'Banco de Bogota',
+  Davivienda = 'Davivienda',
   Finandina = 'Finandina',
   Nu = 'Nu',
 }
