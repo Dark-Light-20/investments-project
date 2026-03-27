@@ -23,6 +23,7 @@ export class Cdt implements CdtGateway {
     [Bank.Ban100]: `${environment.ban100Url}${environment.rateListEndpoint}`,
     [Bank.Bancolombia]: `${environment.bancolombiaUrl}${environment.rateListEndpoint}`,
     [Bank.BancoDeBogota]: `${environment.bancoDeBogotaUrl}${environment.rateListEndpoint}`,
+    [Bank.Davivienda]: `${environment.daviviendaUrl}${environment.rateListEndpoint}`,
     [Bank.Finandina]: `${environment.finandinaUrl}${environment.rateListEndpoint}`,
     [Bank.Nu]: `${environment.nuUrl}${environment.rateListEndpoint}`,
   };
@@ -31,6 +32,7 @@ export class Cdt implements CdtGateway {
     [Bank.Ban100]: `${environment.ban100Url}${environment.simulationEndpoint}`,
     [Bank.Bancolombia]: `${environment.bancolombiaUrl}${environment.simulationEndpoint}`,
     [Bank.BancoDeBogota]: `${environment.bancoDeBogotaUrl}${environment.simulationEndpoint}`,
+    [Bank.Davivienda]: `${environment.daviviendaUrl}${environment.simulationEndpoint}`,
     [Bank.Finandina]: `${environment.finandinaUrl}${environment.simulationEndpoint}`,
     [Bank.Nu]: `${environment.nuUrl}${environment.simulationEndpoint}`,
   };

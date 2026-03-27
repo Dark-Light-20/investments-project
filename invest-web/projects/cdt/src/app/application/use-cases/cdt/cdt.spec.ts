@@ -93,7 +93,7 @@ describe('Cdt', () => {
     cdtGatewayMock.getCdtRates.mockReturnValueOnce(
       of({
         rates: [] as CdtRate[],
-        failedBanks: [Bank.Ban100, Bank.Bancolombia, Bank.BancoDeBogota, Bank.Finandina, Bank.Nu],
+        failedBanks: [Bank.Ban100, Bank.Bancolombia, Bank.BancoDeBogota, Bank.Davivienda, Bank.Finandina, Bank.Nu],
       } as CdtRatesResponse)
     );
 
@@ -103,6 +103,7 @@ describe('Cdt', () => {
         Bank.Ban100,
         Bank.Bancolombia,
         Bank.BancoDeBogota,
+        Bank.Davivienda,
         Bank.Finandina,
         Bank.Nu,
       ]);
@@ -164,7 +165,7 @@ describe('Cdt', () => {
     cdtGatewayMock.simulateCdt.mockReturnValueOnce(
       of({
         simulations: [],
-        failedBanks: [Bank.Ban100, Bank.Bancolombia, Bank.BancoDeBogota, Bank.Finandina, Bank.Nu],
+        failedBanks: [Bank.Ban100, Bank.Bancolombia, Bank.BancoDeBogota, Bank.Davivienda, Bank.Finandina, Bank.Nu],
       } as CdtSimulationResponse)
     );
 
@@ -179,6 +180,7 @@ describe('Cdt', () => {
         Bank.Ban100,
         Bank.Bancolombia,
         Bank.BancoDeBogota,
+        Bank.Davivienda,
         Bank.Finandina,
         Bank.Nu,
       ]);
