@@ -7,17 +7,20 @@ import { ficMapper } from "../mappers/fic.mapper.js";
 export class FICService implements FICGateway {
   private readonly FIC_INFO_URL = process.env.FIC_INFO_URL!;
   private readonly FIC_NAMES = process.env.FIC_NAMES!.split(",");
+  private readonly PDF_REPORT_LINK_SELECTOR =
+    'a[aria-label="Descargar reporte"]';
 
   async getFICs(): Promise<FIC[]> {
     const ficInfoText = await (await fetch(this.FIC_INFO_URL)).text();
     const ficInfoDocumentQuery = cheerio.load(ficInfoText);
-    const ficDataLink = ficInfoDocumentQuery("section#CheckListModule a")
+    const ficDataLink = ficInfoDocumentQuery(this.PDF_REPORT_LINK_SELECTOR)
       .first()
       .attr("href");
+    if (!ficDataLink) {
+      throw new Error("No se encontro el enlace de descarga del reporte FIC");
+    }
     const ficBufferPDF = Buffer.from(
-      await (
-        await fetch(`https://www.bancolombia.com${ficDataLink}`)
-      ).arrayBuffer(),
+      await (await fetch(ficDataLink)).arrayBuffer(),
     );
     const pdfParser = new PDFParser();
 
