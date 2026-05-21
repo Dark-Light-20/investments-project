@@ -2,9 +2,10 @@ import { app, HttpResponseInit } from "@azure/functions";
 import { CdtUseCase } from "@dark-light-20/invest-domain";
 import { CdtService } from "../infrastructure/http-adapters/cdt.service.js";
 
+const cdtUseCase = new CdtUseCase(new CdtService());
+
 export async function getCDTRates(): Promise<HttpResponseInit> {
   try {
-    const cdtUseCase = new CdtUseCase(new CdtService());
     const cdts = await cdtUseCase.getAllCDTRates();
     return { jsonBody: cdts };
   } catch (error) {
