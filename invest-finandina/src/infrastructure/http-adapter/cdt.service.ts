@@ -10,18 +10,13 @@ export class CdtService implements CdtGateway {
 
     const cdtDocument = cheerio.load(cdtInfoText);
 
-    const ratesTable = cdtDocument("section.body-tax-table")
-      .find("table")
-      .first(); // Get first table only (contains the CDT rates)
-
-    const amountRangeHeader = ratesTable
-      .find("thead")
-      .slice(1) // Get second header row (contains CDTs amount ranges)
+    const container = cdtDocument("#tasas-digital");
+    const amountRangeData = container
+      .find(".amount-row .pill.light")
       .first()
-      .find("tr th")
-      .slice(1, 2) // Get second entry only (contains Digital CDT amount range)
-      .get();
-    const amountRangeData = cdtDocument(amountRangeHeader[0]).text().trim();
+      .text()
+      .trim();
+
     const minimumAmountMatch = /Desde\s+([\d$,.]+)/i.exec(amountRangeData)?.[1];
     const maximumAmountMatch = /hasta\s+([\d$,.]+)/i.exec(amountRangeData)?.[1];
 
@@ -32,42 +27,43 @@ export class CdtService implements CdtGateway {
       ? Number.parseFloat(maximumAmountMatch.replace("$", "")) * 1000
       : Number.parseFloat(maximumAmountMatch!) * 1000000;
 
-    const ratesRangeData = ratesTable
-      .find("tbody tr")
-      .slice(1) // Skip first row (contains text info)
-      .map((_, tr) => [cdtDocument(tr).children("td").slice(0, 2).get()]) // Get first two entries only (contains term range and Digital CDT rate)
+    const rates: CDTRate[] = container
+      .find(".table .row")
+      .not(".header")
+      .map((_, element) => {
+        const row = cdtDocument(element);
+        const rangeText = row.find(".label").text().trim();
+        const rateValueText = row
+          .find(".cell")
+          .first()
+          .text()
+          .trim()
+          .replace("%", "");
+
+        const rateValue = Number.parseFloat(rateValueText);
+
+        let minimumTerm = 0;
+        let maximumTerm = 0;
+
+        if (rangeText.includes(" y ")) {
+          const [minText, maxText] = rangeText.split(" y ");
+          minimumTerm = Number.parseInt(minText.replaceAll(/\D/g, ""));
+          maximumTerm = Number.parseInt(maxText.replaceAll(/\D/g, ""));
+        } else {
+          minimumTerm = Number.parseInt(rangeText.replaceAll(/\D/g, "")) + 1;
+          maximumTerm = Number.MAX_SAFE_INTEGER;
+        }
+
+        return {
+          rate: rateValue,
+          minimumAmount,
+          minimumTerm,
+          maximumAmount,
+          maximumTerm,
+          termUnit: CDTTermUnit.DAYS,
+        };
+      })
       .get();
-
-    const rates: CDTRate[] = ratesRangeData.map((rateData) => {
-      const rangeText = cdtDocument(rateData[0]).text().trim();
-      const rateValueText = cdtDocument(rateData[1])
-        .text()
-        .trim()
-        .replace("%", "");
-
-      const rateValue = Number.parseFloat(rateValueText);
-
-      let minimumTerm = 0;
-      let maximumTerm = 0;
-
-      if (rangeText.includes(" y ")) {
-        const [minText, maxText] = rangeText.split(" y ");
-        minimumTerm = Number.parseInt(minText.replaceAll(/\D/g, ""));
-        maximumTerm = Number.parseInt(maxText.replaceAll(/\D/g, ""));
-      } else {
-        minimumTerm = Number.parseInt(rangeText.replaceAll(/\D/g, "")) + 1;
-        maximumTerm = Number.MAX_SAFE_INTEGER;
-      }
-
-      return {
-        rate: rateValue,
-        minimumAmount,
-        minimumTerm,
-        maximumAmount,
-        maximumTerm,
-        termUnit: CDTTermUnit.DAYS,
-      };
-    });
 
     return rates;
   }

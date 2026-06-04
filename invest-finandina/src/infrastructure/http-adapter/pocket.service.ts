@@ -10,27 +10,18 @@ export class PocketService implements PocketGateway {
 
     const pocketDocument = cheerio.load(pocketInfoText);
 
-    const rateHeader = pocketDocument(
-      "section.body-tax-table section.tax-savings-account-classic"
-    )
-      .find("h2")
-      .get()
-      .find((el) =>
-        pocketDocument(el).text().toLowerCase().includes("flexidigital")
-      )!;
+    const container = pocketDocument("#tasas-flexidigital");
+    const pocketRow = container.find(".row").filter((_, el) => {
+      return pocketDocument(el)
+        .find(".label")
+        .text()
+        .toLowerCase()
+        .includes("bolsillo de ahorro");
+    });
 
-    const rateTable = pocketDocument(rateHeader.parent!)
-      .find("table")
+    const rateText = pocketRow
+      .find(".cell")
       .first()
-      .get();
-
-    const rateElement = pocketDocument(rateTable)
-      .find("tbody tr")
-      .first()
-      .find("td")
-      .get()[1]; // Get second entry (contains Flexidigital rate)
-
-    const rateText = pocketDocument(rateElement)
       .text()
       .trim()
       .replace(/%.*/, "");
