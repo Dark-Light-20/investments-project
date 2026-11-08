@@ -1,5 +1,4 @@
 import { CdtGateway, CDTRate } from "@dark-light-20/invest-domain";
-import { randUserAgent } from "@ngneat/falso";
 import { extractCdtRowsBySections } from "../utils/cdt-pdf.utils.js";
 import { cdtMapper } from "../mappers/cdt.mapper.js";
 import PDFParser, { Output } from "pdf2json";
@@ -16,6 +15,9 @@ export class CdtService implements CdtGateway {
   private readonly MAX_FETCH_ATTEMPTS = Number(
     process.env.CDT_FETCH_RETRIES ?? 5,
   );
+  private readonly USER_AGENT =
+    process.env.CDT_USER_AGENT ??
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
 
   async getAllCDTRates(): Promise<CDTRate[]> {
     const cachedRates = this.getValidCachedRates(Date.now());
@@ -84,7 +86,7 @@ export class CdtService implements CdtGateway {
             "application/pdf,text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
           "accept-language": "es-CO,es;q=0.9,en;q=0.8",
           referer: "https://www.davivienda.com/",
-          "user-agent": randUserAgent(),
+          "user-agent": this.USER_AGENT,
           ...(cookieHeader ? { cookie: cookieHeader } : {}),
         },
       });

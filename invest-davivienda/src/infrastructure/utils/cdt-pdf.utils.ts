@@ -25,8 +25,9 @@ const RATE_REGEX = /(\d{1,2}(?:[.,]\d{1,4})?)\s*%/g;
 const NUEVO_ROW_REGEX =
   /Nuevo\s*ó?\s*Pr[oó]rroga\s*Autom[aá]tica\s*((?:\d{1,2}(?:[.,]\d{1,4})?%\s*){8,12})/gi;
 const TARGET_SECTION_BLOCK_REGEX =
-  /CDT\s*M[ÓO]VIL\s*-\s*Desde\s*cuentas\s*de\s*otros\s*Bancos\s*\(PSE\)([\s\S]*?)\*\s*TASAS\s*E\.A\./i;
-const TARGET_SECTION_NAME = "CDT MOVIL - DESDE CUENTAS DE OTROS BANCOS (PSE)";
+  /CDT\s*M[ÓO]VIL\s*-\s*Desde\s*Cuentas\s*(?:Davivienda\s*u\s*otros\s*Bancos\s*por\s*PSE|de\s*otros\s*Bancos\s*\(PSE\))([\s\S]*?)\*\s*TASAS\s*E\.A\./i;
+const TARGET_SECTION_NAME =
+  "CDT MOVIL - DESDE CUENTAS DAVIVIENDA U OTROS BANCOS POR PSE";
 
 const TARGET_AMOUNT_BUCKETS: AmountRange[] = [
   { minimumAmount: MINIMUM_CDT_AMOUNT, maximumAmount: 50_000_000 },
