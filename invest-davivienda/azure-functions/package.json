@@ -14,7 +14,6 @@
   "dependencies": {
     "@azure/functions": "^4.0.0",
     "@dark-light-20/invest-domain": "^1.0.1",
-    "@ngneat/falso": "^7.3.0",
     "cheerio": "^1.0.1",
     "pdf2json": "^3.2.0"
   },

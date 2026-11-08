@@ -15,7 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "@dark-light-20/invest-domain": "^1.0.1",
-    "@ngneat/falso": "^7.3.0",
     "cheerio": "^1.0.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
