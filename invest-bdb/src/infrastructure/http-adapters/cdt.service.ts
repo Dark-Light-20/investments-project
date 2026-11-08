@@ -9,10 +9,18 @@ export class CdtService implements CdtGateway {
   async getAllCDTRates(): Promise<CDTRate[]> {
     const cdtInfo: CDTRawModel[] = await (
       await fetch(this.CDT_INFO_URL, {
-        headers: { "user-agent": randUserAgent() },
+        headers: {
+          accept: "application/json,text/plain,*/*",
+          "user-agent": randUserAgent(),
+        },
       })
     ).json();
-    const cdtTypes = cdtInfo.map((item) => item.ratesAttributes).flat();
-    return cdtTypes.map((item) => cdtMapper(item));
+    const cdtTypes = cdtInfo.flatMap((item) =>
+      item.ratesAttributes.map((rate) => ({
+        rate,
+        term: item.productsAttributes.TipoPlazo,
+      })),
+    );
+    return cdtTypes.map(({ rate, term }) => cdtMapper(rate, term));
   }
 }

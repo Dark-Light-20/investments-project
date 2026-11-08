@@ -6,8 +6,7 @@ const cdtTermMap = new Map<RateUnitType, CDTTermUnit>([
   [RateUnitType.MONTHS, CDTTermUnit.MONTHS],
 ]);
 
-export const cdtMapper = (item: RatesAttribute): CDTRate => {
-  const term = item["UnidadPlazo"] as string;
+export const cdtMapper = (item: RatesAttribute, term: string): CDTRate => {
   const termUnitType = term.slice(3, -1).trim() as RateUnitType;
   return {
     rate: parseFloat(item["TasaSpread"]),
